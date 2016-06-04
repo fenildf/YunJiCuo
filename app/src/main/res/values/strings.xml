@@ -1,0 +1,257 @@
+<resources>
+    <string name="app_name">YunJiCuo</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+
+    <string name="auth_username">用户名</string>
+    <string name="auth_password">密码</string>
+    <string name="auth_log_in">登录</string>
+    <string name="auth_register">没有账户？现在注册</string>
+    <string name="auth_error_empty_username">请输入用户名</string>
+    <string name="auth_error_empty_password">请输入密码</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- 提示信息 -->
+    <string name="tips_str">温馨提示</string>
+    <string name="exit_prompt_str">您确定退出吗？</string>
+
+    <!--外网地址-->
+    <!-- <string name="http_request_url">http://yunjicuo.com</string>-->
+    <!--外网测试库地址-->
+    <string name="http_request_url">http://www.yunjicuo.com:8090/zy</string>
+    <!--内网地址-->
+    <!--<string name="http_request_url">http://172.16.1.158:8090/zy</string>-->
+
+
+    <!--登陆地址-->
+    <string name="loginRequestUrl"><!--http://yunjicuo.com-->/system/wx/login_action</string>
+    <string name="loginTrancode">1000</string>
+
+    <!--获取班级列表地址-->
+    <string name="getBanJIRequestUrl"><!--http://yunjicuo.com-->/banUser/data</string>
+    <string name="getBanjiListTranCode">1001</string>
+
+
+    <!--获取学校列表-->
+    <string name="getschoolListTrancode">1002</string>
+    <!--获取科目列表-->
+    <string name="getkemuListTranCode">1003</string>
+
+    <!--新增班级提交地址-->
+    <string name="addclass_submit_requestUrl"><!--http://yunjicuo.com-->/banji/datum</string>
+    <string name="addclass_submit_trancode">1004</string>
+
+    <!--管理练习册列表地址-->
+    <string name="getlianxicelist"><!--http://yunjicuo.com-->/banjipaper/data</string>
+    <string name="getlianxice_Trancode">1005</string>
+
+
+    <!-- 班级错题本列表地址-->
+    <string name="banjicuotiben_requestUrl"><!--http://yunjicuo.com-->/banUser/data</string>
+    <string name="getbanjicuotibenListTrancode">1006</string>
+
+    <!--新增班级练习册-->
+    <!--获取班级练习册-->
+    <string name="get_banji_lianxice_list_requestUrl">/banjipaper/getPaper</string>
+    <string name="get_banji_lianxice_list_trancode">1007</string>
+
+    <!--保存练习册-->
+    <string name="submit_add_lianxice_requestUrl">/banjipaper/datum</string>
+    <string name="submit_add_lianxice_trancode">1008</string>
+
+    <!--布置作业列表-->
+    <string name="buzhizuoye_getList_requestUrl">/homeworkbanji/0/</string>
+    <string name="buzhizuoye_getList_trancode">1008</string>
+
+    <!--修改班级保存接口-->
+    <string name="xiugai_banji_requestUrl">/banji/datum/</string>
+    <string name="xiugai_banji_tranCode">1009</string>
+
+    <!--删除班级接口-->
+    <string name="delete_banji_requestUrl">/banji/data</string>
+    <string name="delete_banji_trancode">1010</string>
+
+
+    <!--学生管理接口  里面包括已审和未审-->
+    <string name="xueshengguanli_list_requestUrl">/banUser/data</string>
+    <string name="xueshengguanli_yishen_trancode">1011</string>
+    <string name="xueshengguanli_weishen_trancode">1012</string>
+
+    <!--  设置管理员-->
+    <string name="setadmin_requestUrl">/banUser/setAdmin/</string>
+    <string name="setadmin_trancode">1013</string>
+
+    <!--取消管理员-->
+    <string name="cancel_requestUrl">/banUser/cancelAdmin/</string>
+    <string name="canceladmin_trancode">1014</string>
+
+
+    <!--审核接口-->
+    <string name="shenhe_requestUrl">/banUser/shengHe</string>
+    <string name="shenhe_tranCode">1015</string>
+
+    <!--删除学生接口-->
+    <string name="delete_stu_requestUrl">/banUser/data/</string>
+    <string name="delete_stu_trancode">1016</string>
+
+    <!--错题库列表-->
+    <string name="cuotiku_list_requestUrl">/banjiquestion/data4paper/</string>
+    <string name="cuotiku_list_trancode">1017</string>
+
+    <!--错题列表-->
+    <string name="fence_cuoti_list_requestUrl">/banjiquestion/data</string>
+    <string name="fence_cuoti_list_trancode">1018</string>
+
+    <!--错题列表详情-->
+    <string name="cuotilist_info_requesturl">/question/datum/</string>
+    <string name="cuotilist_info_trancode">1019</string>
+
+    <!--习题详情界面-->
+    <string name="xitixiangqing_list_requestUrl">/homeworkquestion/data</string>
+    <string name="xitixiangqing_list_trancode">1020</string>
+
+    <!--布置作业&#45;&#45;获取科目接口-->
+    <string name="teacher_buzhizuoye_getkemu_requesturl">/banUser/data4km/</string>
+    <string name="teacher_buzhizuoye_getkemu_trancode">1021</string>
+
+    <!--布置作业==获取班级接口-->
+    <string name="teacher_buzhizuoye_getbanji_trancode">1022</string>
+
+    <!--布置作业  获取练习册接口-->
+    <string name="teacher_buzhizuoye_getlianxice_trancode">1023</string>
+
+    <string name="teacher_buzhizuoye_getyema">1024</string>
+
+    <string name="teacher_buzhizuoye_gettihao">1025</string>
+
+    <!-- 布置作业 提交接口-->
+    <string name="teacher_buzhizuoye_submit_requesturl">/homework/datum</string>
+    <string name="teacher_buzhizuoye_submit_trancode">1026</string>
+
+
+
+    <string name="teacher_banjicuotiben_cuotitongji_getlianxice_trancode">1027</string>
+
+    <string name="tea_cuotitongji_getyema_trancode">1028</string>
+    <!--===========================================================================================-->
+    <!--学生界面接口如下-->
+
+    <!--我的书架-->
+    <string name="wodeshujia_requestUrl">/studentpaper/data</string>
+    <string name="wodeshujia_trancode">2000</string>
+
+    <!--新增我的书架上的练习册-->
+    <string name="add_wodeshujia_requestUrl">/exampaper/data</string>
+    <string name="add_wodeshujia_trancode">2001</string>
+
+    <!-- 新增练习册保存接口-->
+    <string name="submit_add_wode_lianxice_requestURl">/studentpaper/datum</string>
+    <string name="submit_add_wode_lianxice_trancode">2002</string>
+
+    <!--学生删除我的练习册接口-->
+    <string name="stu_delete_lianxice_requesturl">/studentpaper/data?_method=DELETE</string>
+    <string name="stu_delete_lianxice_trancode">2003</string>
+
+    <!--学生-我的错题本-->
+    <string name="stu_wodecuotiben_requestUrl">/studentquestion/data4paper/</string>
+    <string name="stu_wodecuotiben_trancode">2004</string>
+
+    <!--学生-&#45;&#45;我的错题本里的获取错题列表-->
+    <string name="stu_wodecuotiben_cuotiliebiao_requesturl">/studentquestion/data?</string>
+    <string name="stu_wodecuotiben_cuotiliebiao_trancode">2005</string>
+
+    <!--学生&#45;&#45;新增错题本 获取练习册或者试卷-->
+    <string name="stu_add_wodecuotiben_requestUrl">/exampaper/data4stu</string>
+    <string name="stu_add_wodecuotiben_trancode">2006</string>
+
+    <!--获取页码-->
+    <string name="stu_add_wodecuotiben_getyema_requesturl">/exampaper/</string>
+    <string name="stu_add_wodecuotiben_getyema_trancode">2007</string>
+
+    <!-- 获取题号-->
+    <string name="stu_add_wodecuotiben_gettihao_requesturl">/exampaper/</string>
+    <string name="stu_add_wodecuotiben_gettihao_trancode">2008</string>
+
+    <!-- 学生-新增错题本保存接口-->
+    <string name="stu_add_wodecuotiben_submit_requesturl">/studentquestion/</string>
+    <string name="stu_add_wodecuotiben_submit_trancode">2009</string>
+
+
+    <!--学生  我的班级列表-->
+    <string name="stu_wdbj_list_requesturl">/banUser/data</string>
+    <string name="stu_wdbj_list_trancode">2011</string>
+
+    <!--学生加入班级 搜索班级接口-->
+    <string name="stu_sousuobanji_requesturl">/banji/datum/</string>
+    <string name="stu_sousuobanji_trancode">2010</string>
+
+    <!--学生搜索班级获取是否加入的属性接口-->
+    <string name="stu_getisjiarubanji_requesturl">/banUser/data</string>
+    <string name="stu_getisjiarubanji_trancode">2012</string>
+
+    <!--申请加入班级-->
+    <string name="stu_shenqingjiaru_requesturl">/banUser/datum</string>
+    <string name="stu_shenqingjiaru_trancode">2013</string>
+
+
+    <!--学生我的作业接口-->
+    <string name="stu_wdzy_list_requesturl">/homeworkbanji/1/</string>
+    <string name="stu_wdzy_list_trancode">2014</string>
+
+    <!--获取判卷状态接口-->
+    <string name="stu_wdzy_list_panjuan_status_requesturl">/homeworkstate/</string>
+    <string name="stu_wdzy_list_panjuan_status_trancode">2015</string>
+
+
+    <!--学生答案查询获取数据界面-->
+    <!-- <string name="stu_daanchaxun_huoqulianxice_requesturl"></string>-->
+    <string name="stu_daanchaxun_huoqulianxice_trancode">2016</string>
+
+
+    <!--学生答案查询获取页码-->
+    <string name="stu_daanchaxun_getyema_trancode">2017</string>
+
+    <!--学生答案查询获取题号-->
+    <string name="stu_daanchaxun_gettihao_trancode">2018</string>
+
+    <!--根据习题id查询答案接口-->
+    <string name="stu_daanchaxun_byxitiid_requesturl">/question/datum/</string>
+    <string name="stu_daanchaxun_byxitiid_trancode">2019</string>
+
+
+    <!--学生答案查询==加入错题库接口-->
+    <string name="stu_daanchaxun_jiarucuotiku_requesturl">/studentquestion/</string>
+    <string name="stu_daanchaxun_jiarucuotiku_trancode">2020</string>
+
+    <!--我的作业&#45;&#45;抽题列表-->
+    <string name="stu_getpanjuanlist_trancode">2021</string>
+    <!-- 抽题状态-->
+    <string name="stu_getpanjuanlist_status_trancode">2022</string>
+
+    <!--判卷  置为false-->
+    <string name="stu_panjuan_set_false_trancode">2023</string>
+    <!--判卷  置为true-->
+    <string name="stu_panjuan_set_true_trancode">2024</string>
+
+    <!--判卷完成-->
+    <string name="stu_panjuan_wancheng">2025</string>
+
+
+    <!-- 注册  获取学校-->
+    <string name="zhuce_getschool_trancode">2026</string>
+
+    <!--注册  获取验证码-->
+    <string name="zhuce_getyanzhengma_trancode">2027</string>
+
+    <!-- 验证验证码是否成功-->
+    <string name="zhuce_yzyanzhengma_trancode">2028</string>
+
+    <!--注册 提交数据-->
+    <string name="zhuce_submit">2029</string>
+</resources>

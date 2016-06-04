@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="45dip">
+
+
+    <ImageView
+        android:id="@+id/admin_imageview"
+        android:src="@mipmap/noadmin"
+        android:layout_marginBottom="@dimen/common_margin_5"
+        android:layout_marginTop="@dimen/common_margin_5"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_width="30dip"
+        android:layout_height="30dip"/>
+    <TextView
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.7"
+        android:textSize="@dimen/ts_normal"
+        android:id="@+id/name_tv"
+        android:layout_gravity="center_vertical"
+        android:textColor="@color/black"
+        android:text="王哈哈"
+        android:layout_marginBottom="@dimen/info_pad"
+        android:layout_marginTop="@dimen/info_pad"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        />
+    <TextView
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="@dimen/ts_normal"
+        android:id="@+id/tel_tv"
+        android:layout_gravity="center_vertical"
+        android:textColor="@color/black"
+        android:text="15513069187"
+       android:layout_marginTop="@dimen/info_pad"
+        android:layout_marginBottom="@dimen/info_pad"
+        android:drawableRight="@mipmap/ic_arrow"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        />
+</LinearLayout>

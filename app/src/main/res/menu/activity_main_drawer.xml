@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="我是老师" android:id="@+id/teacher_item">
+        <menu>
+            <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/glbj_item"
+                android:icon="@drawable/ic_menu_share"
+                android:title="管理班级"/>
+            <item
+                android:id="@+id/bjctk_item"
+                android:icon="@drawable/ic_menu_send"
+                android:title="班级错题库"/>
+
+                <item
+                    android:id="@+id/bjlxc_item"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="班级练习册"/>
+            <item
+                android:id="@+id/bzzy_item"
+                android:icon="@drawable/ic_menu_send"
+                android:title="作业布置"/>
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="我是学生" android:id="@+id/student_item">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/wdsj_item"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="我的书架"/>
+                <item
+                    android:id="@+id/ctb_item"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="错题本"/>
+                <item
+                    android:id="@+id/xuewdbj_item"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="我的班级"/>
+                <item
+                    android:id="@+id/wdzy_item"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="我的作业"/>
+                <item
+                    android:id="@+id/dacx_item"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="答案查询"/>
+            </group>
+        </menu>
+    </item>
+    
+</menu>

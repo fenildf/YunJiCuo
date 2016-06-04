@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.dvp.base.fenwu.yunjicuo"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:name=".common.CommonApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".ui.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.teacher.GuanLiBanJActivity">
+        </activity>
+        <activity android:name=".ui.teacher.AddBanjiActivity">
+        </activity>
+        <activity android:name=".ui.teacher.GuanLiLianXiCeActivity">
+        </activity>
+        <activity android:name=".ui.teacher.BanJCuoTiBenActivity">
+        </activity>
+        <activity android:name=".ui.teacher.AddBanJLianXiCeActivity">
+        </activity>
+        <activity android:name=".ui.teacher.BuZhiZuoYeActivity">
+        </activity>
+        <activity android:name=".ui.teacher.GuanLBJXiuGaiActivity">
+        </activity>
+        <activity android:name=".ui.student.SouSuoBanjActivity">
+        </activity>
+        <activity android:name=".ui.teacher.GuanLXueShengActivity">
+        </activity>
+        <activity android:name=".ui.teacher.CuoTiKuActivity">
+        </activity>
+        <activity android:name=".ui.teacher.FenCeCuoTiListActivity">
+        </activity>
+        <activity android:name=".ui.teacher.CuoTiLieBiaoInfoActivity">
+        </activity>
+        <activity android:name=".ui.teacher.XiTiXiangQingActivity">
+        </activity>
+        <activity android:name=".ui.student.WoDShuJActivity">
+        </activity>
+        <activity android:name=".ui.student.AddWDSJActivity">
+        </activity>
+        <activity android:name=".ui.student.StuWoDCTBActivity">
+        </activity>
+        <activity android:name=".ui.student.StuCuoTiLieBiaoActivity">
+        </activity>
+        <activity android:name=".ui.student.AddWDCTBActivity">
+        </activity>
+        <activity android:name=".ui.student.StuGuanLiWDBJActivity">
+        </activity>
+        <activity android:name=".ui.student.StuWDZYListActivity">
+        </activity>
+        <activity android:name=".ui.student.StuDaAnChaXunActivity">
+        </activity>
+        <activity android:name=".ui.student.StuDaAnDisplayActivity">
+        </activity>
+        <activity android:name=".ui.student.StuWDBJCuoTiKuActivity">
+        </activity>
+        <activity android:name=".ui.teacher.AddBuZhiZuoYeActivity">
+        </activity>
+        <activity android:name=".ui.teacher.BuZhiZuoYeXiTInfoActivity">
+        </activity>
+        <activity android:name=".ui.student.StuCuoTiInfoActivity">
+        </activity>
+        <activity android:name=".ui.student.StuPanJuanListActivity">
+        </activity>
+        <activity android:name=".ui.SignUpActivity">
+        </activity>
+        <activity android:name=".ui.teacher.BanJCuoTBCuoTiTongJActivity">
+        </activity>
+    </application>
+
+</manifest>

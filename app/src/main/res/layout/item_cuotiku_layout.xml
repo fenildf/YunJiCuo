@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:fresco="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        card_view:cardBackgroundColor="@android:color/white"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="5dip"
+        android:paddingTop="5dip"
+        android:paddingBottom="3dip"
+        card_view:cardCornerRadius="7dp"
+        card_view:cardElevation="5dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingTop="@dimen/activity_vertical_margin" >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/info_pad"
+                android:paddingRight="@dimen/info_pad"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                >
+                <TextView
+                    android:id="@+id/lianxecename_tv"
+                    android:text="黄冈100分闯关"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/ts_list"
+                    android:layout_weight="1"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/cuotishu_tv"
+                    android:text="错题数"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textSize="@dimen/ts_list"
+                    android:layout_weight="1"
+                    android:layout_width="0dip"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/info_pad"
+                android:paddingRight="@dimen/info_pad"
+                android:orientation="vertical"
+                android:layout_marginBottom="@dimen/info_pad"
+                android:layout_weight="2"
+                >
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/common_margin_5"
+                    >
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/ts_normal"
+                        android:textColor="@color/light_gray"
+                        android:text="分册："
+                        />
+                    <TextView
+                        android:id="@+id/fence_tv"
+                        android:layout_weight="3"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/ts_normal"
+                        android:textColor="@color/light_gray"
+                        android:text="王哈哈"
+                        />
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/ts_normal"
+                        android:textColor="@color/light_gray"
+                        android:text="年级："
+                        />
+                    <TextView
+                        android:id="@+id/nianji_tv"
+                        android:layout_weight="6"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/ts_normal"
+                        android:textColor="@color/light_gray"
+                        android:text="初一"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="科目："
+                        android:textColor="@color/light_gray"
+                        android:textSize="@dimen/ts_normal"
+                        />
+                    <TextView
+                        android:id="@+id/kemu_tv"
+                        android:layout_weight="3"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:text="数学"
+                        android:textColor="@color/light_gray"
+                        android:textSize="@dimen/ts_normal"
+                        />
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/ts_normal"
+                        android:textColor="@color/light_gray"
+                        android:text="版本："
+                        />
+                    <TextView
+                        android:id="@+id/banben_tv"
+                        android:layout_weight="6"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/ts_normal"
+                        android:textColor="@color/light_gray"
+                        android:text="北师大"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+         <!--   <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:background="#EFEFEF"
+                />-->
+           <!-- <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/info_pad"
+                android:paddingRight="@dimen/info_pad"
+                android:layout_marginTop="@dimen/info_pad"
+                android:layout_weight="1"
+                >
+
+                <com.afollestad.materialdialogs.internal.MDButton
+                    android:id="@+id/delete_btn"
+                    android:text="删除"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/ts_button"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    />
+            </LinearLayout>-->
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>
+
+

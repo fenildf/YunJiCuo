@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:fresco="http://schemas.android.com/tools"
+              android:descendantFocusability="blocksDescendants"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="250dip">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        card_view:cardBackgroundColor="@android:color/white"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="5dip"
+        android:paddingTop="5dip"
+        android:paddingBottom="3dip"
+        card_view:cardCornerRadius="7dp"
+        card_view:cardElevation="5dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingTop="@dimen/activity_vertical_margin" >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/info_pad"
+                android:paddingRight="@dimen/info_pad"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                >
+                <TextView
+                    android:id="@+id/banji_tv"
+                    android:text="实验班/物理(学生数：20)"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/ts_list"
+                    android:layout_weight="3"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/zhuangtai_tv"
+                    android:gravity="center"
+                    android:text="未判卷"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/ts_list"
+                    android:layout_weight="1"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/info_pad"
+                android:paddingRight="@dimen/info_pad"
+                android:orientation="vertical"
+                android:layout_marginBottom="@dimen/info_pad"
+                android:layout_weight="2"
+                >
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/common_margin_5"
+                    >
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/ts_normal"
+                        android:textColor="@color/light_gray"
+                        android:text="创建者："
+                        />
+                    <TextView
+                        android:id="@+id/chuangJR_tv"
+                        android:layout_weight="7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/ts_normal"
+                        android:textColor="@color/light_gray"
+                        android:text="王哈哈"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/common_margin_5"
+                    >
+                    <TextView
+                        android:layout_weight="1.3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="开始时间："
+                        android:textColor="@color/light_gray"
+                        android:textSize="@dimen/ts_normal"
+                        />
+                    <TextView
+                        android:id="@+id/begintime_tv"
+                        android:layout_weight="9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2016-05-25 16:43:00"
+                        android:textColor="@color/light_gray"
+                        android:textSize="@dimen/ts_normal"
+                        />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/common_margin_5"
+                    >
+                    <TextView
+                        android:layout_weight="1.3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="结束时间："
+                        android:textColor="@color/light_gray"
+                        android:textSize="@dimen/ts_normal"
+                        />
+                    <TextView
+                        android:id="@+id/endtime_tv"
+                        android:layout_weight="9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2016-05-26 00:00:00"
+                        android:textColor="@color/light_gray"
+                        android:textSize="@dimen/ts_normal"
+                        />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <TextView
+                        android:layout_weight="1.3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="备注："
+                        android:textColor="@color/light_gray"
+                        android:textSize="@dimen/ts_normal"
+                        />
+                    <TextView
+                        android:id="@+id/beizhu_tv"
+                        android:layout_weight="4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="该作业已经完成"
+                        android:textColor="@color/light_gray"
+                        android:textSize="@dimen/ts_normal"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:background="#EFEFEF"
+                />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/info_pad"
+                android:paddingRight="@dimen/info_pad"
+                android:layout_marginTop="@dimen/info_pad"
+                android:layout_weight="1"
+                >
+                <com.afollestad.materialdialogs.internal.MDButton
+                    android:id="@+id/pj_btn"
+                    android:text="判卷"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/ts_button"
+                    android:paddingLeft="@dimen/info_pad"
+                    android:layout_weight="1"
+                    />
+
+                <com.afollestad.materialdialogs.internal.MDButton
+                    android:id="@+id/xqtj_btn"
+                    android:text="学情统计"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/ts_button"
+                    android:gravity="right"
+                    android:layout_weight="1"
+                    android:paddingRight="@dimen/info_pad"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

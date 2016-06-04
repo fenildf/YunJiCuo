@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:background="@color/windowBackGround"
+    xmlns:tl="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.teacher.GuanLiBanJActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            layout="@layout/common_toolbar"
+            ></include>
+    </android.support.design.widget.AppBarLayout>
+
+    <com.flyco.tablayout.SegmentTabLayout
+        android:id="@+id/tl_1"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="10dp"
+        app:tl_bar_color="#FFFFFF"
+        app:tl_indicator_color="#448AFF"
+        app:tl_textUnselectColor="#448AFF"
+        tl:tl_indicator_corner_radius="5dp"
+        tl:tl_tab_padding="20dp"></com.flyco.tablayout.SegmentTabLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_below="@+id/appbarlayout"
+        android:layout_marginTop="@dimen/common_margin_3"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:visibility="gone"
+            android:src="@android:drawable/ic_dialog_email"/>
+    </FrameLayout>
+</LinearLayout>
+

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="60dip"
+              android:descendantFocusability="blocksDescendants"
+              android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="6">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="三年中考两年模拟全一册"
+            android:id="@+id/title_tv"
+            android:textSize="@dimen/ts_list"
+            android:textColor="@color/black"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/info_pad"
+            android:layout_marginBottom="@dimen/info_pad"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="页码：215"
+            android:textColor="@color/light_gray"
+            android:textSize="@dimen/ts_normal"
+            android:id="@+id/yema_tv"
+            android:layout_alignBaseline="@+id/tihao_tv"
+            android:layout_alignBottom="@+id/tihao_tv"
+            android:layout_alignStart="@+id/title_tv"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/light_gray"
+            android:text="题号：A1"
+            android:id="@+id/tihao_tv"
+            android:layout_below="@+id/title_tv"
+            android:layout_alignEnd="@+id/title_tv"
+            android:layout_marginEnd="55dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <ImageView
+            android:src="@mipmap/ic_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"/>
+    </RelativeLayout>
+    <!-- <RadioButton
+         android:id="@+id/radio_btn"
+         android:textColor="@color/black"
+         android:gravity="center_vertical"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"/>-->
+
+    <!-- <com.dvp.base.view.Marquee
+         android:id="@+id/lianxicename_tv"
+         android:textSize="@dimen/ts_normal"
+         android:textColor="@color/black"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginLeft="@dimen/activity_horizontal_margin"
+         android:layout_marginRight="@dimen/activity_horizontal_margin"
+         android:layout_marginTop="@dimen/info_pad"
+         android:layout_marginBottom="@dimen/info_pad"
+         android:text="3年中考2年模拟全一册数学初三北师大"
+         />
+
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="页码：215"
+
+         android:id="@+id/yema_tv"
+         android:layout_below="@+id/lianxicename_tv"
+         android:layout_alignStart="@+id/lianxicename_tv"/>
+
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="题号"
+         android:gravity="center_horizontal"
+         android:id="@+id/tihao_tv"
+         android:layout_below="@+id/lianxicename_tv"
+         />-->
+</LinearLayout>

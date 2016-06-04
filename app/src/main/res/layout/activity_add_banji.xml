@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".ui.teacher.GuanLiBanJActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            layout="@layout/common_toolbar"
+            ></include>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1.4"
+        >
+        <TextView
+            android:text="学校"
+            android:textSize="@dimen/ts_title"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:textColor="@color/light_gray"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:background="@color/white"
+        android:layout_weight="1"
+        >
+
+        <TextView
+            android:id="@+id/select_school_tv"
+            android:text="请选择学校"
+            android:textSize="@dimen/ts_list"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:textColor="@color/light_gray"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1.4"
+        >
+        <TextView
+            android:text="科目"
+            android:textSize="@dimen/ts_title"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:textColor="@color/light_gray"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:background="@color/white"
+        >
+
+        <TextView
+            android:id="@+id/select_kem_tv"
+            android:text="请选择科目"
+            android:textSize="@dimen/ts_list"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:textColor="@color/light_gray"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1.4"
+        >
+        <TextView
+            android:text="名称"
+            android:textSize="@dimen/ts_title"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:textColor="@color/light_gray"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:background="@color/white"
+        >
+
+        <me.zhanghai.android.materialedittext.MaterialTextInputLayout
+            android:id="@+id/banji_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/card_content_horizontal_margin_with_4dp_padding"
+            android:layout_marginRight="@dimen/card_content_horizontal_margin_with_4dp_padding"
+            app:errorEnabled="true">
+
+            <me.zhanghai.android.materialedittext.MaterialEditText
+                android:id="@+id/banji_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:imeActionId="@+id/ime_login"
+                android:imeActionLabel="@string/auth_log_in"
+                android:imeOptions="actionDone"
+                android:inputType="textAutoComplete"
+                android:textColor="@color/black"
+                android:textSize="@dimen/ts_list"
+                android:textColorHighlight="@color/light_gray"
+                android:maxLines="1" />
+        </me.zhanghai.android.materialedittext.MaterialTextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        ></LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1.3"
+        >
+        <com.afollestad.materialdialogs.internal.MDButton
+            android:id="@+id/submit_btn"
+            android:text="保存"
+            android:textSize="@dimen/ts_large"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       >
+
+       <!-- <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"/>-->
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/activity_toolbar_layout"></include>
+       <!-- <include layout="@layout/content_main"/>-->
+    </android.support.design.widget.AppBarLayout>
+
+
+
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_below="@+id/appbarlayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!-- <include layout="@layout/content_main"/>
+         <android.support.v4.view.ViewPager
+             android:id="@+id/demo_viewPager"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             app:layout_behavior="@string/appbar_scrolling_view_behavior"
+             android:layout_above="@+id/demo_commonTab"
+             />-->
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:visibility="gone"
+            android:src="@android:drawable/ic_dialog_email"/>
+    </FrameLayout>
+
+   <!-- <android.support.v4.view.ViewPager
+        android:id="@+id/demo_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        />-->
+
+
+</LinearLayout>

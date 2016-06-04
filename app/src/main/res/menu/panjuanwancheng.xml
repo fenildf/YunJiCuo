@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context=".ui.MainActivity">
+
+    <item android:id="@+id/pj_complete"
+          android:orderInCategory="80"
+          android:title="判卷完成"
+
+          app:showAsAction="always" />
+</menu>

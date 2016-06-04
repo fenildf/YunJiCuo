@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".ui.teacher.GuanLiBanJActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            layout="@layout/common_toolbar"
+            ></include>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#EFEFEF"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <!--  <Space
+                  android:layout_width="0dp"
+                  android:layout_height="0dp"
+                  android:layout_weight="1" />-->
+
+            <!-- Using android:layout_marginTop here to compensate for CardView's margin. -->
+            <!-- Using dp as unit for android:textSize because this TextView functions as imagery. -->
+
+            <!-- <Space
+                 android:layout_width="0dp"
+                 android:layout_height="0dp"
+                 android:layout_weight="1" />-->
+
+            <!-- Using app:cardMaxElevation as margin. -->
+            <com.dvp.base.fenwu.yunjicuo.ui.FriendlyCardView
+                android:layout_width="@dimen/card_view_width"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/screen_edge_horizontal_margin_negative_half"
+                android:layout_marginBottom="@dimen/screen_edge_horizontal_margin_negative_half"
+                app:cardMaxElevation="@dimen/screen_edge_horizontal_margin">
+
+                <LinearLayout
+                    android:id="@+id/form"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <me.zhanghai.android.materialedittext.MaterialTextInputLayout
+                        android:id="@+id/username_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/card_content_horizontal_margin_with_4dp_padding"
+                        android:layout_marginRight="@dimen/card_content_horizontal_margin_with_4dp_padding"
+                        android:layout_marginTop="@dimen/card_content_vertical_margin_large"
+                        app:errorEnabled="true">
+
+                        <me.zhanghai.android.materialedittext.MaterialEditText
+                            android:id="@+id/username"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="真实姓名"
+                            android:textSize="@dimen/ts_title"
+                            android:inputType="textEmailAddress"
+                            android:textColor="@color/black"
+                            android:maxLines="1" />
+                    </me.zhanghai.android.materialedittext.MaterialTextInputLayout>
+
+                    <me.zhanghai.android.materialedittext.MaterialTextInputLayout
+                        android:id="@+id/password_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/card_content_horizontal_margin_with_4dp_padding"
+                        android:layout_marginRight="@dimen/card_content_horizontal_margin_with_4dp_padding"
+                        app:errorEnabled="true">
+
+                        <me.zhanghai.android.materialedittext.MaterialEditText
+                            android:id="@+id/password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="密码"
+                            android:textSize="@dimen/ts_title"
+                            android:imeActionId="@+id/ime_login"
+                            android:imeActionLabel="@string/auth_log_in"
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            android:textColor="@color/black"
+                            android:maxLines="1" />
+                    </me.zhanghai.android.materialedittext.MaterialTextInputLayout>
+
+
+
+                    <me.zhanghai.android.materialedittext.MaterialTextInputLayout
+                        android:id="@+id/queren_password_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/card_content_horizontal_margin_with_4dp_padding"
+                        android:layout_marginRight="@dimen/card_content_horizontal_margin_with_4dp_padding"
+                        app:errorEnabled="true">
+
+                        <me.zhanghai.android.materialedittext.MaterialEditText
+                            android:id="@+id/queren_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="确认密码"
+                            android:textSize="@dimen/ts_title"
+                            android:imeActionId="@+id/ime_login"
+                            android:imeActionLabel="@string/auth_log_in"
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            android:textColor="@color/black"
+                            android:maxLines="1" />
+                    </me.zhanghai.android.materialedittext.MaterialTextInputLayout>
+
+
+
+                    <me.zhanghai.android.materialedittext.MaterialTextInputLayout
+                        android:id="@+id/selectxuexiao_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/card_content_horizontal_margin_with_4dp_padding"
+                        android:layout_marginRight="@dimen/card_content_horizontal_margin_with_4dp_padding"
+                        app:errorEnabled="true">
+
+                        <me.zhanghai.android.materialedittext.MaterialEditText
+                            android:id="@+id/select_xuexiao_edittext"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="请选择学校"
+                            android:editable="false"
+                            android:textSize="@dimen/ts_title"
+                            android:textColor="@color/black"
+                            android:clickable="true"
+                            android:maxLines="1" />
+                    </me.zhanghai.android.materialedittext.MaterialTextInputLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/card_content_horizontal_margin_with_4dp_padding"
+                        android:layout_marginRight="@dimen/card_content_horizontal_margin_with_4dp_padding"
+                        >
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:id="@+id/shoujihao_edittext"
+                            android:hint="手机号"
+                            android:textColor="@color/black"
+                            android:phoneNumber="true"
+                            android:layout_weight="1"
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/fasongyanzhengma_md"
+                            android:textColor="@color/white"
+                            android:text="发送验证码"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:layout_weight="1"
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <me.zhanghai.android.materialedittext.MaterialTextInputLayout
+                        android:id="@+id/tianxieyanzhengma_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/card_content_horizontal_margin_with_4dp_padding"
+                        android:layout_marginRight="@dimen/card_content_horizontal_margin_with_4dp_padding"
+                        app:errorEnabled="true">
+
+                        <me.zhanghai.android.materialedittext.MaterialEditText
+                            android:id="@+id/tianxieyanzhengma_edittext"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="请填写手机收到的6位短信验证码"
+                            android:textSize="@dimen/ts_title"
+                            android:textColor="@color/black"
+                            android:numeric="integer"
+                            android:maxLines="1" />
+                    </me.zhanghai.android.materialedittext.MaterialTextInputLayout>
+                    <Button
+                        android:id="@+id/zhuce_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dip"
+                        android:layout_gravity="right"
+                        android:layout_marginLeft="@dimen/card_content_horizontal_margin_with_4dp_padding"
+                        android:layout_marginRight="@dimen/card_content_horizontal_margin_with_4dp_padding"
+                        android:text="注册"
+                        android:layout_marginBottom="@dimen/info_pad"
+                        style="@style/Widget.AppCompat.Button.Colored" />
+
+                   <!-- <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="@dimen/card_action_margin_with_4dp_padding"
+                        android:layout_marginRight="@dimen/card_action_margin_with_4dp_padding"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <Button
+                            android:id="@+id/forget_psw_btn"
+                            android:layout_weight="1"
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/card_action_margin_with_4dp_padding"
+                            android:layout_marginRight="@dimen/card_action_margin_with_4dp_padding"
+                            android:layout_marginTop="@dimen/card_action_margin"
+                            android:layout_marginBottom="@dimen/card_action_margin"
+                            android:gravity="center_vertical"
+                            android:layout_gravity="left"
+                            android:text="忘记密码"
+                            android:textColor="?android:textColorHint"
+                            style="?borderlessButtonStyle" />
+
+
+                        <Button
+                            android:id="@+id/register"
+                            android:layout_weight="1"
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/card_action_margin_with_4dp_padding"
+                            android:layout_marginRight="@dimen/card_action_margin_with_4dp_padding"
+                            android:layout_marginTop="@dimen/card_action_margin"
+                            android:layout_marginBottom="@dimen/card_action_margin"
+                            android:layout_gravity="right"
+                            android:text="@string/auth_register"
+                            android:textColor="?android:textColorHint"
+                            style="?borderlessButtonStyle" />
+
+                    </LinearLayout>-->
+
+                </LinearLayout>
+            </com.dvp.base.fenwu.yunjicuo.ui.FriendlyCardView>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

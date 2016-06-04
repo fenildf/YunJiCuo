@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:background="@color/windowBackGround"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+
+    <CheckedTextView
+        android:textColor="@color/light_gray"
+        android:id="@+id/child_checkedtv"
+        android:paddingLeft="@dimen/info_pad"
+        android:paddingRight="@dimen/info_pad"
+        android:text="内容"
+        android:gravity="center_vertical"
+        android:textSize="@dimen/ts_normal"
+        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

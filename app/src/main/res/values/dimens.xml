@@ -1,0 +1,161 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+    <item name="match_parent" format="integer" type="dimen">-1</item>
+    <item name="wrap_content" format="integer" type="dimen">-2</item>
+
+    <item name="weight_1_when_phone" format="float" type="dimen">1</item>
+    <item name="weight_1_when_tablet" format="float" type="dimen">0</item>
+
+    <dimen name="status_bar_height">25dp</dimen>
+    <dimen name="screen_edge_horizontal_margin">16dp</dimen>
+    <dimen name="screen_edge_horizontal_margin_negative_half">-8dp</dimen>
+    <dimen name="content_horizontal_margin">72dp</dimen>
+    <dimen name="content_horizontal_margin_from_screen_edge">56dp</dimen>
+    <dimen name="content_horizontal_margin_from_screen_edge_with_40dp_padding">16dp</dimen>
+    <dimen name="toolbar_navigation_button_left_margin">-2dp</dimen>
+    <dimen name="toolbar_title_left_margin">18dp</dimen>
+    <dimen name="toolbar_button_right_margin">2dp</dimen>
+    <dimen name="toolbar_overflow_button_right_margin">-6dp</dimen>
+    <dimen name="toolbar_edit_left_margin">12dp</dimen>
+    <dimen name="toolbar_edit_right_margin">18dp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="tab_height">48dp</dimen>
+    <dimen name="toolbar_hide_offset">-54dp</dimen>
+    <dimen name="toolbar_and_tab_height">104dp</dimen>
+    <dimen name="toolbar_and_tab_hide_offset">-110dp</dimen>
+    <dimen name="appbar_elevation">4dp</dimen>
+    <dimen name="drawer_max_width">320dp</dimen>
+    <dimen name="list_padding_vertical">8dp</dimen>
+    <dimen name="single_line_list_item_height">56dp</dimen>
+    <dimen name="two_line_list_item_height">72dp</dimen>
+    <dimen name="three_line_list_item_height">88dp</dimen>
+    <!-- Using hard-coded 1dp as height for shared-element transition on Android 5.0 -->
+    <dimen name="horizontal_divider_height">1dp</dimen>
+    <!-- 3x toolbar height per Material Design Spec. -->
+    <dimen name="scrim_height">168dp</dimen>
+    <dimen name="card_list_horizontal_padding">0dp</dimen>
+    <dimen name="card_activity_width">@dimen/match_parent</dimen>
+    <dimen name="card_activity_horizontal_margin">0dp</dimen>
+    <dimen name="card_view_width">@dimen/match_parent</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    <!-- See RoundRectDrawableWithShadow.calculate(Vertical)Padding(). -->
+    <dimen name="card_shadow_horizontal_margin">-2dp</dimen>
+    <dimen name="card_shadow_vertical_margin">-3dp</dimen>
+    <dimen name="card_vertical_space">16dp</dimen>
+    <dimen name="card_vertical_space_half">8dp</dimen>
+    <dimen name="card_horizontal_margin">@dimen/card_shadow_horizontal_margin</dimen>
+    <dimen name="card_vertical_margin">5dp</dimen>
+    <dimen name="card_header_bottom_margin">-4dp</dimen>
+    <dimen name="card_corner_radius">0dp</dimen>
+    <dimen name="card_content_horizontal_margin">16dp</dimen>
+    <dimen name="card_content_horizontal_margin_with_4dp_padding">12dp</dimen>
+    <dimen name="card_content_horizontal_margin_with_8dp_padding">8dp</dimen>
+    <dimen name="card_content_horizontal_margin_with_12dp_padding">4dp</dimen>
+    <dimen name="card_content_horizontal_space">16dp</dimen>
+    <dimen name="card_content_horizontal_space_with_4dp_padding">12dp</dimen>
+    <dimen name="card_content_horizontal_space_with_12dp_padding">4dp</dimen>
+    <dimen name="card_content_horizontal_space_with_16dp_padding">0dp</dimen>
+    <dimen name="card_content_vertical_margin_large">24dp</dimen>
+    <dimen name="card_content_vertical_margin">16dp</dimen>
+    <dimen name="card_content_vertical_margin_with_4dp_padding">12dp</dimen>
+    <dimen name="card_content_vertical_margin_with_12dp_padding">4dp</dimen>
+    <dimen name="card_content_vertical_margin_small">8dp</dimen>
+    <dimen name="card_content_vertical_space">16dp</dimen>
+    <dimen name="card_content_vertical_space_with_4dp_padding">12dp</dimen>
+    <dimen name="card_action_margin">8dp</dimen>
+    <dimen name="card_action_margin_with_4dp_padding">4dp</dimen>
+    <dimen name="card_action_margin_with_8dp_padding">0dp</dimen>
+    <dimen name="icon_size">24dp</dimen>
+    <dimen name="touch_target_size">48dp</dimen>
+    <dimen name="toolbar_button_size">48dp</dimen>
+    <dimen name="avatar_size">40dp</dimen>
+    <dimen name="avatar_padding">4dp</dimen>
+    <dimen name="avatar_small_padding">12dp</dimen>
+    <dimen name="icon_button_padding">12dp</dimen>
+    <!-- Fab internally sets a 14dp margin on pre-Lollipop devices. -->
+    <dimen name="fab_margin">2dp</dimen>
+    <dimen name="dialog_padding_horizontal_with_4dp_padding">20dp</dimen>
+
+    <dimen name="profile_large_avatar_size">128dp</dimen>
+    <dimen name="profile_small_avatar_size">32dp</dimen>
+    <dimen name="profile_small_avatar_margin_left">@dimen/screen_edge_horizontal_margin</dimen>
+    <dimen name="profile_small_avatar_margin_top">12dp</dimen>
+
+    <dimen name="image_max_height">640dp</dimen>
+
+
+    <!--通用配置-->
+    <!-- 通用 -->
+    <!-- 指定文字大小 -->
+    <dimen name="ts_xlarge">22sp</dimen>   <!-- 超大字号，不常用 -->
+    <dimen name="ts_large">20sp</dimen>  <!-- 大 -->
+    <dimen name="ts_title">18sp</dimen> <!-- 大，例如：title文字、大标题 -->
+    <dimen name="ts_list">16sp</dimen>   <!-- 中，一级内容常用,列表标题 -->
+    <dimen name="ts_normal">15sp</dimen>  <!-- 中，常用正文、多行标题、Tab菜单-->
+    <dimen name="ts_button">14sp</dimen>  <!-- 小，常用按钮文字-->
+    <dimen name="ts_small">14sp</dimen>
+    <dimen name="ts_xsmall">13sp</dimen>  <!-- 小，常用气泡文字-->
+    <dimen name="ts_xxsmall">12sp</dimen> <!-- 超小，常用评论名称、灰显文字 -->
+    <dimen name="ts_subtitle">11sp</dimen> <!-- 超小，常用多行标题中的小标题 -->
+    <dimen name="list_item_pad_single">16dp</dimen>  <!-- 单行文字-->
+    <!--
+    字体搭配：
+    1.标题18sp，详情15sp，文章详情
+    2.标题16sp，详情13sp，索引列表一
+    3.标题15sp，详情12sp，索引列表二
+    4.标题15sp，详情11sp，带头像列表
+     -->
+    <!-- 页面左右留白 -->
+    <dimen name="activity_margin">12dp</dimen>  <!-- 系统默认-->
+    <dimen name="activity_small_margin">8dp</dimen>  <!-- 页面内容比较多时，建议左右留白小一些 -->
+    <!-- 列表项 -->
+    <!-- List_item.xml -->
+    <dimen name="list_item_margin">12dp</dimen>
+    <dimen name="list_item_small_margin">8dp</dimen>
+    <!-- 图片尺寸 -->
+    <dimen name="img_height">80dp</dimen>
+    <dimen name="img_width">80dp</dimen>
+    <!-- 显示密码图片尺寸-->
+    <dimen name="img_show_password_width">40dp</dimen>
+    <dimen name="img_show_password_height">40dp</dimen>
+    <!-- 列表图片尺寸 -->
+    <dimen name="list_item_img_height">90dp</dimen>
+    <dimen name="list_item_img_width">90dp</dimen>
+    <!-- 多选图片列表图片尺寸 -->
+    <dimen name="folder_cover_size">72dp</dimen>
+    <dimen name="space_size">2dp</dimen>
+    <!-- 详细页 -->
+    <!-- 标题与文字间距 -->
+    <dimen name="title_margin">16dp</dimen>
+    <dimen name="info_pad">8dp</dimen>
+
+    <!-- margin边距-->
+    <dimen name="common_margin_10">10dp</dimen>
+    <dimen name="common_margin_8">8dp</dimen>
+    <dimen name="common_margin_5">5dp</dimen>
+    <dimen name="common_margin_3">3dp</dimen>
+
+    <dimen name="title_lh">48dp</dimen>
+
+
+    <!--以下定义menu的各项尺寸-->
+    <dimen name="pic_width">80dip</dimen>
+    <dimen name="pic_height">130dip</dimen>
+
+    <dimen name="menu_item_vertical_height">1dip</dimen>
+    <dimen name="menu_item_horizotal_width">8dip</dimen>
+    <dimen name="yinying">3dip</dimen>
+    <dimen name="banjing">5dip</dimen>
+
+
+    <!--详情页参数配置-->
+    <dimen name="title_height">55dip</dimen>
+    <dimen name="content_height">48dip</dimen>
+</resources>

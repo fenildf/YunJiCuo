@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="显示个人详细信息">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/personcenter_item"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="个人中心"/>
+            </group>
+        </menu>
+    </item>
+
+
+    <item android:title="退出当前账号">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/exit_item"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="退出当前账号"/>
+            </group>
+        </menu>
+    </item>
+</menu>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+                                   android:id="@+id/toolbar"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   xmlns:tl="http://schemas.android.com/tools"
+                                   android:background="?attr/colorPrimary"
+                                   android:minHeight="?attr/actionBarSize"
+                                   app:navigationIcon="@mipmap/ic_grzx"
+                                   app:layout_scrollFlags="scroll|enterAlways"
+                                   app:title=" ">
+
+    <com.flyco.tablayout.SegmentTabLayout
+        android:id="@+id/tl_1"
+        android:layout_width="200dip"
+        android:layout_height="32dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        app:tl_bar_color="#FFFFFF"
+        app:tl_indicator_color="#448AFF"
+        app:tl_textUnselectColor="#448AFF"
+        tl:tl_indicator_corner_radius="5dp"
+        tl:tl_tab_padding="20dp"
+        />
+
+</android.support.v7.widget.Toolbar>

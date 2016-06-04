@@ -87,6 +87,7 @@ public class AddWDCTBActivity extends CommonActivity implements SelectDialog.Ite
         }
         mModel.addResponseListener(this);
 
+        /////=================
         mBanJLXCList = new ArrayList<>();
         mWDSJList = new ArrayList<>();
 

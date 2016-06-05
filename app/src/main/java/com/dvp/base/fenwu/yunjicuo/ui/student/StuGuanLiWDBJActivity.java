@@ -2,6 +2,7 @@ package com.dvp.base.fenwu.yunjicuo.ui.student;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
@@ -10,6 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.afollestad.materialdialogs.internal.MDButton;
 import com.dvp.base.adapter.recyviewadapter.adapter.RecyclerAdapter;
 import com.dvp.base.adapter.recyviewadapter.adapter.RecyclerHolder;
@@ -132,6 +135,10 @@ public class StuGuanLiWDBJActivity extends CommonActivity implements XRecyclerVi
     @Override
     public void OnHttpResponse(String var1, String var2)
     {
+        if(var1.equals(getResources().getString(R.string.exit_banj_trancode)))
+        {
+            DialogUtil.showToast(getApplicationContext(),"删除成功");
+        }
         if(var1.equals(getResources().getString(R.string.stu_wdbj_list_trancode)))
         {
             mDatas.addAll(mModel.getRtnStuWDBJList().getData());
@@ -140,7 +147,7 @@ public class StuGuanLiWDBJActivity extends CommonActivity implements XRecyclerVi
                 adapter = new RecyclerAdapter<RtnStuWDBJList.DataEntity>(getApplicationContext(), mDatas, R.layout.item_stu_wdbj_layout)
                 {
                     @Override
-                    public void convert(RecyclerHolder recycleHolder, RtnStuWDBJList.DataEntity classManageItem, int i)
+                    public void convert(RecyclerHolder recycleHolder, final RtnStuWDBJList.DataEntity classManageItem, int i)
                     {
 
                         recycleHolder.setText(R.id.banji_tv,classManageItem.getBanJ().getName() + classManageItem.getBanJ().getKeM().getRcsValue());
@@ -153,7 +160,10 @@ public class StuGuanLiWDBJActivity extends CommonActivity implements XRecyclerVi
                             @Override
                             public void onClick(View v)
                             {
-                                DialogUtil.showToast(getApplicationContext(),"错题库");
+                                //DialogUtil.showToast(getApplicationContext(),"错题库");
+                                Bundle bundle = new Bundle();
+                                bundle.putString("banjbh",classManageItem.getBanJ().getId());
+                                startActivity(StuWDBJCuoTiKuActivity.class,bundle);
                             }
                         });
                         MDButton cuotitongji_btn = (MDButton) recycleHolder.findView(R.id.cuotitongji_btn);
@@ -171,7 +181,15 @@ public class StuGuanLiWDBJActivity extends CommonActivity implements XRecyclerVi
                             @Override
                             public void onClick(View v)
                             {
-                                DialogUtil.showToast(getApplicationContext(),"退出班级");
+                                //DialogUtil.showToast(getApplicationContext(),"退出班级");
+                                DialogUtil.getBasicDialog(StuGuanLiWDBJActivity.this, null, "退出班级", "确定退出班级么？", 0, new MaterialDialog.SingleButtonCallback()
+                                {
+                                    @Override
+                                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which)
+                                    {
+                                        mModel.exitBJ(getResources().getString(R.string.exit_banj_trancode),classManageItem.getId().toString());
+                                    }
+                                }).show();
                             }
                         });
                     }

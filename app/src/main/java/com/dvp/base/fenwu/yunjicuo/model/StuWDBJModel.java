@@ -6,6 +6,7 @@ import com.dvp.base.fenwu.yunjicuo.R;
 import com.dvp.base.fenwu.yunjicuo.common.webservice.AppModel;
 import com.dvp.base.fenwu.yunjicuo.domain.student.RtnIsJiaRuBanJ;
 import com.dvp.base.fenwu.yunjicuo.domain.student.RtnSearchWDBJList;
+import com.dvp.base.fenwu.yunjicuo.domain.student.RtnStuWDBJCTKList;
 import com.dvp.base.fenwu.yunjicuo.domain.student.RtnStuWDBJList;
 import com.google.gson.Gson;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -265,6 +266,160 @@ public class StuWDBJModel extends AppModel
                             pd.dismiss();
                         }
                         System.out.println("申请加入班级返回结果===="+response.toString());
+                        OnHttpResponse(tranCode,null);
+                    }
+                });
+    }
+
+
+    public RtnStuWDBJCTKList getRtnStuWDBJCTKList()
+    {
+        return rtnStuWDBJCTKList;
+    }
+
+    public void setRtnStuWDBJCTKList(RtnStuWDBJCTKList rtnStuWDBJCTKList)
+    {
+        this.rtnStuWDBJCTKList = rtnStuWDBJCTKList;
+    }
+
+    /**
+     * 接收我的班级 错题库列表
+     */
+    private RtnStuWDBJCTKList rtnStuWDBJCTKList = new RtnStuWDBJCTKList();
+
+    /**
+     *
+     * 学生我的班级 获取错题库列表
+     * @param tranCode
+     * @param banJBH
+     * @param userId
+     */
+    public void getStuBanJCuoTK(final String tranCode,final String banJBH,final String userId)
+    {
+        String url = mContext.getResources().getString(R.string.http_request_url) +
+                "/studentquestion/" +
+                banJBH +
+                "/data4paper/" +
+                userId;
+        pd.show();
+        OkHttpUtils.get()
+                .url(url)
+                .build()
+                .execute(new StringCallback()
+                {
+                    @Override
+                    public void onError(Call call, Exception e)
+                    {
+                        if(pd.isShowing())
+                        {
+                            pd.dismiss();
+                        }
+                    }
+
+                    @Override
+                    public void onResponse(String response)
+                    {
+                        if(pd.isShowing())
+                        {
+                            pd.dismiss();
+                        }
+                        System.out.println("获取班级错题库列表结果===="+response.toString());
+                        RtnStuWDBJCTKList rtn = gson.fromJson(response,RtnStuWDBJCTKList.class);
+                        rtnStuWDBJCTKList =  rtn;
+                        OnHttpResponse(tranCode,null);
+                    }
+                });
+    }
+
+
+    /**
+     * 退出班级
+     * @param tranCode
+     * @param dataId
+     */
+    public void exitBJ(final String tranCode,final String dataId)
+    {
+        String url = mContext.getResources().getString(R.string.http_request_url) +
+                "/banUser/data/" +
+                dataId +
+                "?_method=DELETE";
+
+        pd.show();
+        OkHttpUtils.post()
+                .url(url)
+                .build()
+                .execute(new StringCallback()
+                {
+                    @Override
+                    public void onError(Call call, Exception e)
+                    {
+                        if(pd.isShowing())
+                        {
+                            pd.dismiss();
+                        }
+                    }
+
+                    @Override
+                    public void onResponse(String response)
+                    {
+                        if(pd.isShowing())
+                        {
+                            pd.dismiss();
+                        }
+                        System.out.println(""+response.toString());
+                        OnHttpResponse(tranCode,null);
+                    }
+                });
+    }
+
+    /**
+     * 获取分册列表
+     * @param tranCode
+     * @param stuId
+     * @param banJBH
+     * @param paperId
+     * @param page
+     * @param pageSize
+     */
+    public void getStuWDBJCTKFCList(final String tranCode,final String stuId,final String banJBH,final String paperId,final int page,final int pageSize)
+    {
+        String url = mContext.getResources().getString(R.string.http_request_url) +
+                "/banjiquestion/data4stu?searchCondition=%5B%7B%22searchPro%22%3A%22sq.student.id%22%2C%22searchVal%22%3A%22" +
+                stuId +
+                "%22%7D%2C%7B%22searchPro%22%3A%22bjq.bjId%22%2C%22searchVal%22%3A%22" +
+                banJBH +
+                "%22%7D%2C%7B%22searchPro%22%3A%22bjq.paperId%22%2C%22searchVal%22%3A%22" +
+                paperId +
+                "%22%7D%5D&" +
+                "pageSize=" +
+                String.valueOf(pageSize) +
+                "&page=" +
+                String.valueOf(page) +
+                "&orderCondition=+order+by+bjq.qpage%2Cbjq.qnum";
+
+        pd.show();
+        OkHttpUtils.get()
+                .url(url)
+                .build()
+                .execute(new StringCallback()
+                {
+                    @Override
+                    public void onError(Call call, Exception e)
+                    {
+                        if(pd.isShowing())
+                        {
+                            pd.dismiss();
+                        }
+                    }
+
+                    @Override
+                    public void onResponse(String response)
+                    {
+                        if(pd.isShowing())
+                        {
+                            pd.dismiss();
+                        }
+                        System.out.println("获取分册错题列表结果==="+response.toString());
                         OnHttpResponse(tranCode,null);
                     }
                 });

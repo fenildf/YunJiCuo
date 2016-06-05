@@ -254,4 +254,13 @@
 
     <!--注册 提交数据-->
     <string name="zhuce_submit">2029</string>
+
+    <!--退出班级-->
+    <string name="exit_banj_trancode">2032</string>
+
+    <!--我的班级 错题库列表-->
+    <string name="stu_wdbj_wdctk_trancode">2030</string>
+
+    <!--我的班级 错题库 分册列表-->
+    <string name="stu_wdbj_wdctk_fencelist_trancode">2031</string>
 </resources>

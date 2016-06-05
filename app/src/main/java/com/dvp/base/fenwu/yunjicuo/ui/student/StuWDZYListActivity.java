@@ -30,6 +30,9 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+/**
+ * 学生 我的作业列表界面
+ */
 public class StuWDZYListActivity extends CommonActivity implements XRecyclerView.LoadingListener
 {
 

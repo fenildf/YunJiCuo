@@ -233,13 +233,6 @@ public class StuWDZYListActivity extends CommonActivity implements XRecyclerView
             if (var2.equals("1"))  //已判卷
             {
                 mDatas.addAll(mModel.getRtnWDZYList().getData());
-               /* for (int i = 0; i < mModel.getRtnPanJStatusList().getData().size(); i++)
-                {
-                    if (mDatas.get(i).getHomework().getId().equals(mModel.getRtnPanJStatusList().getData().get(i).getHomework().getId()))
-                    {
-                        mDatas.get(i).setYiPanJuan("1");
-                    }
-                }*/
                 for (int i = 0; i < mDatas.size(); i++)
                 {
                     for (int j = 0; j < mModel.getRtnPanJStatusList().getData().size(); j++)

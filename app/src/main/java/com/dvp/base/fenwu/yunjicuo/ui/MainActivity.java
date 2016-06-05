@@ -1,6 +1,7 @@
 package com.dvp.base.fenwu.yunjicuo.ui;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -18,8 +19,11 @@ import android.view.Window;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.dvp.base.activity.BaseActivity;
 import com.dvp.base.fenwu.yunjicuo.R;
+import com.dvp.base.fenwu.yunjicuo.common.util.DialogUtil;
 import com.dvp.base.fenwu.yunjicuo.ui.fragment.StudentMenuFragment;
 import com.dvp.base.fenwu.yunjicuo.ui.fragment.TeacherMenuFragment;
 import com.dvp.base.util.DoubleClickExitDetector;
@@ -121,7 +125,15 @@ public class MainActivity extends BaseActivity
         int id = item.getItemId();
         if(id == R.id.exit_item)
         {
-            exitApp();
+            DialogUtil.getBasicDialog(MainActivity.this, null, "退出账号", "确定退出当前账号么？", 0, new MaterialDialog.SingleButtonCallback()
+            {
+                @Override
+                public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which)
+                {
+                    exitApp();
+                }
+            }).show();
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

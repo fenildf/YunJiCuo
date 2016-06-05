@@ -43,8 +43,8 @@ public class MainActivity extends BaseActivity
     FloatingActionButton fab;
     @Bind(R.id.nav_view)
     NavigationView navView;
-    @Bind(R.id.navright_view)
-    NavigationView navrightView;
+   /* @Bind(R.id.navright_view)
+    NavigationView navrightView;*/
     @Bind(R.id.drawer_layout)
     DrawerLayout drawerLayout;
     @Bind(R.id.fl_content)
@@ -74,7 +74,7 @@ public class MainActivity extends BaseActivity
     {
         setSupportActionBar(toolbar);
         setTitle("云计错");
-        toolbar.setOnMenuItemClickListener(onMenuItemClick);
+        //toolbar.setOnMenuItemClickListener(onMenuItemClick);
 
         toolbar.setNavigationIcon(R.mipmap.ic_grzx);
         toolbar.setNavigationOnClickListener(new View.OnClickListener()
@@ -87,43 +87,13 @@ public class MainActivity extends BaseActivity
                         GravityCompat.START);
             }
         });
-        //FloatingActionButton
-      /*  FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                Snackbar.make(view, "滚动到列表最上方", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
 
-       /* ActionBarDrawerToggle mDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
-        {
-            @Override
-            public void onDrawerOpened(View drawerView)
-            {
-                super.onDrawerOpened(drawerView);
-
-            }
-
-            @Override
-            public void onDrawerClosed(View drawerView)
-            {
-                super.onDrawerClosed(drawerView);
-
-            }
-        };
-        mDrawerToggle.syncState();
-        mDrawerToggle.setDrawerIndicatorEnabled(false);
-        drawerLayout.setDrawerListener(mDrawerToggle);*/
 
         //左边滑动菜单
         navView.setNavigationItemSelectedListener(this);
 
         //右边滑动菜单
-        navrightView.setNavigationItemSelectedListener(this);
+       // navrightView.setNavigationItemSelectedListener(this);
     }
 
     private void initTab()
@@ -134,13 +104,13 @@ public class MainActivity extends BaseActivity
         tl1.setTabData(mTitles, this, R.id.fl_content, mFragments3);
     }
 
-    @Override
+   /* @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.toolbar_menu, menu);//加载自定义的menu文件
         return true;
-    }
+    }*/
 
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -156,7 +126,7 @@ public class MainActivity extends BaseActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-        drawer.closeDrawer(GravityCompat.END);
+       // drawer.closeDrawer(GravityCompat.END);
         return true;
     }
 

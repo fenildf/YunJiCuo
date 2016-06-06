@@ -76,7 +76,7 @@ public class StuWDBJModel extends AppModel
         String jsonparam = mContext.getResources().getString(R.string.http_request_url) +
                 mContext.getResources().getString(R.string.stu_wdbj_list_requesturl) +
                 "?searchCondition=[{\"searchVal\":\"" +
-                "e54910245143f903015146aa3ab6042c" +
+                stuId +
                 "\",\"searchPro\":\"user.id\"},{\"searchVal\":\"1\",\"searchPro\":\"isValid\"},{\"searchVal\":\"0\",\"searchPro\":\"type\",\"searchBy\":\"!=\"}]&" +
                 "pageSize=" +
                 String.valueOf(pageSize) +

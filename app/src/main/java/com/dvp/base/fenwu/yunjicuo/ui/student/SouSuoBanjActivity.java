@@ -203,13 +203,25 @@ public class SouSuoBanjActivity extends CommonActivity implements SearchView.OnQ
 
         if (var1.equals(getResources().getString(R.string.stu_getisjiarubanji_trancode)))
         {
-            if (mModel.getRtnIsJiaRuBanJ().getTotalCount() == 1)   //您已经加入该班级，无需加入
+            if (mModel.getRtnIsJiaRuBanJ().getTotalCount() == 1)
             {
-                submitBtn.setVisibility(View.VISIBLE);
-                submitBtn.setText("您已加入");
-                submitBtn.setClickable(false);
-                submitBtn.setEnabled(false);
-                submitBtn.setBackgroundColor(getResources().getColor(R.color.light_gray));
+                if(mModel.getRtnIsJiaRuBanJ().getData().get(0).getValid() == 0)   //正在审核中
+                {
+                    submitBtn.setVisibility(View.VISIBLE);
+                    submitBtn.setText("正在审核中......");
+                    submitBtn.setClickable(false);
+                    submitBtn.setEnabled(false);
+                    submitBtn.setBackgroundColor(getResources().getColor(R.color.light_gray));
+                }
+                if(mModel.getRtnIsJiaRuBanJ().getData().get(0).getValid() == 1)   //您已加入该班级
+                {
+                    submitBtn.setVisibility(View.VISIBLE);
+                    submitBtn.setText("您已加入");
+                    submitBtn.setClickable(false);
+                    submitBtn.setEnabled(false);
+                    submitBtn.setBackgroundColor(getResources().getColor(R.color.light_gray));
+                }
+
             }
             if (mModel.getRtnIsJiaRuBanJ().getTotalCount() == 0)   //未加入班级，可申请加入
             {

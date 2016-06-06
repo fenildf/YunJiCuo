@@ -162,6 +162,7 @@
                             android:hint="手机号"
                             android:textColor="@color/black"
                             android:phoneNumber="true"
+                            android:numeric="integer"
                             android:layout_weight="1"
                             android:layout_width="0dip"
                             android:layout_height="wrap_content"/>

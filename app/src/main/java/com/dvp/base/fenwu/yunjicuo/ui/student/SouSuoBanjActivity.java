@@ -8,11 +8,14 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.internal.MDButton;
@@ -128,6 +131,7 @@ public class SouSuoBanjActivity extends CommonActivity implements SearchView.OnQ
     }
 
 
+
     private SearchView.SearchAutoComplete textView;
 
     public void initSearcheView(Menu menu)
@@ -137,6 +141,8 @@ public class SouSuoBanjActivity extends CommonActivity implements SearchView.OnQ
         MenuItem menuSearchItem = menu.findItem(R.id.menu_search);//得到item
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         searchView = (SearchView) menuSearchItem.getActionView();//这里的searcheView 相当于EditText，但是他没有EditTTxt的方法 下面赋值给EditTeXT
+        //=================
+
         /*SearchView.SearchAutoComplete*/
         textView = (SearchView.SearchAutoComplete) searchView.findViewById(R.id.search_src_text);
         //textView.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);//设置底部下划线

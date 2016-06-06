@@ -309,6 +309,13 @@ public class StuWoDeCuoTiBenModel extends AppModel
                 +strBuilder.toString()
                 +strMap.toString();
         pd.show();
+        try
+        {
+            OkHttpUtils.getInstance().setConnectTimeout(500000,null);
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+        }
         OkHttpUtils.post()
                 .url(url)
                 .build()
@@ -321,6 +328,7 @@ public class StuWoDeCuoTiBenModel extends AppModel
                         {
                             pd.dismiss();
                         }
+                        System.out.println("保存错误===="+call.toString());
                     }
 
                     @Override

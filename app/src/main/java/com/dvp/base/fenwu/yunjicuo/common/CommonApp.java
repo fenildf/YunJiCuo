@@ -6,6 +6,8 @@ import com.dvp.base.app.APP;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.zhy.http.okhttp.OkHttpUtils;
 
+import okio.Buffer;
+
 /**
  * 类: ProjectNameApp
  * 功能描述:
@@ -45,6 +47,5 @@ public class CommonApp extends APP
 
         //图片缓存框架
         Fresco.initialize(getApplicationContext());
-
     }
 }

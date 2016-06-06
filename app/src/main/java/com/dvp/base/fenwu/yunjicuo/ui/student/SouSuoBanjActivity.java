@@ -39,8 +39,8 @@ import butterknife.OnClick;
 public class SouSuoBanjActivity extends CommonActivity implements SearchView.OnQueryTextListener, XRecyclerView.LoadingListener
 {
 
-    @Bind(R.id.middleTitle_tv)
-    TextView middleTitleTv;
+   /* @Bind(R.id.middleTitle_tv)
+    TextView middleTitleTv;*/
     @Bind(R.id.toolbar)
     Toolbar toolbar;
     @Bind(R.id.x_listview)
@@ -70,11 +70,10 @@ public class SouSuoBanjActivity extends CommonActivity implements SearchView.OnQ
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
         if (keyCode == KeyEvent.KEYCODE_BACK)
-        { //监控/拦截/屏蔽返回键
-            finish();
-            return false;
+        {
+           finish();
         }
-        return super.onKeyDown(keyCode, event);
+        return true;
     }
 
     /**
@@ -86,9 +85,9 @@ public class SouSuoBanjActivity extends CommonActivity implements SearchView.OnQ
         stuId = getAPP().getAppConfig().getConfig(User.class).getStaffId();
         mDatas = new ArrayList<>();
         setSupportActionBar(toolbar);
-        setTitle("");
+        setTitle("加入班级");
 
-        middleTitleTv.setText("加入班级");
+       // middleTitleTv.setText("加入班级");
         toolbar.setTitleTextColor(Color.parseColor("#FFFFFF"));
         toolbar.setNavigationIcon(R.mipmap.back_btn);
         toolbar.setNavigationOnClickListener(new View.OnClickListener()
@@ -141,13 +140,13 @@ public class SouSuoBanjActivity extends CommonActivity implements SearchView.OnQ
         /*SearchView.SearchAutoComplete*/
         textView = (SearchView.SearchAutoComplete) searchView.findViewById(R.id.search_src_text);
         //textView.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);//设置底部下划线
-        textView.setHint("请输入搜索内容···");
+        textView.setHint("请输入班级编号···");
         textView.setBackgroundDrawable(getResources().getDrawable(R.drawable.edit_search_bg));//给EditText加个边框
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         searchView.setIconifiedByDefault(true);
         searchView.setOnQueryTextListener(this);
         searchView.setSubmitButtonEnabled(true);
-        //这里为了不让显示  ···  就加了搜索两个字
+      /*  //这里为了不让显示  ···  就加了搜索两个字
         searchView.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener()
         {
             @Override
@@ -163,7 +162,7 @@ public class SouSuoBanjActivity extends CommonActivity implements SearchView.OnQ
             }
         });
 
-        toolbar.isTitleTruncated();
+        toolbar.isTitleTruncated();*/
     }
 
     //返回按钮监听

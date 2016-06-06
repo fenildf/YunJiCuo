@@ -196,7 +196,11 @@ public class StuWDZYListActivity extends CommonActivity implements XRecyclerView
                                 @Override
                                 public void onClick(View v)
                                 {
-                                    DialogUtil.showToast(getApplicationContext(),"判卷点击");
+                                    Bundle bundle = new Bundle();
+                                    bundle.putString("banjbh",classManageItem.getBanJ().getId().toString());
+                                    bundle.putString("homeworkid",classManageItem.getHomework().getId());
+                                    startActivity(StuPanJuanListActivity.class, bundle);
+                                    finish();
                                 }
                             });
 
@@ -206,7 +210,17 @@ public class StuWDZYListActivity extends CommonActivity implements XRecyclerView
                                 @Override
                                 public void onClick(View v)
                                 {
-                                    DialogUtil.showToast(getApplicationContext(),"学情统计点击");
+
+                                    String url = getResources().getString(R.string.http_request_url) +
+                                            "/weixweb/jsp/student/hw/tongjjg.jsp?" +
+                                            "hwID=" +
+                                            classManageItem.getHomework().getId().toString() +
+                                            "&bjID=" +
+                                            classManageItem.getBanJ().getId().toString();
+                                    Bundle bundle = new Bundle();
+                                    bundle.putString("url",url);
+                                    startActivity(TongJDisplayActivity.class,bundle);
+                                   // DialogUtil.showToast(getApplicationContext(),"学情统计点击");
                                 }
                             });
                         }
@@ -296,7 +310,15 @@ public class StuWDZYListActivity extends CommonActivity implements XRecyclerView
                                 @Override
                                 public void onClick(View v)
                                 {
-                                    DialogUtil.showToast(getApplicationContext(),"学情统计点击");
+                                    String url = getResources().getString(R.string.http_request_url) +
+                                            "/weixweb/jsp/student/hw/tongjjg.jsp?" +
+                                            "hwID=" +
+                                            classManageItem.getHomework().getId().toString() +
+                                            "&bjID=" +
+                                            classManageItem.getBanJ().getId().toString();
+                                    Bundle bundle = new Bundle();
+                                    bundle.putString("url",url);
+                                    startActivity(TongJDisplayActivity.class,bundle);
                                 }
                             });
                         }

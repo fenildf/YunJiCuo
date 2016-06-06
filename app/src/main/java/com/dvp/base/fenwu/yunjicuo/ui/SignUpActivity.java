@@ -21,6 +21,8 @@ import com.dvp.base.util.Countdown;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -223,6 +225,10 @@ public class SignUpActivity extends CommonActivity implements SelectDialog.ItemC
                 {
                     shoujihaoEdittext.setError("请输入手机号");
                 }
+                else if(!isMobileNO(shoujihaoEdittext.getText().toString()))
+                {
+                    shoujihaoEdittext.setError("手机号格式错误");
+                }
                 else
                 {
                     mModel.getYanZhengMa(getResources().getString(R.string.zhuce_getyanzhengma_trancode),shoujihaoEdittext.getText().toString());
@@ -251,6 +257,23 @@ public class SignUpActivity extends CommonActivity implements SelectDialog.ItemC
         }
     }
 
+
+    /**
+     * 判断手机号
+     * @param mobiles
+     * @return
+     */
+    public static boolean isMobileNO(String mobiles)
+    {
+        Pattern p = Pattern.compile("^((13[0-9])|(15[^4,\\D])|(18[0,5-9]))\\d{8}$");
+
+        Matcher m = p.matcher(mobiles);
+
+        System.out.println(m.matches() + "---");
+
+        return m.matches();
+
+    }
     @Override
     public void click(AdapterView<?> arg0, View arg1, int arg2, long arg3)
     {

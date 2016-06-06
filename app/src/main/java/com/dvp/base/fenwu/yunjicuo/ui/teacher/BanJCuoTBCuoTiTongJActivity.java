@@ -15,10 +15,12 @@ import com.dvp.base.fenwu.yunjicuo.common.CommonActivity;
 import com.dvp.base.fenwu.yunjicuo.common.dialog.SelectDialog;
 import com.dvp.base.fenwu.yunjicuo.common.util.DialogUtil;
 import com.dvp.base.fenwu.yunjicuo.common.wheelpicker.myinterface.MyTimePickerYearMonthDayHourMinuteListener;
+import com.dvp.base.fenwu.yunjicuo.common.wheelpicker.myinterface.MyTimePickerYearMonthDayListener;
 import com.dvp.base.fenwu.yunjicuo.common.wheelpicker.utils.ShowTimePickerUtils;
 import com.dvp.base.fenwu.yunjicuo.domain.guanlicuotiben.RtnCuoTTJLXCList;
 import com.dvp.base.fenwu.yunjicuo.model.CuoTiKuModel;
 import com.dvp.base.fenwu.yunjicuo.model.GuanLBJCuoTiBenModel;
+import com.dvp.base.fenwu.yunjicuo.ui.student.TongJDisplayActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,7 +33,7 @@ import butterknife.OnClick;
 /**
  * 班级错题本错题统计界面
  */
-public class BanJCuoTBCuoTiTongJActivity extends CommonActivity implements MyTimePickerYearMonthDayHourMinuteListener,SelectDialog.ItemClickInterface
+public class BanJCuoTBCuoTiTongJActivity extends CommonActivity implements MyTimePickerYearMonthDayListener,SelectDialog.ItemClickInterface
 {
 
     @Bind(R.id.middleTitle_tv)
@@ -67,7 +69,7 @@ public class BanJCuoTBCuoTiTongJActivity extends CommonActivity implements MyTim
     private void init()
     {
         banJBH = getIntent().getStringExtra("bianhao");
-        ShowTimePickerUtils.setMyTimePickerYearMonthDayHourMinuteListener(this);
+        ShowTimePickerUtils.setMyTimePickerYearMonthDayListener(this);
         setSupportActionBar(toolbar);
         setTitle("");
         middleTitleTv.setText("错题统计");
@@ -177,12 +179,12 @@ public class BanJCuoTBCuoTiTongJActivity extends CommonActivity implements MyTim
             case R.id.begingtime_tv:
                 index = 1;
                 ShowTimePickerUtils shotTime1 = new ShowTimePickerUtils(this);
-                shotTime1.showTimePickerYearMonthDayHourMinute();
+                shotTime1.showTimePickerYearMonthDay();
                 break;
             case R.id.endtime_tv:
                 index = 2;
                 ShowTimePickerUtils shotTime2 = new ShowTimePickerUtils(this);
-                shotTime2.showTimePickerYearMonthDayHourMinute();
+                shotTime2.showTimePickerYearMonthDay();
                 break;
             case R.id.select_lianxece_tv:
                 mLianXCList.clear();
@@ -200,13 +202,31 @@ public class BanJCuoTBCuoTiTongJActivity extends CommonActivity implements MyTim
                 }
                 break;
             case R.id.submit_btn:
+
+                String url = getResources().getString(R.string.http_request_url) +
+                        "/weixweb/jsp/student/mybj/tongjjg.jsp?" +
+                        "bTime=" +
+                        beginTime +
+                        "&eTime=" +
+                        endTime +
+                        "&pages=" +
+                        strYeMa.toString() +
+                        "&bjID=" +
+                        banJBH +
+                        "&oType=" +
+                        "1" +
+                        "&paperId=" +
+                        mSelectLianXCId;
+                Bundle bundle = new Bundle();
+                bundle.putString("url",url);
+                startActivity(TongJDisplayActivity.class,bundle);
                 break;
         }
     }
 
     private String beginTime = "";
     private String endTime = "";
-    @Override
+   /* @Override
     public void doYearMouthDayHourMinute(String year, String month, String day, String hour, String minute)
     {
         if(index == 1 )
@@ -220,7 +240,7 @@ public class BanJCuoTBCuoTiTongJActivity extends CommonActivity implements MyTim
             endtimeTv.setText(year+"-"+month+"-"+day+" "+hour+":"+minute);
             endTime = year+"-"+month+"-"+day+" "+hour+":"+minute;
         }
-    }
+    }*/
 
     @Override
     public void click(AdapterView<?> arg0, View arg1, int arg2, long arg3)
@@ -243,5 +263,21 @@ public class BanJCuoTBCuoTiTongJActivity extends CommonActivity implements MyTim
         mSelectLianXCId = selectItemKey;
         mSelectLianXCName = selectItemValue;
         selectLianxeceTv.setText(mSelectLianXCName);
+    }
+
+    @Override
+    public void doYearMouthDay(String year, String month, String day)
+    {
+        if(index == 1 )
+        {
+            begingtimeTv.setText(year+"-"+month+"-"+day);
+            beginTime = year+"-"+month+"-"+day;
+        }
+
+        if(index == 2)
+        {
+            endtimeTv.setText(year+"-"+month+"-"+day);
+            endTime = year+"-"+month+"-"+day;
+        }
     }
 }

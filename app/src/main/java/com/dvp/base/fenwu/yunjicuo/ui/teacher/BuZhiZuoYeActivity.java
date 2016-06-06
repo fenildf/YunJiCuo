@@ -21,6 +21,8 @@ import com.dvp.base.fenwu.yunjicuo.common.util.DialogUtil;
 import com.dvp.base.fenwu.yunjicuo.domain.buzhizuoye.RtnBuZhiZuoYeList;
 import com.dvp.base.fenwu.yunjicuo.domain.user.User;
 import com.dvp.base.fenwu.yunjicuo.model.BuZhiZuoYeModel;
+import com.dvp.base.fenwu.yunjicuo.ui.student.StuPanJuanListActivity;
+import com.dvp.base.fenwu.yunjicuo.ui.student.TongJDisplayActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,6 +53,7 @@ public class BuZhiZuoYeActivity extends CommonActivity implements XRecyclerView.
     RecyclerAdapter<RtnBuZhiZuoYeList.DataEntity> adapter;
 
     private List<RtnBuZhiZuoYeList.DataEntity> mDatas;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -107,21 +110,21 @@ public class BuZhiZuoYeActivity extends CommonActivity implements XRecyclerView.
         xListview.setItemAnimator(new DefaultItemAnimator());
         xListview.setPullRefreshEnabled(true);
         xListview.setLoadingMoreEnabled(true);
-        if(mModel==null)
+        if (mModel == null)
         {
             mModel = new BuZhiZuoYeModel(this);
         }
         mModel.addResponseListener(this);
-        mModel.getBuZhiZuoYeList(getResources().getString(R.string.buzhizuoye_getList_trancode),id,pageSize,page++);
+        mModel.getBuZhiZuoYeList(getResources().getString(R.string.buzhizuoye_getList_trancode), id, pageSize, page++);
     }
 
     @Override
     public void OnHttpResponse(String var1, String var2)
     {
-        if(var1.equals(getResources().getString(R.string.buzhizuoye_getList_trancode)))
+        if (var1.equals(getResources().getString(R.string.buzhizuoye_getList_trancode)))
         {
             mDatas.addAll(mModel.getRtnBuZhiZuoYeList().getData());
-            if (page - 1==1)
+            if (page - 1 == 1)
             {
                 adapter = new RecyclerAdapter<RtnBuZhiZuoYeList.DataEntity>(getApplicationContext(), mDatas, R.layout.item_buzhizuoye_layout)
                 {
@@ -129,10 +132,10 @@ public class BuZhiZuoYeActivity extends CommonActivity implements XRecyclerView.
                     public void convert(RecyclerHolder recycleHolder, final RtnBuZhiZuoYeList.DataEntity classManageItem, int i)
                     {
 
-                        recycleHolder.setText(R.id.banji_tv,classManageItem.getBanJ().getName()+"/"+classManageItem.getBanJ().getKeM().getName());
-                        recycleHolder.setText(R.id.begintime_tv,classManageItem.getHomework().getKaiShShJ());
-                        recycleHolder.setText(R.id.endtime_tv,classManageItem.getHomework().getJieShShJ());
-                        recycleHolder.setText(R.id.beizhu_tv,classManageItem.getHomework().getRemark());
+                        recycleHolder.setText(R.id.banji_tv, classManageItem.getBanJ().getName() + "/" + classManageItem.getBanJ().getKeM().getName());
+                        recycleHolder.setText(R.id.begintime_tv, classManageItem.getHomework().getKaiShShJ());
+                        recycleHolder.setText(R.id.endtime_tv, classManageItem.getHomework().getJieShShJ());
+                        recycleHolder.setText(R.id.beizhu_tv, classManageItem.getHomework().getRemark());
 
                         MDButton xitixq = (MDButton) recycleHolder.findView(R.id.xttj_btn);
                         xitixq.setOnClickListener(new View.OnClickListener()
@@ -141,8 +144,8 @@ public class BuZhiZuoYeActivity extends CommonActivity implements XRecyclerView.
                             public void onClick(View v)
                             {
                                 Bundle bundle = new Bundle();
-                                bundle.putString("homeworkid",classManageItem.getHomework().getId()+"");
-                                startActivity(XiTiXiangQingActivity.class,bundle);
+                                bundle.putString("homeworkid", classManageItem.getHomework().getId() + "");
+                                startActivity(XiTiXiangQingActivity.class, bundle);
                             }
                         });
 
@@ -153,7 +156,18 @@ public class BuZhiZuoYeActivity extends CommonActivity implements XRecyclerView.
                             @Override
                             public void onClick(View v)
                             {
-                                DialogUtil.showToast(getApplicationContext(),"学情统计");
+                                //DialogUtil.showToast(getApplicationContext(),"学情统计");
+
+                                String url = getResources().getString(R.string.http_request_url) +
+                                        "/weixweb/jsp/teacher/hw/tongjjg.jsp?" +
+                                        "hwID=" +
+                                        classManageItem.getHomework().getId().toString() +
+                                        "&bjID=" +
+                                        classManageItem.getBanJ().getId().toString();
+
+                                Bundle bundle = new Bundle();
+                                bundle.putString("url", url);
+                                startActivity(TongJDisplayActivity.class, bundle);
                             }
                         });
 
@@ -163,7 +177,7 @@ public class BuZhiZuoYeActivity extends CommonActivity implements XRecyclerView.
                             @Override
                             public void onClick(View v)
                             {
-                                DialogUtil.showToast(getApplicationContext(),"删除");
+                                DialogUtil.showToast(getApplicationContext(), "删除");
                             }
                         });
                     }
@@ -171,19 +185,17 @@ public class BuZhiZuoYeActivity extends CommonActivity implements XRecyclerView.
                 xListview.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
                 xListview.refreshComplete();
-            }
-            else
+            } else
             {
                 xListview.loadMoreComplete();
                 adapter.notifyDataSetChanged();
             }
 
-            if(page>mModel.getTotalPages())
+            if (page > mModel.getTotalPages())
             {
                 xListview.noMoreLoading();
                 xListview.setLoadingMoreEnabled(false);
-            }
-            else
+            } else
             {
                 xListview.setLoadingMoreEnabled(true);
             }
@@ -198,17 +210,18 @@ public class BuZhiZuoYeActivity extends CommonActivity implements XRecyclerView.
         getMenuInflater().inflate(R.menu.addmenu, menu);//加载自定义的menu文件
         return true;
     }
+
     @Override
     public void onRefresh()
     {
         mDatas.clear();
         page = 1;
-        mModel.getBuZhiZuoYeList(getResources().getString(R.string.buzhizuoye_getList_trancode),id,pageSize,page++);
+        mModel.getBuZhiZuoYeList(getResources().getString(R.string.buzhizuoye_getList_trancode), id, pageSize, page++);
     }
 
     @Override
     public void onLoadMore()
     {
-        mModel.getBuZhiZuoYeList(getResources().getString(R.string.buzhizuoye_getList_trancode),id,pageSize,page++);
+        mModel.getBuZhiZuoYeList(getResources().getString(R.string.buzhizuoye_getList_trancode), id, pageSize, page++);
     }
 }

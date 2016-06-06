@@ -138,6 +138,7 @@ public class SouSuoBanjActivity extends CommonActivity implements SearchView.OnQ
         MenuItem menuSearchItem = menu.findItem(R.id.menu_search);//得到item
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         searchView = (SearchView) menuSearchItem.getActionView();//这里的searcheView 相当于EditText，但是他没有EditTTxt的方法 下面赋值给EditTeXT
+        searchView.setBackgroundColor(Color.parseColor("#00FFFFFF"));
         //=================
 
         /*SearchView.SearchAutoComplete*/
@@ -151,6 +152,9 @@ public class SouSuoBanjActivity extends CommonActivity implements SearchView.OnQ
         //修改SearView的搜索图标
         ImageView searchGo = (ImageView)searchView.findViewById(R.id.search_go_btn);
         searchGo.setImageResource(R.mipmap.sousuo);
+
+        ImageView searchClose = (ImageView)searchView.findViewById(R.id.search_close_btn);
+        searchClose.setImageResource(R.mipmap.clearedit);
 
 
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));

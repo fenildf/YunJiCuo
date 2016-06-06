@@ -84,6 +84,8 @@
         </activity>
         <activity android:name=".ui.student.TongJDisplayActivity">
         </activity>
+        <activity android:name=".ui.student.StuWDBJAddCuoTKActivity">
+        </activity>
     </application>
 
 </manifest>

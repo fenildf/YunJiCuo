@@ -16,11 +16,10 @@ import com.dvp.base.adapter.recyviewadapter.view.ProgressStyle;
 import com.dvp.base.adapter.recyviewadapter.view.XRecyclerView;
 import com.dvp.base.fenwu.yunjicuo.R;
 import com.dvp.base.fenwu.yunjicuo.common.CommonActivity;
-import com.dvp.base.fenwu.yunjicuo.domain.guanlicuotiben.RtnCuoTiKuList;
 import com.dvp.base.fenwu.yunjicuo.domain.student.RtnStuWDBJCTKList;
 import com.dvp.base.fenwu.yunjicuo.domain.user.User;
 import com.dvp.base.fenwu.yunjicuo.model.StuWDBJModel;
-import com.dvp.base.fenwu.yunjicuo.ui.teacher.AddBanjiActivity;
+import com.dvp.base.fenwu.yunjicuo.ui.teacher.FenCeCuoTiListActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -87,7 +86,7 @@ public class StuWDBJCuoTiKuActivity extends CommonActivity implements XRecyclerV
                 if (menuItemId == R.id.add)
                 {
                     //Toast.makeText(GuanLiBanJActivity.this, "点击了添加班级按钮", Toast.LENGTH_SHORT).show();
-                    startActivity(AddBanjiActivity.class);
+                    startActivity(StuWDBJAddCuoTKActivity.class);
                 }
                 return true;
             }
@@ -163,12 +162,25 @@ public class StuWDBJCuoTiKuActivity extends CommonActivity implements XRecyclerV
     @Override
     public void onItemClick(View view, int i)
     {
-
+        RtnStuWDBJCTKList.DataEntity info = mDatas.get(i-1);
+        info.getPaper().getId();
+        Bundle bundle = new Bundle();
+        bundle.putString("fencename",info.getPaper().getName());
+        String str1 = (info.getPaper().getFenCe() != null) ? info.getPaper().getFenCe().getName() : "  ";
+        bundle.putString("fence",str1);
+        bundle.putString("kemu",info.getPaper().getKeM().getName());
+        bundle.putString("nianji",info.getPaper().getNianJ().getName());
+        String str2 = (info.getPaper().getBanBen() != null) ? info.getPaper().getBanBen().getName() : "  ";
+        bundle.putString("banben",str2);
+        bundle.putString("paperid",info.getPaper().getId());
+        bundle.putString("id",banJBH);
+        startActivity(FenCeCuoTiListActivity.class,bundle);
     }
 
     @Override
     public void OnItemLongClickListener(View view, int i)
     {
+
 
     }
 }

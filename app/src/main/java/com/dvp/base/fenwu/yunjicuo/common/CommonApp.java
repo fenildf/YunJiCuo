@@ -4,6 +4,7 @@ import android.os.Environment;
 
 import com.dvp.base.app.APP;
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.zhy.http.okhttp.OkHttpUtils;
 
 /**
  * 类: ProjectNameApp

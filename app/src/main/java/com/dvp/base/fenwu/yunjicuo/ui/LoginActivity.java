@@ -55,6 +55,9 @@ public class LoginActivity extends CommonActivity
         init();
     }
 
+    /**
+     * 初始化
+     */
     private void init()
     {
         if (getAPP().getAppConfig().getConfig(User.class) != null)
@@ -68,21 +71,6 @@ public class LoginActivity extends CommonActivity
             mModel = new LoginModel(this);
         }
         mModel.addResponseListener(this);
-
-      /*  password.setOnEditorActionListener(new TextView.OnEditorActionListener()
-        {
-            @Override
-            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent)
-            {
-                if (id == R.id.ime_login || id == EditorInfo.IME_ACTION_DONE
-                        || id == EditorInfo.IME_NULL)
-                {
-                    onClick();
-                    return true;
-                }
-                return false;
-            }
-        });*/
     }
 
     private boolean isValida()

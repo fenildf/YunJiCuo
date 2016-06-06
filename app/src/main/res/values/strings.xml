@@ -22,9 +22,9 @@
     <string name="exit_prompt_str">您确定退出吗？</string>
 
     <!--外网地址-->
-   <!-- <string name="http_request_url">http://yunjicuo.com</string>-->
+    <string name="http_request_url">http://yunjicuo.com</string>
     <!--外网测试库地址-->
-    <string name="http_request_url">http://www.yunjicuo.com:8090/zy</string>
+   <!-- <string name="http_request_url">http://www.yunjicuo.com:8090/zy</string>-->
     <!--内网地址-->
     <!--<string name="http_request_url">http://172.16.1.158:8090/zy</string>-->
 

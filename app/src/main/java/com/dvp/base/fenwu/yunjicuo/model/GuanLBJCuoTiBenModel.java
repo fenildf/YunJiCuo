@@ -71,7 +71,7 @@ public class GuanLBJCuoTiBenModel extends AppModel
         //18735168983的id测试   e549102451280f4f01512828961f0058   密码：218519
         String staffId = CommonApp.getInstance().getAppConfig().getConfig(User.class).getStaffId();
         String tempSearchCondition = "[{\"searchVal\":\""+staffId+"\",\"searchPro\":\"user.id\"},{\"searchVal\":\"1\",\"searchPro\":\"type\",\"searchBy\":\"!=\"}]";
-        //pd.show();
+        pd.show();
 
       /*  String tempSearchCondition = "[{\"searchVal\":\"e549102451280f4f01512828961f0058\",\"searchPro\":\"user.id\"},{\"searchVal\":\"1\",\"searchPro\":\"type\",\"searchBy\":\"!=\"}]";
         pd.show();*/
@@ -82,19 +82,19 @@ public class GuanLBJCuoTiBenModel extends AppModel
             @Override
             public void onError(Call call, Exception e)
             {
-               /* if (pd.isShowing())
+                if (pd.isShowing())
                 {
                     pd.dismiss();
-                }*/
+                }
             }
 
             @Override
             public void onResponse(String response)
             {
-               /* if (pd.isShowing())
+                if (pd.isShowing())
                 {
                     pd.dismiss();
-                }*/
+                }
 
                 System.out.println("班级错题本列表====="+response.toString());
                 RtnBanList rtn = gson.fromJson(response, RtnBanList.class);

@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.dvp.base.fenwu.yunjicuo.R;
 import com.dvp.base.fenwu.yunjicuo.common.webservice.AppModel;
+import com.dvp.base.fenwu.yunjicuo.domain.guanlicuotiben.RtnCuoTTJLXCList;
 import com.dvp.base.fenwu.yunjicuo.domain.student.RtnIsJiaRuBanJ;
 import com.dvp.base.fenwu.yunjicuo.domain.student.RtnSearchWDBJList;
 import com.dvp.base.fenwu.yunjicuo.domain.student.RtnStuWDBJCTKList;
@@ -424,6 +425,153 @@ public class StuWDBJModel extends AppModel
                     }
                 });
     }
+
+
+
+
+
+
+    public RtnCuoTTJLXCList getRtnCuoTTJLXCList()
+    {
+        return rtnCuoTTJLXCList;
+    }
+
+    public void setRtnCuoTTJLXCList(RtnCuoTTJLXCList rtnCuoTTJLXCList)
+    {
+        this.rtnCuoTTJLXCList = rtnCuoTTJLXCList;
+    }
+
+    /**
+     *   错题统计模块 接收练习册列表
+     */
+    private RtnCuoTTJLXCList rtnCuoTTJLXCList = new RtnCuoTTJLXCList();
+
+    /**
+     * 统计获取练习册
+     * @param tranCode
+     * @param banJBH
+     */
+    public void getCuoTTJLianXCList(final String tranCode,final String banJBH)
+    {
+
+        String url = mContext.getResources().getString(R.string.http_request_url) +
+                "/banjipaper/data?searchCondition=%5B%7B%22searchPro%22%3A%22banJ.id%22%2C%22searchVal%22%3A%22" +
+                banJBH +
+                "%22%7D%5D&pageSize=999999&page=1&orderCondition=+order+by+paper.orderId%2C+paper.name";
+        pd.show();
+        OkHttpUtils.get()
+                .url(url)
+                .build()
+                .execute(new StringCallback()
+                {
+                    @Override
+                    public void onError(Call call, Exception e)
+                    {
+                        if(pd.isShowing())
+                        {
+                            pd.dismiss();
+                        }
+                    }
+
+                    @Override
+                    public void onResponse(String response)
+                    {
+                        if(pd.isShowing())
+                        {
+                            pd.dismiss();
+                        }
+                        System.out.println("统计获取练习册"+response.toString());
+                        RtnCuoTTJLXCList rtn = gson.fromJson(response,RtnCuoTTJLXCList.class);
+                        rtnCuoTTJLXCList = rtn;
+                        OnHttpResponse(tranCode,null);
+                    }
+                });
+    }
+
+
+    public String[] getStrYeMa()
+    {
+        return strYeMa;
+    }
+
+    public void setStrYeMa(String[] strYeMa)
+    {
+        this.strYeMa = strYeMa;
+    }
+
+    private String[] strYeMa;//接收页码
+
+    /**
+     * 获取页码
+     *
+     * @param tranCode
+     * @param lianxiceId
+     */
+    public void getYeMa(final String tranCode, final String lianxiceId)
+    {
+        String url = mContext.getResources().getString(R.string.http_request_url) + mContext.getResources().getString(R.string.stu_add_wodecuotiben_getyema_requesturl) + lianxiceId + "/pages";
+        pd.show();
+        OkHttpUtils.get()
+                .url(url)
+                .build()
+                .execute(new StringCallback()
+                {
+                    @Override
+                    public void onError(Call call, Exception e)
+                    {
+                        if (pd.isShowing())
+                        {
+                            pd.dismiss();
+                        }
+                    }
+
+                    @Override
+                    public void onResponse(String response)
+                    {
+                        if (pd.isShowing())
+                        {
+                            pd.dismiss();
+                        }
+                        System.out.println("获取页码结果=====" + response.toString());
+                        String result = response.substring(1, response.length() - 1);
+                        String[] str = result.split(",");
+                        strYeMa = str;
+                        OnHttpResponse(tranCode, null);
+                    }
+                });
+    }
+
+   /* public void tongJMethod(final String tranCode)
+    {
+
+        pd.show();
+        OkHttpUtils.get()
+                .url("")
+                .build()
+                .execute(new StringCallback()
+                {
+                    @Override
+                    public void onError(Call call, Exception e)
+                    {
+                        if(pd.isShowing())
+                        {
+                            pd.dismiss();
+                        }
+                    }
+
+                    @Override
+                    public void onResponse(String response)
+                    {
+                        if(pd.isShowing())
+                        {
+                            pd.dismiss();
+                        }
+
+                        System.out.println(""+response.toString());
+                    }
+                });
+    }*/
+
 }
 
 

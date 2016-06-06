@@ -148,6 +148,14 @@ public class SouSuoBanjActivity extends CommonActivity implements SearchView.OnQ
         //textView.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);//设置底部下划线
         textView.setHint("请输入班级编号···");
         textView.setBackgroundDrawable(getResources().getDrawable(R.drawable.edit_search_bg));//给EditText加个边框
+        //修改ToolBar上SearView的搜索图标
+        ImageView searchButton = (ImageView)searchView.findViewById(R.id.search_button);
+        searchButton.setImageResource(R.mipmap.sousuo);
+        //修改SearView的搜索图标
+        ImageView searchGo = (ImageView)searchView.findViewById(R.id.search_go_btn);
+        searchGo.setImageResource(R.mipmap.sousuo);
+
+
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         searchView.setIconifiedByDefault(true);
         searchView.setOnQueryTextListener(this);

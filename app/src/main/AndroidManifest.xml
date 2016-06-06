@@ -80,6 +80,10 @@
         </activity>
         <activity android:name=".ui.teacher.BanJCuoTBCuoTiTongJActivity">
         </activity>
+        <activity android:name=".ui.student.StuWDBJCuoTTJActivity">
+        </activity>
+        <activity android:name=".ui.student.TongJDisplayActivity">
+        </activity>
     </application>
 
 </manifest>

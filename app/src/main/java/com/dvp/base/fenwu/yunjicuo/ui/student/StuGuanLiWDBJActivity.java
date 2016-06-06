@@ -21,11 +21,9 @@ import com.dvp.base.adapter.recyviewadapter.view.XRecyclerView;
 import com.dvp.base.fenwu.yunjicuo.R;
 import com.dvp.base.fenwu.yunjicuo.common.CommonActivity;
 import com.dvp.base.fenwu.yunjicuo.common.util.DialogUtil;
-import com.dvp.base.fenwu.yunjicuo.domain.guanlibanji.RtnBanList;
 import com.dvp.base.fenwu.yunjicuo.domain.student.RtnStuWDBJList;
 import com.dvp.base.fenwu.yunjicuo.domain.user.User;
 import com.dvp.base.fenwu.yunjicuo.model.StuWDBJModel;
-import com.dvp.base.fenwu.yunjicuo.ui.teacher.AddBanjiActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -172,7 +170,10 @@ public class StuGuanLiWDBJActivity extends CommonActivity implements XRecyclerVi
                             @Override
                             public void onClick(View v)
                             {
-                                DialogUtil.showToast(getApplicationContext(),"错题统计");
+                                //DialogUtil.showToast(getApplicationContext(),"错题统计");
+                                Bundle bundle = new Bundle();
+                                bundle.putString("bianhao",classManageItem.getBanJ().getId());
+                                startActivity(StuWDBJCuoTTJActivity.class,bundle);
                             }
                         });
                         MDButton tuichubanji_btn = (MDButton) recycleHolder.findView(R.id.tuichubanji_btn);

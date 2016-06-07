@@ -286,4 +286,15 @@
 
     <!--我的班级 错题库 分册列表-->
     <string name="stu_wdbj_wdctk_fencelist_trancode">2031</string>
+
+
+    <!--上传照片地址-->
+    <string name="upload_pic_url">/base/upload</string>
+
+    <!--下载图片地址-->
+    <string name="down_load_pic_url">/homeworkscore/datum/</string>
+    <string name="down_load_pic_trancode">2033</string>
+
+    <!--拍照上传数据接口-->
+    <string name="stu_baocuntupian_trancode">2034</string>
 </resources>

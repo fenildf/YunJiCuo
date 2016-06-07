@@ -290,6 +290,18 @@ public class StuPanJuanListActivity extends CommonActivity implements XRecyclerV
                             @Override
                             public void onClick(View v)
                             {
+                                if( mModel.getRtnChouTStatusList().getData().size()>0)
+                                {
+                                    for (int j = 0; j < mModel.getRtnChouTStatusList().getData().size(); j++)
+                                    {
+                                        if(classManageItem.getId().equals(mModel.getRtnChouTStatusList().getData().get(j).getHomeworkQuestion().getId()))
+                                        {
+                                            homeworkScoreId = mModel.getRtnChouTStatusList().getData().get(j).getId().toString();
+                                        }
+                                    }
+                                }
+                                Bundle bundle = new Bundle();
+                                bundle.putString("homeworkscoreid",homeworkScoreId);
                                 startActivity(StuCuoTPaiZhaoActivity.class);
                             }
                         });

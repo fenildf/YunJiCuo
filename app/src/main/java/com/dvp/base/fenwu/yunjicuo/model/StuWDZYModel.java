@@ -7,6 +7,7 @@ import com.dvp.base.fenwu.yunjicuo.R;
 import com.dvp.base.fenwu.yunjicuo.common.webservice.AppModel;
 import com.dvp.base.fenwu.yunjicuo.domain.student.RtnChouTList;
 import com.dvp.base.fenwu.yunjicuo.domain.student.RtnChouTStatusList;
+import com.dvp.base.fenwu.yunjicuo.domain.student.RtnCuoTZhaoPian;
 import com.dvp.base.fenwu.yunjicuo.domain.student.RtnPanJStatusList;
 import com.dvp.base.fenwu.yunjicuo.domain.student.RtnPanJWanC;
 import com.dvp.base.fenwu.yunjicuo.domain.student.RtnSetFalse;
@@ -471,6 +472,101 @@ public class StuWDZYModel extends AppModel
                 });
     }
 
+
+    public RtnCuoTZhaoPian getRtnCuoTZhaoPian()
+    {
+        return rtnCuoTZhaoPian;
+    }
+
+    public void setRtnCuoTZhaoPian(RtnCuoTZhaoPian rtnCuoTZhaoPian)
+    {
+        this.rtnCuoTZhaoPian = rtnCuoTZhaoPian;
+    }
+
+    /**
+     * 接收错题照片列表
+     */
+    private RtnCuoTZhaoPian rtnCuoTZhaoPian = new RtnCuoTZhaoPian();
+
+    /**
+     * 错题拍照   下载图片接口
+     * @param tranCode
+     * @param homeworkScoreId
+     */
+    public void downloadPic(final String tranCode,final String homeworkScoreId)
+    {
+        String url = mContext.getResources().getString(R.string.http_request_url)+mContext.getResources().getString(R.string.down_load_pic_url)+homeworkScoreId;
+        pd.show();
+        OkHttpUtils.get()
+                .url(url)
+                .build()
+                .execute(new StringCallback()
+                {
+                    @Override
+                    public void onError(Call call, Exception e)
+                    {
+                        if(pd.isShowing())
+                        {
+                            pd.dismiss();
+                        }
+                    }
+
+                    @Override
+                    public void onResponse(String response)
+                    {
+                        if(pd.isShowing())
+                        {
+                            pd.dismiss();
+                        }
+                        System.out.println("下载图片结果===="+response.toString());
+                        RtnCuoTZhaoPian rtn = gson.fromJson(response,RtnCuoTZhaoPian.class);
+                        rtnCuoTZhaoPian = rtn;
+                        OnHttpResponse(tranCode,null);
+                    }
+                });
+    }
+
+
+    /**
+     *  上传图片id的接口
+     * @param tranCode
+     * @param homeworkScoreId
+     * @param cuoTZPId
+     */
+    public void uploadPicMethod(final String tranCode,final String homeworkScoreId,final String cuoTZPId)
+    {
+        String url = mContext.getResources().getString(R.string.http_request_url) +
+                "/homeworkscore/datum4zp/" +
+                homeworkScoreId.toString() +
+                "?_method=PUT";
+        pd.show();
+        OkHttpUtils.post()
+                .url(url)
+                .addParams("cuoTZhP",cuoTZPId)
+                .build()
+                .execute(new StringCallback()
+                {
+                    @Override
+                    public void onError(Call call, Exception e)
+                    {
+                        if(pd.isShowing())
+                        {
+                            pd.dismiss();
+                        }
+                    }
+
+                    @Override
+                    public void onResponse(String response)
+                    {
+                        if(pd.isShowing())
+                        {
+                            pd.dismiss();
+                        }
+                        System.out.println("返回结果==="+response.toString());
+                        OnHttpResponse(tranCode,null);
+                    }
+                });
+    }
 }
 
 

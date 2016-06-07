@@ -1,26 +1,38 @@
 package com.dvp.base.fenwu.yunjicuo.ui.student;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.dvp.base.fenwu.yunjicuo.R;
 import com.dvp.base.fenwu.yunjicuo.common.CommonActivity;
 import com.dvp.base.fenwu.yunjicuo.common.CommonApp;
 import com.dvp.base.fenwu.yunjicuo.common.pictureselect.adapter.ImagePublishAdapter;
 import com.dvp.base.fenwu.yunjicuo.common.pictureselect.ui.activity.MultiImageSelectorActivity;
 import com.dvp.base.fenwu.yunjicuo.common.pictureselect.ui.activity.MultiImageZoomActivity;
+import com.dvp.base.fenwu.yunjicuo.common.util.DialogUtil;
+import com.dvp.base.fenwu.yunjicuo.model.StuWDZYModel;
 import com.dvp.base.view.NestedGridView;
+import com.google.gson.Gson;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
+import okhttp3.Call;
 
 /**
  * 错题拍照界面
@@ -35,13 +47,15 @@ public class StuCuoTPaiZhaoActivity extends CommonActivity
     Toolbar toolbar;
     @Bind(R.id.gridview)
     NestedGridView gridview;
+    @Bind(R.id.submit_btn)
+    Button submitBtn;
 
+    private StuWDZYModel mModel;
 
     private ImagePublishAdapter mAdapter;
     public static ArrayList<String> mDataList = new ArrayList<>();
-    private ArrayList<String> mpicPathList = new ArrayList<>();
 
-
+    private String homeworkscoreid = ""; //homeworkscoreid
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -52,11 +66,25 @@ public class StuCuoTPaiZhaoActivity extends CommonActivity
         init();
     }
 
+    @Override
+    protected void onDestroy()
+    {
+        super.onDestroy();
+        mDataList.clear();
+    }
+
     /**
      * 初始化
      */
     private void init()
     {
+
+        homeworkscoreid = getIntent().getStringExtra("homeworkscoreid");
+        if(mModel == null)
+        {
+            mModel = new StuWDZYModel(this);
+        }
+        mModel.addResponseListener(this);
         setSupportActionBar(toolbar);
         setTitle("");
         middleTitleTv.setText("拍摄错题照片");
@@ -111,14 +139,20 @@ public class StuCuoTPaiZhaoActivity extends CommonActivity
             }
         });
     }
+
     private int getDataSize()
     {
         return mDataList == null ? 0 : mDataList.size();
     }
+
     @Override
     public void OnHttpResponse(String var1, String var2)
     {
-
+        if(var1.equals(getResources().getString(R.string.stu_baocuntupian_trancode)))
+        {
+            DialogUtil.showToast(getApplicationContext(),"保存成功");
+            finish();
+        }
     }
 
 
@@ -126,13 +160,73 @@ public class StuCuoTPaiZhaoActivity extends CommonActivity
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
         super.onActivityResult(requestCode, resultCode, data);
-        Log.e("onActivityResult","onActivityResult");
+        Log.e("onActivityResult", "onActivityResult");
 
-        if (requestCode==0x123 && resultCode == 0)
+        if (requestCode == 0x123 && resultCode == 0)
         {
             mDataList = data.getStringArrayListExtra("image_list");
             getDataSize();
             initData(mDataList);
         }
+    }
+
+    private boolean isUploadSuccess = false;//是否上传图片完成 默认是没有完成
+    public void upLoadPic(final ArrayList<String> filePaths, int i)
+    {
+        final MaterialDialog md = DialogUtil.getLoadingDialog(StuCuoTPaiZhaoActivity.this,"正在上传图片...");
+        md.show();
+        // File file = new File("/storage/sdcard1/Pictures/Screenshots/Screenshot_2016-03-21-19-12-03.png");
+        // File file1 = new File("/storage/sdcard1/Pictures/Screenshots/Screenshot_2016-04-11-13-44-03.png");
+        File file = new File(filePaths.get(i));
+
+        String url = getResources().getString(R.string.http_request_url)+getResources().getString(R.string.upload_pic_url);
+        System.out.println("uploadurl==="+url);
+        OkHttpUtils.post()
+                .addFile("mFile", "messenger_01.png", file)
+                .addParams("saveType","1")
+                .addParams("folder","uploads")
+                .addParams("plicyType","uuid")
+                .addParams("folderPolicy","0")
+                .url(url)
+                .build()
+                .connTimeOut(200000)
+                .readTimeOut(200000)
+                .writeTimeOut(200000)
+                .execute(new StringCallback()
+                {
+                    @Override
+                    public void onError(Call call, Exception e)
+                    {
+                        if(md.isShowing())
+                        {
+                            md.dismiss();
+                        }
+                        System.out.println("图片上传失败=====");
+                        isUploadSuccess = false;
+                    }
+
+                    @Override
+                    public void onResponse(String response)
+                    {
+                        if(md.isShowing())
+                        {
+                            md.dismiss();
+                        }
+                        System.out.println("图片上传成功=====");
+                        isUploadSuccess = true;
+                        String[] arrayName = response.split(",");
+                        System.out.println("图片上传成功返回的id=====" + arrayName[0]);
+                        if (isUploadSuccess)
+                        {
+                            //调用接口传递数据
+                            mModel.uploadPicMethod(getResources().getString(R.string.stu_baocuntupian_trancode),homeworkscoreid,arrayName[0]);
+                        }
+                    }
+                });
+    }
+    @OnClick(R.id.submit_btn)
+    public void onClick()
+    {
+        upLoadPic(mDataList,0);
     }
 }

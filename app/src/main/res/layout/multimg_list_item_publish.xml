@@ -4,11 +4,11 @@
     android:layout_height="wrap_content"
     android:orientation="vertical" >
 
-    <ImageView
+    <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/item_grid_image"
         android:layout_width="68dp"
         android:layout_height="68dp"
         android:scaleType="centerCrop"
         android:src="@mipmap/bg_img" >
-    </ImageView>
+    </com.facebook.drawee.view.SimpleDraweeView>
 </LinearLayout>

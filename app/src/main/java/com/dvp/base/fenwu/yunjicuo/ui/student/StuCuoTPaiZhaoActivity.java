@@ -1,15 +1,12 @@
 package com.dvp.base.fenwu.yunjicuo.ui.student;
 
-import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.MediaController;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -22,13 +19,11 @@ import com.dvp.base.fenwu.yunjicuo.common.pictureselect.ui.activity.MultiImageZo
 import com.dvp.base.fenwu.yunjicuo.common.util.DialogUtil;
 import com.dvp.base.fenwu.yunjicuo.model.StuWDZYModel;
 import com.dvp.base.view.NestedGridView;
-import com.google.gson.Gson;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -50,13 +45,16 @@ public class StuCuoTPaiZhaoActivity extends CommonActivity
     NestedGridView gridview;
     @Bind(R.id.submit_btn)
     Button submitBtn;
+  /*  @Bind(R.id.oldpic_imageview)
+    ImageView oldpicImageview;*/
 
     private StuWDZYModel mModel;
 
     private ImagePublishAdapter mAdapter;
-    public static ArrayList<String> mDataList = new ArrayList<>();
+    public  ArrayList<String> mDataList = new ArrayList<>();
 
     private String homeworkscoreid = ""; //homeworkscoreid
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -81,7 +79,7 @@ public class StuCuoTPaiZhaoActivity extends CommonActivity
     {
 
         homeworkscoreid = getIntent().getStringExtra("homeworkscoreid");
-        if(mModel == null)
+        if (mModel == null)
         {
             mModel = new StuWDZYModel(this);
         }
@@ -100,15 +98,15 @@ public class StuCuoTPaiZhaoActivity extends CommonActivity
         });
 
         //下载图片
-        mModel.downloadPic(getResources().getString(R.string.down_load_pic_trancode),homeworkscoreid);
+        mModel.downloadPic(getResources().getString(R.string.down_load_pic_trancode), homeworkscoreid);
 
-        initData(mDataList);//多选图片
+
 
     }
 
-    private void initData(final ArrayList<String> mDataList)
+    private void initData(final ArrayList<String> mDataList,final int mark)
     {
-        mAdapter = new ImagePublishAdapter(StuCuoTPaiZhaoActivity.this, mDataList);
+        mAdapter = new ImagePublishAdapter(StuCuoTPaiZhaoActivity.this, mDataList,mark);
         gridview.setAdapter(mAdapter);
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
@@ -117,6 +115,7 @@ public class StuCuoTPaiZhaoActivity extends CommonActivity
             {
                 if (position == getDataSize())
                 {
+                    mDataList.clear();
                     Intent intent = new Intent(StuCuoTPaiZhaoActivity.this,
                             MultiImageSelectorActivity.class);
                     // 是否显示拍摄图片
@@ -152,19 +151,30 @@ public class StuCuoTPaiZhaoActivity extends CommonActivity
     @Override
     public void OnHttpResponse(String var1, String var2)
     {
-        if(var1.equals(getResources().getString(R.string.down_load_pic_trancode)))  //下载错题照片返回结果
+        if (var1.equals(getResources().getString(R.string.down_load_pic_trancode)))  //下载错题照片返回结果
         {
-            if(mModel.getRtnCuoTZhaoPian().getCuoTZhP().size()>0)
+            if (mModel.getRtnCuoTZhaoPian().getCuoTZhP().size() > 0)
             {
-                String path = getResources().getString(R.string.http_request_url)+mModel.getRtnCuoTZhaoPian().getCuoTZhP().get(0).getFilePath();
+                mDataList.clear();
+                String path = getResources().getString(R.string.http_request_url) + mModel.getRtnCuoTZhaoPian().getCuoTZhP().get(0).getFilePath();
 
+                mDataList.add(path);
+                initData(mDataList,1);//多选图片
+                // ImageLoader.getInstance().displayImage(path,oldpicImageview);
+
+                //ImageLoader.getInstance().getDiskCache().get(path).getPath();
+               // ImageDownloader.Scheme.FILE.wrap(path);
+            }
+            else
+            {
+                initData(mDataList,0);//多选图片
             }
 
         }
 
-        if(var1.equals(getResources().getString(R.string.stu_baocuntupian_trancode)))
+        if (var1.equals(getResources().getString(R.string.stu_baocuntupian_trancode)))
         {
-            DialogUtil.showToast(getApplicationContext(),"保存成功");
+            DialogUtil.showToast(getApplicationContext(), "保存成功");
             finish();
         }
     }
@@ -178,29 +188,40 @@ public class StuCuoTPaiZhaoActivity extends CommonActivity
 
         if (requestCode == 0x123 && resultCode == 0)
         {
-            mDataList = data.getStringArrayListExtra("image_list");
-            getDataSize();
-            initData(mDataList);
+
+            if(data.getStringArrayListExtra("image_list").size()==0)
+            {
+                return;
+            }
+            else
+            {
+
+                mDataList = data.getStringArrayListExtra("image_list");
+                getDataSize();
+                initData(mDataList,0);
+            }
+
         }
     }
 
     private boolean isUploadSuccess = false;//是否上传图片完成 默认是没有完成
+
     public void upLoadPic(final ArrayList<String> filePaths, int i)
     {
-        final MaterialDialog md = DialogUtil.getLoadingDialog(StuCuoTPaiZhaoActivity.this,"正在上传图片...");
+        final MaterialDialog md = DialogUtil.getLoadingDialog(StuCuoTPaiZhaoActivity.this, "正在上传图片...");
         md.show();
         // File file = new File("/storage/sdcard1/Pictures/Screenshots/Screenshot_2016-03-21-19-12-03.png");
         // File file1 = new File("/storage/sdcard1/Pictures/Screenshots/Screenshot_2016-04-11-13-44-03.png");
         File file = new File(filePaths.get(i));
 
-        String url = getResources().getString(R.string.http_request_url)+getResources().getString(R.string.upload_pic_url);
-        System.out.println("uploadurl==="+url);
+        String url = getResources().getString(R.string.http_request_url) + getResources().getString(R.string.upload_pic_url);
+        System.out.println("uploadurl===" + url);
         OkHttpUtils.post()
                 .addFile("mFile", "messenger_01.png", file)
-                .addParams("saveType","1")
-                .addParams("folder","uploads")
-                .addParams("plicyType","uuid")
-                .addParams("folderPolicy","0")
+                .addParams("saveType", "1")
+                .addParams("folder", "uploads")
+                .addParams("plicyType", "uuid")
+                .addParams("folderPolicy", "0")
                 .url(url)
                 .build()
                 .connTimeOut(200000)
@@ -211,7 +232,7 @@ public class StuCuoTPaiZhaoActivity extends CommonActivity
                     @Override
                     public void onError(Call call, Exception e)
                     {
-                        if(md.isShowing())
+                        if (md.isShowing())
                         {
                             md.dismiss();
                         }
@@ -222,7 +243,7 @@ public class StuCuoTPaiZhaoActivity extends CommonActivity
                     @Override
                     public void onResponse(String response)
                     {
-                        if(md.isShowing())
+                        if (md.isShowing())
                         {
                             md.dismiss();
                         }
@@ -233,14 +254,15 @@ public class StuCuoTPaiZhaoActivity extends CommonActivity
                         if (isUploadSuccess)
                         {
                             //调用接口传递数据
-                            mModel.uploadPicMethod(getResources().getString(R.string.stu_baocuntupian_trancode),homeworkscoreid,arrayName[0]);
+                            mModel.uploadPicMethod(getResources().getString(R.string.stu_baocuntupian_trancode), homeworkscoreid, arrayName[0]);
                         }
                     }
                 });
     }
+
     @OnClick(R.id.submit_btn)
     public void onClick()
     {
-        upLoadPic(mDataList,0);
+        upLoadPic(mDataList, 0);
     }
 }

@@ -26,10 +26,28 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/oldpic_imageview"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content">
+          <!--  <ImageView
+                android:id="@+id/oldpic_imageview"
+                android:layout_width="match_parent"
+                android:layout_height="300dip"/>-->
+
+            <com.dvp.base.view.NestedGridView
+                android:id="@+id/gridview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:horizontalSpacing="3dp"
+                android:numColumns="4"
+                android:scrollbars="none"
+                android:layout_centerHorizontal="true"
+                android:verticalSpacing="5dp"
+                android:layout_gravity="center">
+            </com.dvp.base.view.NestedGridView>
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/submit_btn"
@@ -41,17 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|bottom"/>
 
-        <com.dvp.base.view.NestedGridView
-            android:id="@+id/gridview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:horizontalSpacing="3dp"
-            android:numColumns="4"
-            android:scrollbars="none"
-            android:layout_centerHorizontal="true"
-            android:verticalSpacing="5dp"
-            android:layout_gravity="center">
-        </com.dvp.base.view.NestedGridView>
+
     </FrameLayout>
 
 

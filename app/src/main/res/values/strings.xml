@@ -162,6 +162,8 @@
     <string name="teacher_banjicuotiben_cuotitongji_getlianxice_trancode">1027</string>
 
     <string name="tea_cuotitongji_getyema_trancode">1028</string>
+
+    <string name="get_user_info_trancode">1029</string>
     <!--===========================================================================================-->
     <!--学生界面接口如下-->
 
@@ -297,4 +299,6 @@
 
     <!--拍照上传数据接口-->
     <string name="stu_baocuntupian_trancode">2034</string>
+
+
 </resources>

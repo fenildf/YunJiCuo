@@ -91,6 +91,35 @@ public class LoginModel extends AppModel
     }
 
 
+    /**
+     * 获取用户的详细信息
+     * @param tranCode
+     * @param userId
+     */
+    public void getUserInfo(final String tranCode,final String userId)
+    {
+        System.out.println("=="+mContext.getResources().getString(R.string.http_request_url)+"/user/"+userId+"     "+userId);
+        OkHttpUtils.get()
+                .url(mContext.getResources().getString(R.string.http_request_url)+"/user/"+userId)
+                .build()
+                .execute(new StringCallback()
+                {
+                    @Override
+                    public void onError(Call call, Exception e)
+                    {
+
+                    }
+
+                    @Override
+                    public void onResponse(String response)
+                    {
+                        System.out.println(""+response.toString());
+                        OnHttpResponse(tranCode,null);
+                    }
+                });
+    }
+
+
 /*
     private void controlKeyboardLayout(final View root, final View scrollToView) {
 

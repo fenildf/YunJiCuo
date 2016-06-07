@@ -23,7 +23,10 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.dvp.base.activity.BaseActivity;
 import com.dvp.base.fenwu.yunjicuo.R;
+import com.dvp.base.fenwu.yunjicuo.common.CommonActivity;
 import com.dvp.base.fenwu.yunjicuo.common.util.DialogUtil;
+import com.dvp.base.fenwu.yunjicuo.domain.user.User;
+import com.dvp.base.fenwu.yunjicuo.model.LoginModel;
 import com.dvp.base.fenwu.yunjicuo.ui.fragment.StudentMenuFragment;
 import com.dvp.base.fenwu.yunjicuo.ui.fragment.TeacherMenuFragment;
 import com.dvp.base.util.DoubleClickExitDetector;
@@ -35,7 +38,7 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends BaseActivity
+public class MainActivity extends CommonActivity
         implements NavigationView.OnNavigationItemSelectedListener
 {
 
@@ -60,6 +63,8 @@ public class MainActivity extends BaseActivity
 
 
     DoubleClickExitDetector exit = new DoubleClickExitDetector(MainActivity.this);//创建双击退出程序对象
+
+    private LoginModel mModel;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -69,6 +74,17 @@ public class MainActivity extends BaseActivity
 
         initDawLayout();
         initTab();
+        init();
+    }
+
+    private void init()
+    {
+        if(mModel == null)
+        {
+            mModel = new LoginModel(this);
+        }
+        mModel.addResponseListener(this);
+        mModel.getUserInfo(getResources().getString(R.string.get_user_info_trancode),getAPP().getAppConfig().getConfig(User.class).getStaffId());
     }
 
     /**
@@ -200,5 +216,13 @@ public class MainActivity extends BaseActivity
             }
         }
         return true;
+    }
+
+    @Override
+    public void OnHttpResponse(String var1, String var2)
+    {
+        if(var1.equals(getResources().getString(R.string.get_user_info_trancode)))
+        {
+        }
     }
 }

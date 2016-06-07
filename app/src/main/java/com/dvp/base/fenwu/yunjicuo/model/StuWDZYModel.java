@@ -269,7 +269,7 @@ public class StuWDZYModel extends AppModel
      */
     public void getChouTStatus(final String tranCode,final String questionHomeworkId,final String stuId,final String banJBH)
     {
-        String url = "http://www.yunjicuo.com:8090/zy" +
+        String url = mContext.getResources().getString(R.string.http_request_url) +
                 "/homeworkscore/data?searchCondition=%5B%7B%22searchVal%22%3A%22" +
                 questionHomeworkId +
                 "%22%2C%22searchPro%22%3A%22homeworkQuestion.homework.id%22%7D%2C%7B%22searchVal%22%3A%22" +

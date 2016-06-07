@@ -25,18 +25,11 @@
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <com.dvp.base.view.NestedGridView
-            android:id="@+id/gridview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:horizontalSpacing="3dp"
-            android:numColumns="4"
-            android:scrollbars="none"
-            android:layout_centerHorizontal="true"
-            android:verticalSpacing="5dp"
-            >
-        </com.dvp.base.view.NestedGridView>
 
+        <ImageView
+            android:id="@+id/oldpic_imageview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
         <Button
             android:id="@+id/submit_btn"
@@ -47,6 +40,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|bottom"/>
+
+        <com.dvp.base.view.NestedGridView
+            android:id="@+id/gridview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:horizontalSpacing="3dp"
+            android:numColumns="4"
+            android:scrollbars="none"
+            android:layout_centerHorizontal="true"
+            android:verticalSpacing="5dp"
+            android:layout_gravity="center">
+        </com.dvp.base.view.NestedGridView>
     </FrameLayout>
 
 

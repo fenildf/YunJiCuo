@@ -46,9 +46,9 @@
 
 
     <!--外网地址-->
-    <!-- <string name="http_request_url">http://yunjicuo.com</string>-->
+     <string name="http_request_url">http://yunjicuo.com</string>
     <!--外网测试库地址-->
-    <string name="http_request_url">http://www.yunjicuo.com:8090/zy</string>
+    <!--<string name="http_request_url">http://www.yunjicuo.com:8090/zy</string>-->
     <!--内网地址-->
     <!--<string name="http_request_url">http://172.16.1.158:8090/zy</string>-->
 
@@ -68,16 +68,16 @@
     <string name="getkemuListTranCode">1003</string>
 
     <!--新增班级提交地址-->
-    <string name="addclass_submit_requestUrl"><!--http://yunjicuo.com-->/banji/datum</string>
+    <string name="addclass_submit_requestUrl">/banji/datum</string>
     <string name="addclass_submit_trancode">1004</string>
 
     <!--管理练习册列表地址-->
-    <string name="getlianxicelist"><!--http://yunjicuo.com-->/banjipaper/data</string>
+    <string name="getlianxicelist">/banjipaper/data</string>
     <string name="getlianxice_Trancode">1005</string>
 
 
     <!-- 班级错题本列表地址-->
-    <string name="banjicuotiben_requestUrl"><!--http://yunjicuo.com-->/banUser/data</string>
+    <string name="banjicuotiben_requestUrl">/banUser/data</string>
     <string name="getbanjicuotibenListTrancode">1006</string>
 
     <!--新增班级练习册-->

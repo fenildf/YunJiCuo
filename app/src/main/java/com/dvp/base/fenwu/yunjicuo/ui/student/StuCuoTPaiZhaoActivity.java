@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.MediaController;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -98,6 +99,9 @@ public class StuCuoTPaiZhaoActivity extends CommonActivity
             }
         });
 
+        //下载图片
+        mModel.downloadPic(getResources().getString(R.string.down_load_pic_trancode),homeworkscoreid);
+
         initData(mDataList);//多选图片
 
     }
@@ -148,6 +152,16 @@ public class StuCuoTPaiZhaoActivity extends CommonActivity
     @Override
     public void OnHttpResponse(String var1, String var2)
     {
+        if(var1.equals(getResources().getString(R.string.down_load_pic_trancode)))  //下载错题照片返回结果
+        {
+            if(mModel.getRtnCuoTZhaoPian().getCuoTZhP().size()>0)
+            {
+                String path = getResources().getString(R.string.http_request_url)+mModel.getRtnCuoTZhaoPian().getCuoTZhP().get(0).getFilePath();
+
+            }
+
+        }
+
         if(var1.equals(getResources().getString(R.string.stu_baocuntupian_trancode)))
         {
             DialogUtil.showToast(getApplicationContext(),"保存成功");

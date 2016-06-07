@@ -140,14 +140,34 @@
                  android:id="@+id/submit_btn"
                  android:text="正确"
                  android:textSize="@dimen/ts_large"
-                 android:layout_width="match_parent"
+                 android:layout_weight="1"
+                 android:layout_width="0dip"
                  android:layout_height="@dimen/title_height"
                  android:gravity="center"
                 android:layout_gravity="center_horizontal"
                  android:layout_marginTop="@dimen/info_pad"
                  android:textColor="@color/white"
                  android:background="@drawable/side_nav_bar"
+                 android:layout_marginLeft="@dimen/info_pad"
+                 android:layout_marginRight="@dimen/info_pad"
                  />
+
+            <Button
+                android:id="@+id/paizhao_btn"
+                android:text="错题拍照"
+                android:textSize="@dimen/ts_large"
+                android:layout_weight="1"
+                android:layout_width="0dip"
+                android:layout_height="@dimen/title_height"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/info_pad"
+                android:textColor="@color/white"
+                android:background="@drawable/side_nav_bar3"
+                android:layout_marginLeft="@dimen/info_pad"
+                android:layout_marginRight="@dimen/info_pad"
+                android:visibility="gone"
+                />
             </LinearLayout>
 
         </LinearLayout>

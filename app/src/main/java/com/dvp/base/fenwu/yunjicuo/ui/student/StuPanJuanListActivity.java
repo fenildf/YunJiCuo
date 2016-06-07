@@ -175,18 +175,30 @@ public class StuPanJuanListActivity extends CommonActivity implements XRecyclerV
                         webView.loadData(timu, "text/html; charset=UTF-8", null);
 
                         final Button btn = (Button)recycleHolder.findView(R.id.submit_btn);
+                        final Button paizhao_btn = (Button) recycleHolder.findView(R.id.paizhao_btn);
                         if(!classManageItem.isDuiC())
                         {
 
                             btn.setText("错误");
                             btn.setBackground(getResources().getDrawable(R.drawable.side_nav_bar1));
-
+                            paizhao_btn.setVisibility(View.VISIBLE);
                         }
                         else
                         {
                             btn.setText("正确");
                             btn.setBackground(getResources().getDrawable(R.drawable.side_nav_bar));
+                            paizhao_btn.setVisibility(View.GONE);
                         }
+
+                        //拍照
+                        paizhao_btn.setOnClickListener(new View.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(View v)
+                            {
+                                startActivity(StuCuoTPaiZhaoActivity.class);
+                            }
+                        });
 
                         btn.setOnClickListener(new View.OnClickListener()
                         {
@@ -199,6 +211,7 @@ public class StuPanJuanListActivity extends CommonActivity implements XRecyclerV
                                     mModel.panJError(getResources().getString(R.string.stu_panjuan_set_false_trancode),classManageItem.getId(),classManageItem.getHomework().getBanJID(),stuId);
                                     btn.setText("错误");
                                     btn.setBackground(getResources().getDrawable(R.drawable.side_nav_bar1));
+                                    paizhao_btn.setVisibility(View.VISIBLE);
                                     //notifyItemChanged(i);
                                 }
                                 else
@@ -217,6 +230,7 @@ public class StuPanJuanListActivity extends CommonActivity implements XRecyclerV
                                     mModel.panJTrue(getResources().getString(R.string.stu_panjuan_set_true_trancode),homeworkScoreId);
                                     btn.setText("正确");
                                     btn.setBackground(getResources().getDrawable(R.drawable.side_nav_bar));
+                                    paizhao_btn.setVisibility(View.GONE);
                                     //notifyItemChanged(i);
                                 }
                             }
@@ -255,20 +269,30 @@ public class StuPanJuanListActivity extends CommonActivity implements XRecyclerV
 
 
                         final Button btn = (Button)recycleHolder.findView(R.id.submit_btn);
+                        final Button paizhao_btn = (Button) recycleHolder.findView(R.id.paizhao_btn);
                         if(!classManageItem.isDuiC())
                         {
 
                             btn.setText("错误");
                             btn.setBackground(getResources().getDrawable(R.drawable.side_nav_bar1));
-
+                            paizhao_btn.setVisibility(View.VISIBLE);
                         }
                         else
                         {
                             btn.setText("正确");
                             btn.setBackground(getResources().getDrawable(R.drawable.side_nav_bar));
+                            paizhao_btn.setVisibility(View.GONE);
                         }
 
 
+                        paizhao_btn.setOnClickListener(new View.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(View v)
+                            {
+                                startActivity(StuCuoTPaiZhaoActivity.class);
+                            }
+                        });
                         btn.setOnClickListener(new View.OnClickListener()
                         {
                             @Override
@@ -280,6 +304,7 @@ public class StuPanJuanListActivity extends CommonActivity implements XRecyclerV
                                     mModel.panJError(getResources().getString(R.string.stu_panjuan_set_false_trancode),classManageItem.getId(),classManageItem.getHomework().getBanJID(),stuId);
                                     btn.setText("错误");
                                     btn.setBackground(getResources().getDrawable(R.drawable.side_nav_bar1));
+                                    paizhao_btn.setVisibility(View.VISIBLE);
                                     //notifyItemChanged(i);
                                 }
                                 else
@@ -298,6 +323,7 @@ public class StuPanJuanListActivity extends CommonActivity implements XRecyclerV
                                     mModel.panJTrue(getResources().getString(R.string.stu_panjuan_set_true_trancode),homeworkScoreId);
                                     btn.setText("正确");
                                     btn.setBackground(getResources().getDrawable(R.drawable.side_nav_bar));
+                                    paizhao_btn.setVisibility(View.GONE);
                                     //notifyItemChanged(i);
                                 }
                             }

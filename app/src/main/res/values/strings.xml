@@ -21,10 +21,34 @@
     <string name="tips_str">温馨提示</string>
     <string name="exit_prompt_str">您确定退出吗？</string>
 
+    <!-- 多选图片相关 -->
+    <string name="folder_all">所有照片</string>
+    <string name="photo_unit">张</string>
+    <string name="tip_take_photo">拍摄照片</string>
+    <string name="preview">预览</string>
+    <string name="msg_no_camera">没有系统相机</string>
+    <string name="msg_amount_limit">已经达到最高选择数量</string>
+    <string name="action_done">完成</string>
+    <string name="select_mode">选择模式</string>
+    <string name="mode_single">单选</string>
+    <string name="mode_multi">多选</string>
+    <string name="max_select_amount">最大选择数量</string>
+    <string name="hint_default_amount">默认数量为9</string>
+    <string name="enable_camera">是否启用照相机</string>
+    <string name="enable">是</string>
+    <string name="disable">否</string>
+    <string name="go_select">图片选择</string>
+    <string name="picture_list">图片列表</string>
+    <string name="preview_picture">图片预览</string>
+    <string name="picture">图片</string>
+
+
+
+
     <!--外网地址-->
-    <string name="http_request_url">http://yunjicuo.com</string>
+    <!-- <string name="http_request_url">http://yunjicuo.com</string>-->
     <!--外网测试库地址-->
-   <!-- <string name="http_request_url">http://www.yunjicuo.com:8090/zy</string>-->
+    <string name="http_request_url">http://www.yunjicuo.com:8090/zy</string>
     <!--内网地址-->
     <!--<string name="http_request_url">http://172.16.1.158:8090/zy</string>-->
 

@@ -22,6 +22,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity android:name=".common.pictureselect.ui.activity.MultiImageListActivity"></activity>
+        <activity android:name=".common.pictureselect.ui.activity.MultiImageSelectorActivity"></activity>
+        <activity android:name=".common.pictureselect.ui.activity.MultiImageZoomActivity"></activity>
+
         <activity android:name=".ui.teacher.GuanLiBanJActivity">
         </activity>
         <activity android:name=".ui.teacher.AddBanjiActivity">
@@ -85,6 +90,8 @@
         <activity android:name=".ui.student.TongJDisplayActivity">
         </activity>
         <activity android:name=".ui.student.StuWDBJAddCuoTKActivity">
+        </activity>
+        <activity android:name=".ui.student.StuCuoTPaiZhaoActivity">
         </activity>
     </application>
 

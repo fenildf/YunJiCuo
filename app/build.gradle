@@ -73,4 +73,8 @@ dependencies {
 
     compile 'com.google.code.gson:gson:2.+'
 
+
+    //图片选择器
+    compile 'com.lzy.widget:imagepicker:0.1.4'
+    compile 'com.squareup.picasso:picasso:2.4.0'
 }

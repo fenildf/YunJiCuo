@@ -38,6 +38,12 @@ public class CommonApp extends APP
         this.banJBH = banJBH;
     }
 
+    //多选图片相关
+    public static final int SELECTEDMODE = 1;
+    public static final int MAXNUM = 9;
+    public static int PICSIZE = 0;
+    public static final boolean SHOW_CAMERA = true;
+    public static final String EXTRA_CURRENT_IMG_POSITION = "current_img_position";
 
     @Override
     public void onCreate() {
@@ -47,5 +53,7 @@ public class CommonApp extends APP
 
         //图片缓存框架
         Fresco.initialize(getApplicationContext());
+
+
     }
 }

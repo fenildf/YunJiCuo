@@ -153,22 +153,32 @@ public class StuCuoTPaiZhaoActivity extends CommonActivity
     {
         if (var1.equals(getResources().getString(R.string.down_load_pic_trancode)))  //下载错题照片返回结果
         {
-            if (mModel.getRtnCuoTZhaoPian().getCuoTZhP().size() > 0)
-            {
-                mDataList.clear();
-                String path = getResources().getString(R.string.http_request_url) + mModel.getRtnCuoTZhaoPian().getCuoTZhP().get(0).getFilePath();
 
-                mDataList.add(path);
-                initData(mDataList,1);//多选图片
-                // ImageLoader.getInstance().displayImage(path,oldpicImageview);
-
-                //ImageLoader.getInstance().getDiskCache().get(path).getPath();
-               // ImageDownloader.Scheme.FILE.wrap(path);
-            }
-            else
+            if(var2.equals("0"))
             {
                 initData(mDataList,0);//多选图片
             }
+
+            if(var2.equals("1"))
+            {
+                if (mModel.getRtnCuoTZhaoPian().getCuoTZhP().size() > 0)
+                {
+                    mDataList.clear();
+                    String path = getResources().getString(R.string.http_request_url) + mModel.getRtnCuoTZhaoPian().getCuoTZhP().get(0).getFilePath();
+
+                    mDataList.add(path);
+                    initData(mDataList,1);//多选图片
+                    // ImageLoader.getInstance().displayImage(path,oldpicImageview);
+
+                    //ImageLoader.getInstance().getDiskCache().get(path).getPath();
+                    // ImageDownloader.Scheme.FILE.wrap(path);
+                }
+                else
+                {
+                    initData(mDataList,0);//多选图片
+                }
+            }
+
 
         }
 

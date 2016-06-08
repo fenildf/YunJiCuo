@@ -224,7 +224,7 @@ public class StuPanJuanListActivity extends CommonActivity implements XRecyclerV
                                     btn.setBackground(getResources().getDrawable(R.drawable.side_nav_bar1));
                                     paizhao_btn.setVisibility(View.VISIBLE);
                                     mDatas.get(i).setDuiC(false);
-                                    notifyItemChanged(i);
+                                    //notifyItemChanged(i);
                                 }
                                 else
                                 {
@@ -244,7 +244,7 @@ public class StuPanJuanListActivity extends CommonActivity implements XRecyclerV
                                     btn.setBackground(getResources().getDrawable(R.drawable.side_nav_bar));
                                     paizhao_btn.setVisibility(View.GONE);
                                     mDatas.get(i).setDuiC(true);
-                                    notifyItemChanged(i);
+                                   // notifyItemChanged(i);
                                 }
                             }
                         });
@@ -331,7 +331,7 @@ public class StuPanJuanListActivity extends CommonActivity implements XRecyclerV
                                     btn.setBackground(getResources().getDrawable(R.drawable.side_nav_bar1));
                                     paizhao_btn.setVisibility(View.VISIBLE);
                                     mDatas.get(i).setDuiC(false);
-                                    notifyItemChanged(i);
+                                   // notifyItemChanged(i);
                                 }
                                 else
                                 {
@@ -351,7 +351,7 @@ public class StuPanJuanListActivity extends CommonActivity implements XRecyclerV
                                     btn.setBackground(getResources().getDrawable(R.drawable.side_nav_bar));
                                     paizhao_btn.setVisibility(View.GONE);
                                     mDatas.get(i).setDuiC(true);
-                                   notifyItemChanged(i);
+                                   //notifyItemChanged(i);
                                 }
                             }
                         });

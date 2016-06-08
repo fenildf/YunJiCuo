@@ -519,9 +519,17 @@ public class StuWDZYModel extends AppModel
                             pd.dismiss();
                         }
                         System.out.println("下载图片结果===="+response.toString());
-                        RtnCuoTZhaoPian rtn = gson.fromJson(response,RtnCuoTZhaoPian.class);
-                        rtnCuoTZhaoPian = rtn;
-                        OnHttpResponse(tranCode,null);
+                        if(response.equals("{\"statusCode\":\"500\"}"))
+                        {
+                            OnHttpResponse(tranCode,"0");
+                        }
+                        else
+                        {
+                            RtnCuoTZhaoPian rtn = gson.fromJson(response,RtnCuoTZhaoPian.class);
+                            rtnCuoTZhaoPian = rtn;
+                            OnHttpResponse(tranCode,"1");
+                        }
+
                     }
                 });
     }

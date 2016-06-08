@@ -37,6 +37,7 @@ public class FriendlyCardView extends CardView
         init(getContext(), attrs, defStyleAttr);
     }
 
+
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
 
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CardView, defStyleAttr,

@@ -155,6 +155,9 @@
     <dimen name="banjing">5dp</dimen>
 
 
+    <!--各个cardview的配置-->
+    <dimen name="banji_item">165dp</dimen>
+    <dimen name="card_list_item">8dp</dimen>
     <!--详情页参数配置-->
     <dimen name="title_height">55dip</dimen>
     <dimen name="content_height">48dip</dimen>

@@ -153,7 +153,7 @@ public class StuWDZYListActivity extends CommonActivity implements XRecyclerView
             if (var2.equals("0"))  //未判卷
             {
                 mDatas.addAll(mModel.getRtnWDZYList().getData());
-                for (int i = 0; i < mDatas.size(); i++)
+               /* for (int i = 0; i < mDatas.size(); i++)
                 {
                     for (int j = 0; j < mModel.getRtnPanJStatusList().getData().size(); j++)
                     {
@@ -162,7 +162,7 @@ public class StuWDZYListActivity extends CommonActivity implements XRecyclerView
                             mDatas.get(i).setYiPanJuan("1");
                         }
                     }
-                }
+                }*/
                 System.out.println("=====");
                 if (page - 1 == 1)
                 {

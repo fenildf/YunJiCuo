@@ -65,7 +65,7 @@
 
     <!--以下定义menu的各项尺寸-->
     <dimen name="pic_width">80dp</dimen>
-    <dimen name="pic_height">220dp</dimen>
+    <dimen name="pic_height">130dp</dimen>
 
     <dimen name="menu_item_vertical_height">1dp</dimen>
     <dimen name="menu_item_horizotal_width">8dp</dimen>
@@ -73,6 +73,9 @@
     <dimen name="banjing">5dp</dimen>
 
 
+    <!--各个cardview的配置-->
+   <!-- <dimen name="banji_item">165dp</dimen>-->
+    <dimen name="card_list_item">1dp</dimen>
     <!--详情页参数配置-->
     <dimen name="title_height">55dip</dimen>
     <dimen name="content_height">48dip</dimen>

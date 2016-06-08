@@ -391,7 +391,6 @@ public class StuPanJuanListActivity extends CommonActivity implements XRecyclerV
     {
 
     }
-
     @Override
     public void onLoadMore()
     {

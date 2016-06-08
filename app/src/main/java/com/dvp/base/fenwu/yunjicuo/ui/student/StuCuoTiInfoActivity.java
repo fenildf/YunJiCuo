@@ -93,9 +93,14 @@ public class StuCuoTiInfoActivity extends CommonActivity
         if(var1.equals(getResources().getString(R.string.cuotilist_info_trancode)))
         {
             lianxiceTv.setText(mModel.getRtnCuoTiInfo().getPaper().getRcsValue());
-            danyuanTv.setText(mModel.getRtnCuoTiInfo().getZhiShiDian().getZhangJ().getDanY().getName());
-            zhangjieTv.setText(mModel.getRtnCuoTiInfo().getZhiShiDian().getName());
-            zhishidianTv.setText(mModel.getRtnCuoTiInfo().getZhiShiDian().getName());
+
+            String danyuantv = mModel.getRtnCuoTiInfo().getZhiShiDian()!=null?mModel.getRtnCuoTiInfo().getZhiShiDian().getZhangJ().getDanY().getName():"  ";
+            danyuanTv.setText(danyuantv);
+            String zhangjiestr = mModel.getRtnCuoTiInfo().getZhiShiDian()!=null?mModel.getRtnCuoTiInfo().getZhiShiDian().getZhangJ().getName():"  ";
+
+            zhangjieTv.setText(zhangjiestr);
+            String zhishidian = mModel.getRtnCuoTiInfo().getZhiShiDian()!=null?mModel.getRtnCuoTiInfo().getZhiShiDian().getName():"  ";
+            zhishidianTv.setText(zhishidian);
             leixingTv.setText(mModel.getRtnCuoTiInfo().getLeiX().getRcsValue());
             yemaTv.setText(mModel.getRtnCuoTiInfo().getPage() + "");
             timubianhaoTv.setText(mModel.getRtnCuoTiInfo().getNum() + "");

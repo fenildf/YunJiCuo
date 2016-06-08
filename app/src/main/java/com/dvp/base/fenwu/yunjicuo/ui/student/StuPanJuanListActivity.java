@@ -178,7 +178,6 @@ public class StuPanJuanListActivity extends CommonActivity implements XRecyclerV
                         final Button paizhao_btn = (Button) recycleHolder.findView(R.id.paizhao_btn);
                         if(!classManageItem.isDuiC())
                         {
-
                             btn.setText("错误");
                             btn.setBackground(getResources().getDrawable(R.drawable.side_nav_bar1));
                             paizhao_btn.setVisibility(View.VISIBLE);

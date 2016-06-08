@@ -7,6 +7,7 @@ import android.widget.LinearLayout;
 import com.dvp.base.fenwu.yunjicuo.R;
 import com.dvp.base.fenwu.yunjicuo.common.CommonActivity;
 import com.dvp.base.fenwu.yunjicuo.common.util.DialogUtil;
+import com.dvp.base.fenwu.yunjicuo.common.util.DimenTool;
 import com.dvp.base.fenwu.yunjicuo.domain.user.User;
 import com.dvp.base.fenwu.yunjicuo.model.LoginModel;
 
@@ -71,6 +72,16 @@ public class LoginActivity extends CommonActivity
             mModel = new LoginModel(this);
         }
         mModel.addResponseListener(this);
+        //自动生成不同分辨率下的dimens文件
+        new Thread(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                DimenTool.gen();
+            }
+        }).start();
+
     }
 
     private boolean isValida()

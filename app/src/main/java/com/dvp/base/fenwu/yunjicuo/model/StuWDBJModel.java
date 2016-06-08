@@ -3,6 +3,7 @@ package com.dvp.base.fenwu.yunjicuo.model;
 import android.content.Context;
 
 import com.dvp.base.fenwu.yunjicuo.R;
+import com.dvp.base.fenwu.yunjicuo.common.util.DialogUtil;
 import com.dvp.base.fenwu.yunjicuo.common.webservice.AppModel;
 import com.dvp.base.fenwu.yunjicuo.domain.guanlicuotiben.RtnCuoTTJLXCList;
 import com.dvp.base.fenwu.yunjicuo.domain.student.RtnIsJiaRuBanJ;
@@ -161,9 +162,17 @@ public class StuWDBJModel extends AppModel
                             pd.dismiss();
                         }
                         System.out.println("搜索班级结果====="+response.toString());
-                        RtnSearchWDBJList rtn = gson.fromJson(response,RtnSearchWDBJList.class);
-                        rtnSearchWDBJList = rtn;
-                        OnHttpResponse(tranCode,null);
+                        if(response.equals("{\"statusCode\":\"500\"}"))
+                        {
+                            DialogUtil.showToast(mContext,"暂无搜索结果");
+                        }
+                        else
+                        {
+                            RtnSearchWDBJList rtn = gson.fromJson(response,RtnSearchWDBJList.class);
+                            rtnSearchWDBJList = rtn;
+                            OnHttpResponse(tranCode,null);
+                        }
+
                     }
                 });
     }

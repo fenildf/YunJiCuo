@@ -8,6 +8,8 @@ import android.view.ViewTreeObserver;
 import com.dvp.base.fenwu.yunjicuo.R;
 import com.dvp.base.fenwu.yunjicuo.common.util.DialogUtil;
 import com.dvp.base.fenwu.yunjicuo.common.webservice.AppModel;
+import com.dvp.base.fenwu.yunjicuo.domain.user.RtnUserInfo;
+import com.google.gson.Gson;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -20,6 +22,7 @@ import okhttp3.Call;
  */
 public class LoginModel extends AppModel
 {
+    private Gson gson;
     public LoginModel()
     {
         super();
@@ -28,6 +31,7 @@ public class LoginModel extends AppModel
     public LoginModel(Context context)
     {
         super(context);
+        gson = new Gson();
     }
 
     private String staffId;
@@ -91,6 +95,18 @@ public class LoginModel extends AppModel
     }
 
 
+    public RtnUserInfo getRtnUserInfo()
+    {
+        return rtnUserInfo;
+    }
+
+    public void setRtnUserInfo(RtnUserInfo rtnUserInfo)
+    {
+        this.rtnUserInfo = rtnUserInfo;
+    }
+
+    private RtnUserInfo rtnUserInfo = new RtnUserInfo();
+
     /**
      * 获取用户的详细信息
      * @param tranCode
@@ -98,9 +114,9 @@ public class LoginModel extends AppModel
      */
     public void getUserInfo(final String tranCode,final String userId)
     {
-        System.out.println("=="+mContext.getResources().getString(R.string.http_request_url)+"/user/"+userId+"     "+userId);
+        System.out.println("=="+mContext.getResources().getString(R.string.http_request_url)+"/system/user/"+userId+"     "+userId);
         OkHttpUtils.get()
-                .url(mContext.getResources().getString(R.string.http_request_url)+"/user/"+userId)
+                .url(mContext.getResources().getString(R.string.http_request_url)+"/system/user/"+userId)
                 .build()
                 .execute(new StringCallback()
                 {
@@ -114,6 +130,8 @@ public class LoginModel extends AppModel
                     public void onResponse(String response)
                     {
                         System.out.println(""+response.toString());
+                        RtnUserInfo rtn = gson.fromJson(response,RtnUserInfo.class);
+                        rtnUserInfo = rtn;
                         OnHttpResponse(tranCode,null);
                     }
                 });

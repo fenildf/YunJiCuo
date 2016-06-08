@@ -12,12 +12,14 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -223,6 +225,12 @@ public class MainActivity extends CommonActivity
     {
         if(var1.equals(getResources().getString(R.string.get_user_info_trancode)))
         {
+            View view = LayoutInflater.from(this).inflate(R.layout.left_nav_bar_layout, null);
+            navView.addHeaderView(view);
+            TextView nameTv = (TextView) view.findViewById(R.id.name_tv);
+            nameTv.setText(mModel.getRtnUserInfo().getName());
+            TextView mobile_tv = (TextView) view.findViewById(R.id.mobile_tv);
+            mobile_tv.setText(mModel.getRtnUserInfo().getMobile().toString());
         }
     }
 }

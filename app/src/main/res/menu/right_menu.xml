@@ -6,7 +6,7 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/personcenter_item"
-                    android:icon="@drawable/ic_menu_share"
+                    android:icon="@mipmap/personcenter"
                     android:title="个人中心"/>
             </group>
         </menu>
@@ -18,7 +18,7 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/exit_item"
-                    android:icon="@drawable/ic_menu_share"
+                    android:icon="@mipmap/signout"
                     android:title="退出当前账号"/>
             </group>
         </menu>

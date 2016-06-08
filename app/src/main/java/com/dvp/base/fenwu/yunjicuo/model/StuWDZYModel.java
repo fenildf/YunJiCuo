@@ -434,7 +434,7 @@ public class StuWDZYModel extends AppModel
      */
     public void panJAllEnd(final String tranCode,final String homeworkId,final String banJBH,final String stuId)
     {
-        String url = "http://www.yunjicuo.com:8090/zy" +
+        String url = mContext.getResources().getString(R.string.http_request_url) +
                 "/homeworkstate/" +
                 homeworkId +
                 "/" +

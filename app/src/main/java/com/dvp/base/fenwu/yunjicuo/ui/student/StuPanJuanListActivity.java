@@ -224,7 +224,8 @@ public class StuPanJuanListActivity extends CommonActivity implements XRecyclerV
                                     btn.setText("错误");
                                     btn.setBackground(getResources().getDrawable(R.drawable.side_nav_bar1));
                                     paizhao_btn.setVisibility(View.VISIBLE);
-                                    //notifyItemChanged(i);
+                                    mDatas.get(i).setDuiC(false);
+                                    notifyItemChanged(i);
                                 }
                                 else
                                 {
@@ -243,7 +244,8 @@ public class StuPanJuanListActivity extends CommonActivity implements XRecyclerV
                                     btn.setText("正确");
                                     btn.setBackground(getResources().getDrawable(R.drawable.side_nav_bar));
                                     paizhao_btn.setVisibility(View.GONE);
-                                    //notifyItemChanged(i);
+                                    mDatas.get(i).setDuiC(true);
+                                    notifyItemChanged(i);
                                 }
                             }
                         });
@@ -329,7 +331,8 @@ public class StuPanJuanListActivity extends CommonActivity implements XRecyclerV
                                     btn.setText("错误");
                                     btn.setBackground(getResources().getDrawable(R.drawable.side_nav_bar1));
                                     paizhao_btn.setVisibility(View.VISIBLE);
-                                    //notifyItemChanged(i);
+                                    mDatas.get(i).setDuiC(false);
+                                    notifyItemChanged(i);
                                 }
                                 else
                                 {
@@ -348,7 +351,8 @@ public class StuPanJuanListActivity extends CommonActivity implements XRecyclerV
                                     btn.setText("正确");
                                     btn.setBackground(getResources().getDrawable(R.drawable.side_nav_bar));
                                     paizhao_btn.setVisibility(View.GONE);
-                                    //notifyItemChanged(i);
+                                    mDatas.get(i).setDuiC(true);
+                                   notifyItemChanged(i);
                                 }
                             }
                         });

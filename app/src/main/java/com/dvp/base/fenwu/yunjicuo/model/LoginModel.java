@@ -64,7 +64,7 @@ public class LoginModel extends AppModel
                 {
                     pd.dismiss();
                 }
-                DialogUtil.showToast(mContext,call.toString());
+                DialogUtil.showToast(mContext,"服务器异常");
             }
 
             @Override

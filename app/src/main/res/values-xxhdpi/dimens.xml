@@ -71,23 +71,12 @@
     <dimen name="menu_item_horizotal_width">8dp</dimen>
     <dimen name="yinying">3dp</dimen>
     <dimen name="banjing">5dp</dimen>
+    <dimen name="card_margin_bottom">8dip</dimen>
+
 
     <!--各个cardview的配置-->
-    <dimen name="banji_item">165dp</dimen>
     <dimen name="card_list_item">15dp</dimen>
 
-   <!-- <dimen name="banjicuotiben_item">185dip</dimen>
-    <dimen name="banji_cuotiben_card_list_item">15dp</dimen>
-
-    <dimen name="buzhizuoye_item">220dp</dimen>
-
-
-    <dimen name="wodeshujia_item">165dp</dimen>
-
-    <dimen name="wodebanji_item">180dip</dimen>
-
-    <dimen name="wodecuotiben_item">136dip</dimen>
-    <dimen name="wodezuoye_item">220dip</dimen>-->
     <!--详情页参数配置-->
     <dimen name="title_height">55dip</dimen>
     <dimen name="content_height">48dip</dimen>

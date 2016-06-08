@@ -69,7 +69,7 @@
 
     <dimen name="menu_item_vertical_height">1dp</dimen>
     <dimen name="menu_item_horizotal_width">8dp</dimen>
-    <dimen name="yinying">3dp</dimen>
+    <dimen name="yinying">2dp</dimen>
     <dimen name="banjing">5dp</dimen>
 
 

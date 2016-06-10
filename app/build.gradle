@@ -30,7 +30,6 @@ repositories {
 dependencies {
 
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
     compile fileTree(include: ['*.jar', '*.so'], dir: 'jniLibs')
     compile(name: 'app-debug', ext: 'aar')
     //materialDialog
@@ -41,41 +40,31 @@ dependencies {
     // compile 'com.github.navasmdc:MaterialDesign:1.5@aar'
     
 
-    compile 'me.zhanghai.android.materialprogressbar:library:1.1.5'
     
+
+
     compile 'me.zhanghai.android.materialprogressbar:library:1.1.5'
 
-    compile 'com.android.support:appcompat-v7:23.4.0'
-
-    compile 'com.android.support:design:23.4.0'
-
-    compile 'com.jakewharton:butterknife:7.0.+'
-
-    compile 'com.android.support:cardview-v7:23.4.0'
-
-    compile 'me.zhanghai.android.customtabshelper:library:1.0.1'
-
-    compile 'me.zhanghai.android.materialedittext:library:1.0.2'
-
-    compile 'me.zhanghai.android.systemuihelper:library:1.0.0'
-
-    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.2@aar'
-
-    compile 'com.afollestad.material-dialogs:core:0.8.5.9@aar'
-
-    compile 'com.afollestad.material-dialogs:commons:0.8.5.9@aar'
-
-    compile 'com.android.support:support-v4:23.4.0'
-
-    compile 'com.facebook.fresco:fresco:0.10.0'
-
-    compile 'com.zhy:okhttputils:2.4.1'
-
-    compile 'com.google.code.gson:gson:2.+'
-
-    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
-
+    
     //图片选择器
+    compile 'me.zhanghai.android.materialprogressbar:library:1.1.5'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'
+    compile 'com.jakewharton:butterknife:7.0.+'
+    compile 'com.android.support:cardview-v7:23.4.0'
+    compile 'me.zhanghai.android.customtabshelper:library:1.0.1'
+    compile 'me.zhanghai.android.materialedittext:library:1.0.2'
+    compile 'me.zhanghai.android.systemuihelper:library:1.0.0'
+    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.2@aar'
+    compile 'com.afollestad.material-dialogs:core:0.8.5.9@aar'
+    compile 'com.afollestad.material-dialogs:commons:0.8.5.9@aar'
+    compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.facebook.fresco:fresco:0.10.0'
+    compile 'com.zhy:okhttputils:2.4.1'
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     compile 'com.lzy.widget:imagepicker:0.1.4'
     compile 'com.squareup.picasso:picasso:2.4.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha1'
+    testCompile 'junit:junit:4.12'
 }

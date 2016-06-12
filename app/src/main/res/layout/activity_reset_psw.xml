@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".ui.teacher.GuanLiBanJActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            layout="@layout/common_toolbar"
+            ></include>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#EFEFEF"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <com.dvp.base.fenwu.yunjicuo.ui.FriendlyCardView
+                android:layout_width="@dimen/card_view_width"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/screen_edge_horizontal_margin_negative_half"
+                android:layout_marginBottom="@dimen/screen_edge_horizontal_margin_negative_half"
+                app:cardMaxElevation="@dimen/screen_edge_horizontal_margin">
+
+                <LinearLayout
+                    android:id="@+id/form"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <me.zhanghai.android.materialedittext.MaterialTextInputLayout
+                        android:id="@+id/username_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/card_content_horizontal_margin_with_4dp_padding"
+                        android:layout_marginRight="@dimen/card_content_horizontal_margin_with_4dp_padding"
+                        android:layout_marginTop="@dimen/card_content_vertical_margin_large"
+                        app:errorEnabled="true">
+
+                        <me.zhanghai.android.materialedittext.MaterialEditText
+                            android:id="@+id/username"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/ts_title"
+                            android:hint="用户名"
+                            android:editable="false"
+                            android:textColor="@color/black"
+                            android:maxLines="1" />
+                    </me.zhanghai.android.materialedittext.MaterialTextInputLayout>
+
+                    <me.zhanghai.android.materialedittext.MaterialTextInputLayout
+                        android:id="@+id/password_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/card_content_horizontal_margin_with_4dp_padding"
+                        android:layout_marginRight="@dimen/card_content_horizontal_margin_with_4dp_padding"
+                        app:errorEnabled="true">
+
+                        <me.zhanghai.android.materialedittext.MaterialEditText
+                            android:id="@+id/password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="新密码"
+                            android:textSize="@dimen/ts_title"
+                            android:imeActionId="@+id/ime_login"
+                            android:imeActionLabel="@string/auth_log_in"
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            android:textColor="@color/black"
+                            android:maxLines="1" />
+                    </me.zhanghai.android.materialedittext.MaterialTextInputLayout>
+
+
+
+                    <me.zhanghai.android.materialedittext.MaterialTextInputLayout
+                        android:id="@+id/queren_password_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/card_content_horizontal_margin_with_4dp_padding"
+                        android:layout_marginRight="@dimen/card_content_horizontal_margin_with_4dp_padding"
+                        app:errorEnabled="true">
+
+                        <me.zhanghai.android.materialedittext.MaterialEditText
+                            android:id="@+id/queren_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="确认密码"
+                            android:textSize="@dimen/ts_title"
+                            android:imeActionId="@+id/ime_login"
+                            android:imeActionLabel="@string/auth_log_in"
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            android:textColor="@color/black"
+                            android:maxLines="1" />
+                    </me.zhanghai.android.materialedittext.MaterialTextInputLayout>
+
+
+                    <Button
+                        android:id="@+id/zhuce_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dip"
+                        android:layout_gravity="right"
+                        android:layout_marginLeft="@dimen/card_content_horizontal_margin_with_4dp_padding"
+                        android:layout_marginRight="@dimen/card_content_horizontal_margin_with_4dp_padding"
+                        android:text="保存"
+                        android:layout_marginBottom="@dimen/info_pad"
+                        style="@style/Widget.AppCompat.Button.Colored" />
+
+
+
+                </LinearLayout>
+            </com.dvp.base.fenwu.yunjicuo.ui.FriendlyCardView>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

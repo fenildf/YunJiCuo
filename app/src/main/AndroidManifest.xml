@@ -93,6 +93,8 @@
         </activity>
         <activity android:name=".ui.ForgetPswActivity">
         </activity>
+        <activity android:name=".ui.ResetPswActivity">
+        </activity>
     </application>
 
 </manifest>

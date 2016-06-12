@@ -205,6 +205,7 @@ public class SignUpActivity extends CommonActivity implements SelectDialog.ItemC
         else if(tianxieyanzhengmaEdittext.getText().toString().equals(""))
         {
             tianxieyanzhengmaLayout.setError("请输入收到的验证码");
+            return false;
         }
         return true;
     }

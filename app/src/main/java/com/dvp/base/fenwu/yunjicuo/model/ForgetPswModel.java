@@ -107,6 +107,7 @@ public class ForgetPswModel extends AppModel
                 "/system/checkvalicode";
         OkHttpUtils.post()
                 .url(url)
+                .addParams("valiCode",tuxYZM)
                 .build()
                 .execute(new StringCallback()
                 {
@@ -131,6 +132,48 @@ public class ForgetPswModel extends AppModel
                         }
 
 
+                    }
+                });
+    }
+
+
+    public String getIsTrueYanzhengma()
+    {
+        return isTrueYanzhengma;
+    }
+
+    public void setIsTrueYanzhengma(String isTrueYanzhengma)
+    {
+        this.isTrueYanzhengma = isTrueYanzhengma;
+    }
+
+    private String isTrueYanzhengma;
+
+    /**
+     * 验证验证码是否正确
+     * @param tranCode
+     * @param vcode
+     */
+    public void validataVCode(final String tranCode,final String vcode)
+    {
+        OkHttpUtils.post()
+                .url(mContext.getResources().getString(R.string.http_request_url)+"/register/validateVCode")
+                .addParams("vCode",vcode)
+                .build()
+                .execute(new StringCallback()
+                {
+                    @Override
+                    public void onError(Call call, Exception e)
+                    {
+
+                    }
+
+                    @Override
+                    public void onResponse(String response)
+                    {
+                        System.out.println("验证码是否正确==="+response.toString());
+                        isTrueYanzhengma = response.toString();
+                        OnHttpResponse(tranCode,null);
                     }
                 });
     }

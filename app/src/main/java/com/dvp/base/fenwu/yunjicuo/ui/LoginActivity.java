@@ -138,7 +138,7 @@ public class LoginActivity extends CommonActivity
     @OnClick(R.id.forget_psw_btn)
     public void onForgotClick()
     {
-        DialogUtil.showToast(getApplicationContext(), "忘记密码点击");
+       startActivity(ForgetPswActivity.class);
     }
 
     @OnClick(R.id.register)

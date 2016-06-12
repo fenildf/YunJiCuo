@@ -299,4 +299,9 @@
     <string name="stu_baocuntupian_trancode">2034</string>
 
 
+    <string name="forget_psw_getpicviladata_trancode">2035</string>
+
+    <string name="forget_psw_checkviladata_trancode">2036</string>
+
+    <string name="forget_psw_modifypsw_trancode">2037</string>
 </resources>

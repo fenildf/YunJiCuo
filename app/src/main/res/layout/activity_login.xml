@@ -122,7 +122,6 @@
                         android:layout_marginBottom="@dimen/card_action_margin"
                         android:gravity="center_vertical"
                         android:layout_gravity="left"
-                        android:visibility="invisible"
                         android:text="忘记密码"
                         android:textColor="?android:textColorHint"
                         style="?borderlessButtonStyle" />

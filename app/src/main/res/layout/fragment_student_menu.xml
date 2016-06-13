@@ -73,7 +73,7 @@
                             android:layout_alignStart="@+id/glbj_tv1"
                             android:layout_centerVertical="true"
                             android:gravity="left"
-                            android:text="拥有 5 个练习册，丰富阅读"/>
+                            android:text="学生书架，丰富阅读"/>
 
                         <ImageButton
                             android:id="@+id/imageButton1"
@@ -151,7 +151,7 @@
                             android:layout_alignStart="@+id/glbj_tv2"
                             android:layout_centerVertical="true"
                             android:gravity="left"
-                            android:text="现在 省实验中学306班"/>
+                            android:text="所在的班级列表"/>
 
                         <ImageButton
                             android:id="@+id/imageButton2"
@@ -229,7 +229,7 @@
                             android:layout_alignStart="@+id/glbj_tv3"
                             android:layout_centerVertical="true"
                             android:gravity="left"
-                            android:text="现拥有 5 个错题本"/>
+                            android:text="拥有的错题本"/>
 
                         <ImageButton
                             android:id="@+id/imageButton3"
@@ -307,7 +307,7 @@
                             android:layout_alignStart="@+id/glbj_tv4"
                             android:layout_centerVertical="true"
                             android:gravity="left"
-                            android:text="现拥有 5 项作业"/>
+                            android:text="需要完成的作业"/>
 
                         <ImageButton
                             android:id="@+id/imageButton4"

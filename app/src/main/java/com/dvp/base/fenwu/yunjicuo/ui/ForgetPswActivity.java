@@ -15,7 +15,7 @@ import com.dvp.base.fenwu.yunjicuo.R;
 import com.dvp.base.fenwu.yunjicuo.common.CommonActivity;
 import com.dvp.base.fenwu.yunjicuo.common.util.DialogUtil;
 import com.dvp.base.fenwu.yunjicuo.model.ForgetPswModel;
-import com.dvp.base.fenwu.yunjicuo.util.Code;
+import com.dvp.base.fenwu.yunjicuo.util.CodeUtils;
 import com.dvp.base.util.Countdown;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -96,7 +96,7 @@ public class ForgetPswActivity extends CommonActivity implements Countdown.TextV
         //mModel.createTuXingYanZhengMa(getResources().getString(R.string.forget_psw_getpicviladata_trancode));
         clearFrescoCache();
         //picyanzhengmaWebview.setImageURI(Uri.parse(getResources().getString(R.string.http_request_url) + "/system/createvalicode"));
-        picyanzhengmaWebview.setImageBitmap(Code.getInstance().createBitmap());
+        picyanzhengmaWebview.setImageBitmap(CodeUtils.getInstance().createBitmap());
         pictuxingyanzhengmaEdittext.addTextChangedListener(textWatcher);
     }
 
@@ -129,7 +129,15 @@ public class ForgetPswActivity extends CommonActivity implements Countdown.TextV
 
             if(s.length()>=4)
             {
-                mModel.checkValidata(getResources().getString(R.string.forget_psw_checkviladata_trancode), pictuxingyanzhengmaEdittext.getText().toString());
+                if(pictuxingyanzhengmaEdittext.getText().toString().equals(CodeUtils.getInstance().getCode()))
+                {
+                    DialogUtil.showToast(getApplicationContext(),"图形验证码正确");
+                }
+                else
+                {
+                    DialogUtil.showToast(getApplicationContext(),"图形验证码错误");
+                }
+                //mModel.checkValidata(getResources().getString(R.string.forget_psw_checkviladata_trancode), pictuxingyanzhengmaEdittext.getText().toString());
             }
         }
     };
@@ -170,6 +178,11 @@ public class ForgetPswActivity extends CommonActivity implements Countdown.TextV
             else if(mModel.getIsTrueYanzhengma().equals("invalid"))
             {
                 DialogUtil.showToast(getApplicationContext(),"验证码无效");
+                return;
+            }
+            else if(pictuxingyanzhengmaEdittext.getText().toString().length()<4)
+            {
+                DialogUtil.showToast(getApplicationContext(),"图形验证码无效");
                 return;
             }
             else
@@ -232,6 +245,7 @@ public class ForgetPswActivity extends CommonActivity implements Countdown.TextV
                 break;
             case R.id.picyanzhengma_webview://
                 clearFrescoCache();
+                picyanzhengmaWebview.setImageBitmap(CodeUtils.getInstance().createBitmap());
                 //picyanzhengmaWebview.setImageURI(Uri.parse(getResources().getString(R.string.http_request_url) + "/system/createvalicode"));
                 break;
             case R.id.queding_btn:

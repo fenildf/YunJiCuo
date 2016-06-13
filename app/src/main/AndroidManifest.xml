@@ -16,11 +16,6 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".ui.LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity android:name=".common.pictureselect.ui.activity.MultiImageListActivity"/>
         <activity android:name=".common.pictureselect.ui.activity.MultiImageSelectorActivity"/>
@@ -94,6 +89,13 @@
         <activity android:name=".ui.ForgetPswActivity">
         </activity>
         <activity android:name=".ui.ResetPswActivity">
+        </activity>
+        <activity android:name=".ui.NewLoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
     </application>
 

@@ -1,6 +1,202 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
 
-</LinearLayout>
+    >
+
+    <LinearLayout
+        android:clipToPadding="true"
+        android:fitsSystemWindows="true"
+        android:id="@+id/login_title_ll"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/login_title__height"
+        android:background="@color/colorPrimary"
+        android:gravity="center" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/hw_iclogin" />
+    </LinearLayout>
+
+    <!-- 用户名和密码 -->
+
+    <LinearLayout
+        android:id="@+id/username_ll"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_title_ll"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="14dp"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingBottom="6dp" >
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:src="@mipmap/ic_zh" />
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:inputType="text"
+                android:maxLength="16"
+                android:paddingLeft="@dimen/list_item_pad"
+                android:textCursorDrawable="@null"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/password_ll"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/username_ll"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="14dp"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingBottom="6dp" >
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:src="@mipmap/ic_mm" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:inputType="textPassword"
+                android:maxLength="16"
+                android:paddingLeft="@dimen/list_item_pad"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/ts_xmiddle" />
+
+            <ImageView
+                android:id="@+id/img_mmqh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/img_mm_qh" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary" />
+    </LinearLayout>
+
+    <!-- login_button -->
+
+    <Button
+        android:id="@+id/login"
+        style="@style/btn_style"
+        android:layout_width="match_parent"
+        android:layout_below="@id/password_ll"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="14dp"
+        android:text="登录"
+        android:textSize="@dimen/ts_middle" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/login"
+        android:layout_alignRight="@id/login"
+        android:layout_below="@+id/login"
+        android:layout_marginTop="@dimen/login_input_mh" >
+
+        <!-- style="?android:attr/progressBarStyleHorizontal" -->
+
+       <!-- <ProgressBar
+            android:id="@+id/download_proressbar"
+            style="@style/MyProgressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_pb_lh"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/stop_iv"
+            android:max="100"
+            android:visibility="gone" />-->
+
+       <!-- <ImageView
+            android:id="@id/stop_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_del"
+            android:visibility="gone" />-->
+    </RelativeLayout>
+
+    <Button
+        android:text="免费注册"
+        android:textColor="?android:textColorHint"
+        style="?borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/forget_psw_btn"
+        android:layout_alignEnd="@+id/relativeLayout1"
+        android:id="@+id/register"/>
+
+    <Button
+        android:text="忘记密码"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="?android:textColorHint"
+        style="?borderlessButtonStyle"
+        android:id="@+id/forget_psw_btn"
+        android:layout_below="@+id/login"
+        android:layout_alignStart="@+id/relativeLayout1"/>
+
+    <!--  <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="@dimen/title_lh"
+         android:layout_alignParentBottom="true"
+         android:background="@color/style_now"
+         android:gravity="center" >
+
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:gravity="center"
+             android:text="客服电话：400-653-0677"
+             android:textColor="@color/white" />
+     </LinearLayout>
+  -->
+</RelativeLayout>

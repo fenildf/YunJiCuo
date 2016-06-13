@@ -304,4 +304,10 @@
     <string name="forget_psw_checkviladata_trancode">2036</string>
 
     <string name="forget_psw_modifypsw_trancode">2037</string>
+
+
+    <!--重置密码提交-->
+    <string name="reset_psw_trancode">2038</string>
+
+
 </resources>

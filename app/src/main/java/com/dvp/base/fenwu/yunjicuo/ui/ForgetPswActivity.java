@@ -190,6 +190,7 @@ public class ForgetPswActivity extends CommonActivity implements Countdown.TextV
                 Bundle bundle =  new Bundle();
                 bundle.putString("username",shoujihaoEdittext.getText().toString());
                 startActivity(ResetPswActivity.class,bundle);
+                finish();
                 //mModel.postSignUp(getResources().getString(R.string.zhuce_submit),username.getText().toString(),password.getText().toString(),querenPassword.getText().toString(),mSchoolId,shoujihaoEdittext.getText().toString(),tianxieyanzhengmaEdittext.getText().toString());
             }
         }

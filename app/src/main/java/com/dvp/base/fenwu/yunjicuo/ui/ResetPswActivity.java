@@ -10,6 +10,8 @@ import android.widget.TextView;
 import com.dvp.base.fenwu.yunjicuo.R;
 import com.dvp.base.fenwu.yunjicuo.common.CommonActivity;
 import com.dvp.base.fenwu.yunjicuo.common.util.DialogUtil;
+import com.dvp.base.fenwu.yunjicuo.domain.user.User;
+import com.dvp.base.fenwu.yunjicuo.model.ForgetPswModel;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -42,6 +44,9 @@ public class ResetPswActivity extends CommonActivity
     LinearLayout form;
 
     private String usernameStr = "";
+    private ForgetPswModel mModel;
+
+    private String id = "";
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -53,6 +58,15 @@ public class ResetPswActivity extends CommonActivity
 
     private void init()
     {
+
+        id = getAPP().getAppConfig().getConfig(User.class).getStaffId();
+
+        if(mModel == null)
+        {
+            mModel = new ForgetPswModel(this);
+        }
+        mModel.addResponseListener(this);
+
         usernameStr = getIntent().getStringExtra("username");
         setSupportActionBar(toolbar);
         setTitle("");
@@ -70,7 +84,11 @@ public class ResetPswActivity extends CommonActivity
     @Override
     public void OnHttpResponse(String var1, String var2)
     {
-
+        if(var1.equals(getResources().getString(R.string.reset_psw_trancode)))
+        {
+            DialogUtil.showToast(getApplicationContext(),"修改成功");
+            finish();
+        }
     }
 
     private  boolean isVadata()
@@ -94,14 +112,13 @@ public class ResetPswActivity extends CommonActivity
     public void onClick()
     {
         usernameLayout.setError(null);
-
         passwordLayout.setError(null);
-
         querenPasswordLayout.setError(null);
+
 
         if(isVadata())
         {
-
+            mModel.resetPsw(getResources().getString(R.string.reset_psw_trancode),usernameStr,id,password.getText().toString());
         }
     }
 }

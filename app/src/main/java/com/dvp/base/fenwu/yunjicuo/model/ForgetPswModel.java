@@ -177,4 +177,45 @@ public class ForgetPswModel extends AppModel
                     }
                 });
     }
+
+    /**
+     *  密码修改提交
+     * @param tranCode
+     * @param name
+     * @param id
+     * @param password
+     */
+    public void resetPsw(final String tranCode,final String name,final String id,final String password)
+    {
+        String url = mContext.getResources().getString(R.string.http_request_url)+"/system/user/reset_password";
+        OkHttpUtils.post()
+                .url(url)
+                .addParams("name",name)
+                .addParams("id",id)
+                .addParams("password",password)
+                .build()
+                .execute(new StringCallback()
+                {
+                    @Override
+                    public void onError(Call call, Exception e)
+                    {
+                        if(pd.isShowing())
+                        {
+                            pd.dismiss();
+                        }
+                    }
+
+                    @Override
+                    public void onResponse(String response)
+                    {
+                        if(pd.isShowing())
+                        {
+                            pd.dismiss();
+                        }
+                        System.out.println("修改成功"+response.toString());
+                        OnHttpResponse(tranCode,null);
+                    }
+                });
+    }
+
 }

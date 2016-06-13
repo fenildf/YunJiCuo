@@ -138,11 +138,18 @@ public class StuWDZYListActivity extends CommonActivity implements XRecyclerView
         if (var1.equals(getResources().getString(R.string.stu_wdzy_list_trancode)))
         {
 
-            for (int i = 0; i < mModel.getRtnWDZYList().getData().size(); i++)
+            if(mModel.getRtnWDZYList().getData()!=null && mModel.getRtnWDZYList().getData().size()>0)
             {
-                homeWorkIdList.add(mModel.getRtnWDZYList().getData().get(i).getHomework().getId());
+                for (int i = 0; i < mModel.getRtnWDZYList().getData().size(); i++)
+                {
+                    homeWorkIdList.add(mModel.getRtnWDZYList().getData().get(i).getHomework().getId());
+                }
+                mModel.getPanJStatus(getResources().getString(R.string.stu_wdzy_list_panjuan_status_trancode), id, homeWorkIdList);
             }
-            mModel.getPanJStatus(getResources().getString(R.string.stu_wdzy_list_panjuan_status_trancode), id, homeWorkIdList);
+            else
+            {
+                DialogUtil.showToast(getApplicationContext(),"暂无作业");
+            }
 
         }
 

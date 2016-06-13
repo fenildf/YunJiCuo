@@ -199,15 +199,14 @@
                     </me.zhanghai.android.materialedittext.MaterialTextInputLayout>
                     <Button
                         android:id="@+id/zhuce_btn"
+                        style="@style/btn_style"
                         android:layout_width="match_parent"
-                        android:layout_height="50dip"
-                        android:layout_gravity="right"
-                        android:textSize="@dimen/ts_middle"
-                        android:layout_marginLeft="@dimen/card_content_horizontal_margin_with_4dp_padding"
-                        android:layout_marginRight="@dimen/card_content_horizontal_margin_with_4dp_padding"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginRight="32dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginBottom="14dp"
                         android:text="注册"
-                        android:layout_marginBottom="@dimen/info_pad"
-                        style="@style/Widget.AppCompat.Button.Colored" />
+                        android:textSize="@dimen/ts_middle" />
 
                    <!-- <LinearLayout
                         android:orientation="horizontal"

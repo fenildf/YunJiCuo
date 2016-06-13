@@ -78,7 +78,7 @@ public class ForgetPswActivity extends CommonActivity implements Countdown.TextV
     {
         setSupportActionBar(toolbar);
         setTitle("");
-        middleTitleTv.setText("用户注册");
+        middleTitleTv.setText("忘记密码");
         toolbar.setNavigationOnClickListener(new View.OnClickListener()
         {
             @Override

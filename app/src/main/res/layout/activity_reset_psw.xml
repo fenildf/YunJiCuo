@@ -120,7 +120,7 @@
                         android:layout_marginLeft="32dp"
                         android:layout_marginRight="32dp"
                         android:layout_marginTop="14dp"
-                        android:layout_marginBottom="14dp"
+                        android:layout_marginBottom="14dip"
                         android:text="保存"
                         android:textSize="@dimen/ts_middle"  />
 

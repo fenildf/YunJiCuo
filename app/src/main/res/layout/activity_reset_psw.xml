@@ -59,7 +59,7 @@
                             android:id="@+id/username"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textSize="@dimen/ts_title"
+                            android:textSize="@dimen/ts_xmiddle"
                             android:hint="用户名"
                             android:editable="false"
                             android:textColor="@color/black"
@@ -79,7 +79,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="新密码"
-                            android:textSize="@dimen/ts_title"
+                            android:textSize="@dimen/ts_xmiddle"
                             android:imeActionId="@+id/ime_login"
                             android:imeActionLabel="@string/auth_log_in"
                             android:imeOptions="actionDone"
@@ -103,7 +103,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="确认密码"
-                            android:textSize="@dimen/ts_title"
+                            android:textSize="@dimen/ts_xmiddle"
                             android:imeActionId="@+id/ime_login"
                             android:imeActionLabel="@string/auth_log_in"
                             android:imeOptions="actionDone"
@@ -122,6 +122,7 @@
                         android:layout_marginRight="@dimen/card_content_horizontal_margin_with_4dp_padding"
                         android:text="保存"
                         android:layout_marginBottom="@dimen/info_pad"
+                        android:textSize="@dimen/ts_middle"
                         style="@style/Widget.AppCompat.Button.Colored" />
 
 

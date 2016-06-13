@@ -104,6 +104,11 @@ public class StuCuoTPaiZhaoActivity extends CommonActivity
 
     }
 
+    /**
+     * 初始化数据
+     * @param mDataList
+     * @param mark
+     */
     private void initData(final ArrayList<String> mDataList,final int mark)
     {
         mAdapter = new ImagePublishAdapter(StuCuoTPaiZhaoActivity.this, mDataList,mark);

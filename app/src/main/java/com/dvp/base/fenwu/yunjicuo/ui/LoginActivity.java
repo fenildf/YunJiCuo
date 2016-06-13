@@ -73,14 +73,14 @@ public class LoginActivity extends CommonActivity
         }
         mModel.addResponseListener(this);
         //自动生成不同分辨率下的dimens文件
-        new Thread(new Runnable()
+      /*  new Thread(new Runnable()
         {
             @Override
             public void run()
             {
                 DimenTool.gen();
             }
-        }).start();
+        }).start();*/
 
     }
 

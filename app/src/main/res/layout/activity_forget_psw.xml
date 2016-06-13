@@ -65,6 +65,7 @@
                             android:textColor="@color/black"
                             android:phoneNumber="true"
                             android:numeric="integer"
+                            android:textSize="@dimen/ts_xmiddle"
                             android:layout_weight="1"
                             android:layout_width="0dip"
                             android:layout_height="wrap_content"/>
@@ -93,7 +94,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="请填写图形验证码"
-                            android:textSize="@dimen/ts_title"
+                            android:textSize="@dimen/ts_xmiddle"
                             android:textColor="@color/black"
                             android:maxLines="1" />
 
@@ -128,7 +129,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="请填写手机收到的6位短信验证码"
-                            android:textSize="@dimen/ts_title"
+                            android:textSize="@dimen/ts_xmiddle"
                             android:textColor="@color/black"
                             android:numeric="integer"
                             android:maxLines="1" />
@@ -144,6 +145,7 @@
                         android:layout_marginLeft="@dimen/card_content_horizontal_margin_with_4dp_padding"
                         android:layout_marginRight="@dimen/card_content_horizontal_margin_with_4dp_padding"
                         android:text="确定"
+                        android:textSize="@dimen/ts_middle"
                         android:layout_marginBottom="@dimen/info_pad"
                         style="@style/Widget.AppCompat.Button.Colored" />
 

@@ -11,6 +11,7 @@ import com.afollestad.materialdialogs.internal.MDButton;
 import com.dvp.base.fenwu.yunjicuo.R;
 import com.dvp.base.fenwu.yunjicuo.common.CommonActivity;
 import com.dvp.base.fenwu.yunjicuo.common.dialog.SelectDialog;
+import com.dvp.base.fenwu.yunjicuo.common.util.DialogUtil;
 import com.dvp.base.fenwu.yunjicuo.domain.guanlibanji.RtnKeMList;
 import com.dvp.base.fenwu.yunjicuo.domain.guanlibanji.RtnSchoolList;
 import com.dvp.base.fenwu.yunjicuo.model.GuanLBJModel;
@@ -163,7 +164,26 @@ public class AddBanjiActivity extends CommonActivity implements SelectDialog.Ite
             case R.id.banji_layout:
                 break;
             case R.id.submit_btn:
-                mModel.postAddClass(getResources().getString(R.string.addclass_submit_trancode),mSchoolId,mKemuId,banjiEdittext.getText().toString());
+                if(mSchoolId.equals(""))
+                {
+                    DialogUtil.showToast(getApplicationContext(),"请选择学校");
+                    return;
+                }
+                else if(mKemuId.equals(""))
+                {
+                    DialogUtil.showToast(getApplicationContext(),"请选择科目");
+                    return;
+                }
+                else if(banjiEdittext.getText().toString().equals(""))
+                {
+                    DialogUtil.showToast(getApplicationContext(),"请填写班级");
+                    return;
+                }
+                else
+                {
+                    mModel.postAddClass(getResources().getString(R.string.addclass_submit_trancode),mSchoolId,mKemuId,banjiEdittext.getText().toString());
+                }
+
                 break;
         }
     }

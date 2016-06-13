@@ -75,7 +75,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="真实姓名"
-                            android:textSize="@dimen/ts_title"
+                            android:textSize="@dimen/ts_xmiddle"
                             android:inputType="textEmailAddress"
                             android:textColor="@color/black"
                             android:maxLines="1" />
@@ -94,7 +94,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="密码"
-                            android:textSize="@dimen/ts_title"
+                            android:textSize="@dimen/ts_xmiddle"
                             android:imeActionId="@+id/ime_login"
                             android:imeActionLabel="@string/auth_log_in"
                             android:imeOptions="actionDone"
@@ -118,7 +118,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="确认密码"
-                            android:textSize="@dimen/ts_title"
+                            android:textSize="@dimen/ts_xmiddle"
                             android:imeActionId="@+id/ime_login"
                             android:imeActionLabel="@string/auth_log_in"
                             android:imeOptions="actionDone"
@@ -143,7 +143,7 @@
                             android:layout_height="wrap_content"
                             android:hint="请选择学校"
                             android:editable="false"
-                            android:textSize="@dimen/ts_title"
+                            android:textSize="@dimen/ts_xmiddle"
                             android:textColor="@color/black"
                             android:clickable="true"
                             android:maxLines="1" />
@@ -165,12 +165,14 @@
                             android:numeric="integer"
                             android:layout_weight="1"
                             android:layout_width="0dip"
+                            android:textSize="@dimen/ts_xmiddle"
                             android:layout_height="wrap_content"/>
 
                         <TextView
                             android:id="@+id/fasongyanzhengma_md"
                             android:textColor="@color/white"
                             android:text="发送验证码"
+                            android:textSize="@dimen/ts_xmiddle"
                             style="@style/Widget.AppCompat.Button.Colored"
                             android:layout_weight="1"
                             android:layout_width="0dip"
@@ -190,7 +192,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="请填写手机收到的6位短信验证码"
-                            android:textSize="@dimen/ts_title"
+                            android:textSize="@dimen/ts_xmiddle"
                             android:textColor="@color/black"
                             android:numeric="integer"
                             android:maxLines="1" />
@@ -200,6 +202,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dip"
                         android:layout_gravity="right"
+                        android:textSize="@dimen/ts_middle"
                         android:layout_marginLeft="@dimen/card_content_horizontal_margin_with_4dp_padding"
                         android:layout_marginRight="@dimen/card_content_horizontal_margin_with_4dp_padding"
                         android:text="注册"

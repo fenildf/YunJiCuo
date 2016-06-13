@@ -15,6 +15,7 @@ import com.dvp.base.fenwu.yunjicuo.R;
 import com.dvp.base.fenwu.yunjicuo.common.CommonActivity;
 import com.dvp.base.fenwu.yunjicuo.common.util.DialogUtil;
 import com.dvp.base.fenwu.yunjicuo.model.ForgetPswModel;
+import com.dvp.base.fenwu.yunjicuo.util.Code;
 import com.dvp.base.util.Countdown;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -94,8 +95,8 @@ public class ForgetPswActivity extends CommonActivity implements Countdown.TextV
         mModel.addResponseListener(this);
         //mModel.createTuXingYanZhengMa(getResources().getString(R.string.forget_psw_getpicviladata_trancode));
         clearFrescoCache();
-        picyanzhengmaWebview.setImageURI(Uri.parse(getResources().getString(R.string.http_request_url) + "/system/createvalicode"));
-
+        //picyanzhengmaWebview.setImageURI(Uri.parse(getResources().getString(R.string.http_request_url) + "/system/createvalicode"));
+        picyanzhengmaWebview.setImageBitmap(Code.getInstance().createBitmap());
         pictuxingyanzhengmaEdittext.addTextChangedListener(textWatcher);
     }
 
@@ -231,7 +232,7 @@ public class ForgetPswActivity extends CommonActivity implements Countdown.TextV
                 break;
             case R.id.picyanzhengma_webview://
                 clearFrescoCache();
-                picyanzhengmaWebview.setImageURI(Uri.parse(getResources().getString(R.string.http_request_url) + "/system/createvalicode"));
+                //picyanzhengmaWebview.setImageURI(Uri.parse(getResources().getString(R.string.http_request_url) + "/system/createvalicode"));
                 break;
             case R.id.queding_btn:
                 shoujihaoEdittext.setError(null);

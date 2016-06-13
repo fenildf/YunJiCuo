@@ -229,7 +229,7 @@ public class StuCuoTPaiZhaoActivity extends CommonActivity
         OkHttpUtils.post()
                 .addFile("mFile", "messenger_01.png", file)
                 .addParams("saveType", "1")
-                .addParams("folder", "uploads")
+                .addParams("folder", "/uploads")
                 .addParams("plicyType", "uuid")
                 .addParams("folderPolicy", "0")
                 .url(url)
@@ -259,7 +259,7 @@ public class StuCuoTPaiZhaoActivity extends CommonActivity
                         }
                         System.out.println("图片上传成功=====");
                         isUploadSuccess = true;
-                        String[] arrayName = response.split(",");
+                        String[] arrayName = response.split("@");
                         System.out.println("图片上传成功返回的id=====" + arrayName[0]);
                         if (isUploadSuccess)
                         {

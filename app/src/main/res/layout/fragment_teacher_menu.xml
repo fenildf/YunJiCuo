@@ -86,6 +86,7 @@
                         android:layout_marginBottom="@dimen/activity_vertical_margin"
                         android:layout_marginEnd="29dp"
                         android:background="#00FFFFFF"
+                        android:visibility="gone"
                         android:src="@mipmap/jinru2"/>
                 </RelativeLayout>
 
@@ -242,6 +243,7 @@
                         android:layout_marginBottom="@dimen/activity_vertical_margin"
                         android:layout_marginEnd="29dp"
                         android:background="#00FFFFFF"
+                        android:visibility="gone"
                         android:src="@mipmap/jinru2"/>
                 </RelativeLayout>
 
@@ -321,6 +323,7 @@
                         android:layout_marginBottom="@dimen/activity_vertical_margin"
                         android:layout_marginEnd="29dp"
                         android:background="#00FFFFFF"
+                        android:visibility="gone"
                         android:src="@mipmap/jinru2"/>
                 </RelativeLayout>
 

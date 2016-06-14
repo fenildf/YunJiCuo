@@ -159,7 +159,7 @@ public class StuWDZYListActivity extends CommonActivity implements XRecyclerView
             //获取到状态后匹配
             if (var2.equals("0"))  //未判卷
             {
-                mDatas.addAll(mModel.getRtnWDZYList().getData());
+
                /* for (int i = 0; i < mDatas.size(); i++)
                 {
                     for (int j = 0; j < mModel.getRtnPanJStatusList().getData().size(); j++)
@@ -173,6 +173,7 @@ public class StuWDZYListActivity extends CommonActivity implements XRecyclerView
                 System.out.println("=====");
                 if (page - 1 == 1)
                 {
+                    mDatas = mModel.getRtnWDZYList().getData();
                     adapter = new RecyclerAdapter<RtnWDZYList.DataEntity>(getApplicationContext(), mDatas, R.layout.item_stu_wdzy_layout)
                     {
                         @Override
@@ -237,6 +238,8 @@ public class StuWDZYListActivity extends CommonActivity implements XRecyclerView
                     xListview.refreshComplete();
                 } else
                 {
+
+                    mDatas.addAll(mModel.getRtnWDZYList().getData());
                     xListview.loadMoreComplete();
                     
                     
@@ -256,21 +259,22 @@ public class StuWDZYListActivity extends CommonActivity implements XRecyclerView
             }
             if (var2.equals("1"))  //已判卷
             {
-                mDatas.addAll(mModel.getRtnWDZYList().getData());
-                for (int i = 0; i < mDatas.size(); i++)
-                {
-                    for (int j = 0; j < mModel.getRtnPanJStatusList().getData().size(); j++)
-                    {
-                        if (mDatas.get(i).getHomework().getId().equals(mModel.getRtnPanJStatusList().getData().get(j).getHomework().getId()))
-                        {
-                            mDatas.get(i).setYiPanJuan("1");
-                        }
-                    }
-                }
+
                 
                 System.out.println("=====");
                 if (page - 1 == 1)
                 {
+                    mDatas = mModel.getRtnWDZYList().getData();
+                    for (int i = 0; i < mDatas.size(); i++)
+                    {
+                        for (int j = 0; j < mModel.getRtnPanJStatusList().getData().size(); j++)
+                        {
+                            if (mDatas.get(i).getHomework().getId().equals(mModel.getRtnPanJStatusList().getData().get(j).getHomework().getId()))
+                            {
+                                mDatas.get(i).setYiPanJuan("1");
+                            }
+                        }
+                    }
                     adapter = new RecyclerAdapter<RtnWDZYList.DataEntity>(getApplicationContext(), mDatas, R.layout.item_stu_wdzy_layout)
                     {
                         @Override
@@ -336,6 +340,19 @@ public class StuWDZYListActivity extends CommonActivity implements XRecyclerView
                 } else
                 {
 
+                    mDatas.addAll(mModel.getRtnWDZYList().getData());
+                    for (int i = 0; i < mDatas.size(); i++)
+                    {
+                        for (int j = 0; j < mModel.getRtnPanJStatusList().getData().size(); j++)
+                        {
+                            if (mDatas.get(i).getHomework().getId().equals(mModel.getRtnPanJStatusList().getData().get(j).getHomework().getId()))
+                            {
+                                mDatas.get(i).setYiPanJuan("1");
+                            }
+                        }
+                    }
+
+
                     xListview.loadMoreComplete();
                     adapter.notifyDataSetChanged();
                 }
@@ -360,7 +377,7 @@ public class StuWDZYListActivity extends CommonActivity implements XRecyclerView
     public void onRefresh()
     {
         homeWorkIdList.clear();
-        mDatas.clear();
+        //mDatas.clear();
         page = 1;
         mModel.getWDZYList(getResources().getString(R.string.stu_wdzy_list_trancode), id, pageSize, page++);
     }

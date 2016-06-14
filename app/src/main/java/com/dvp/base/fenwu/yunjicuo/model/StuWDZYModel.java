@@ -100,6 +100,18 @@ public class StuWDZYModel extends AppModel
                         }
                         System.out.println("获取我的作业列表结果====="+ response.toString());
                         RtnWDZYList rtn = gson.fromJson(response,RtnWDZYList.class);
+
+                        if(page == 1)
+                        {
+                            if(rtnWDZYList!=null)
+                            {
+                                if( rtnWDZYList.getData()!=null &&  rtnWDZYList.getData().size()>0)
+                                {
+                                    rtnWDZYList.getData().clear();
+                                }
+                            }
+                        }
+
                         rtnWDZYList = rtn;
                         mTotalPages = (rtn.getTotalCount()%rtn.getPageSize()==0)?(rtn.getTotalCount()/rtn.getPageSize()):(rtn.getTotalCount()/rtn.getPageSize()+1);
 

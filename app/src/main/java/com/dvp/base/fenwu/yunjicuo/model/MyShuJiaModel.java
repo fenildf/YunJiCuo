@@ -97,6 +97,20 @@ public class MyShuJiaModel extends AppModel
                         }
                         System.out.println("我的书架返回结果===="+response.toString());
                         RtnWDSjList rtn = gson.fromJson(response,RtnWDSjList.class);
+
+                        if(page == 1)
+                        {
+                            if(rtnWDSjList!=null)
+                            {
+                                if( rtnWDSjList.getData()!=null &&  rtnWDSjList.getData().size()>0)
+                                {
+                                    rtnWDSjList.getData().clear();
+                                }
+
+                            }
+
+                        }
+
                         rtnWDSjList = rtn;
                         mShujiaTotalPages = (rtn.getTotalCount()%rtn.getPageSize()==0)?(rtn.getTotalCount()/rtn.getPageSize()):(rtn.getTotalCount()/rtn.getPageSize()+1);
                         OnHttpResponse(tranCode,null);

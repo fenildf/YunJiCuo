@@ -121,9 +121,10 @@ public class WoDShuJActivity extends CommonActivity implements XRecyclerView.Loa
     {
         if(var1.equals(getResources().getString(R.string.wodeshujia_trancode)))
         {
-            mDatas.addAll(mModel.getRtnWDSjList().getData());
+
             if (page - 1==1)
             {
+                mDatas =mModel.getRtnWDSjList().getData();
                 adapter = new RecyclerAdapter<RtnWDSjList.DataEntity>(getApplicationContext(), mDatas, R.layout.item_wodeshujia_list_layout)
                 {
                     @Override
@@ -154,6 +155,7 @@ public class WoDShuJActivity extends CommonActivity implements XRecyclerView.Loa
             }
             else
             {
+                mDatas.addAll(mModel.getRtnWDSjList().getData());
                 xListview.loadMoreComplete();
                 adapter.notifyDataSetChanged();
             }
@@ -173,7 +175,6 @@ public class WoDShuJActivity extends CommonActivity implements XRecyclerView.Loa
     @Override
     public void onRefresh()
     {
-        mDatas.clear();
         page = 1;
         mModel.getWoDeSJ(getResources().getString(R.string.wodeshujia_trancode),page++,pageSize);
     }

@@ -6,6 +6,7 @@ import android.widget.LinearLayout;
 
 import com.dvp.base.fenwu.yunjicuo.R;
 import com.dvp.base.fenwu.yunjicuo.common.CommonActivity;
+import com.dvp.base.fenwu.yunjicuo.common.update.UpdateAgent;
 import com.dvp.base.fenwu.yunjicuo.common.util.DialogUtil;
 import com.dvp.base.fenwu.yunjicuo.common.util.DimenTool;
 import com.dvp.base.fenwu.yunjicuo.domain.user.User;
@@ -72,6 +73,11 @@ public class LoginActivity extends CommonActivity
             mModel = new LoginModel(this);
         }
         mModel.addResponseListener(this);
+
+
+        //检测是否有新版本
+        //UpdateAgent.autoUpdate(LoginActivity.this);
+
         //自动生成不同分辨率下的dimens文件
       /*  new Thread(new Runnable()
         {

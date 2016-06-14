@@ -149,6 +149,10 @@
     <dimen name="title_lh">48dp</dimen>
 
 
+    <!-- 更新对话框 -->
+    <dimen name="dialog_activity_width">280dp</dimen>
+    <dimen name="dialog_dialog_radius">1dp</dimen>
+
     <!--loginActivity界面-->
     <dimen name="login_title_mt">60dp</dimen>
     <dimen name="login_input_mh">40dp</dimen>

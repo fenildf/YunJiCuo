@@ -39,9 +39,12 @@ dependencies {
 
     /* material各种控件*/
     // compile 'com.github.navasmdc:MaterialDesign:1.5@aar'
-    
 
-    
+
+
+    compile 'com.lzy.net:okhttputils:1.5.1'
+    //OKhttp工具类
+    compile 'com.lzy.net:okhttpserver:0.1.6'
 
 
     //图片选择器

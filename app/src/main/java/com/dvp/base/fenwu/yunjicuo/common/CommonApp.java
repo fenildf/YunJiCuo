@@ -5,6 +5,7 @@ import android.content.Context;
 import com.dvp.base.app.APP;
 import com.dvp.base.fenwu.yunjicuo.R;
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.lzy.okhttputils.OkHttpUtils;
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -62,10 +63,24 @@ public class CommonApp extends APP
         initImageLoader(getApplicationContext());
         Fresco.initialize(getApplicationContext());
 
+        //更新apk的okhttp初始化
+        initOkHttp();
 
     }
 
-
+    /**
+     * 初始化OkHttp
+     */
+    private void initOkHttp() {
+        //必须调用初始化
+        OkHttpUtils.init(this);
+        //以下都不是必须的，根据需要自行选择
+        OkHttpUtils.getInstance()//
+                .debug("OkHttpUtils")                                              //是否打开调试
+                .setConnectTimeout(OkHttpUtils.DEFAULT_MILLISECONDS)               //全局的连接超时时间
+                .setReadTimeOut(OkHttpUtils.DEFAULT_MILLISECONDS)                  //全局的读取超时时间
+                .setWriteTimeOut(OkHttpUtils.DEFAULT_MILLISECONDS);               //全局的写入超时时间
+    }
     /*
 	 * 配置过程： 1.导入 Universal-Image-Loader的jar包到libs下面 2.在manifest中加入权限
 	 * 3.在Application中加入全局图片库配置 4. ImageLoader.getInstance().init(config);//

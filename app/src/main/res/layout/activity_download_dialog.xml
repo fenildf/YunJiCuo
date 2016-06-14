@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackGround">
+
+    <LinearLayout
+        android:id="@+id/download_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/dialog_dialog_bg"
+        android:orientation="vertical">
+
+        <!-- Title -->
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/common_margin_10">
+
+            <ImageView
+                android:id="@+id/download_wifi_indicator_iv"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/common_margin_8"
+                android:contentDescription="@string/gprs_condition"
+                android:src="@mipmap/update_wifi_disable" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/common_margin_8"
+                android:layout_toRightOf="@+id/download_wifi_indicator_iv"
+                android:text="@string/download_title"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black"
+
+                />
+        </RelativeLayout>
+
+        <!-- split -->
+
+        <!--        <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/app_line"
+                    android:background="@drawable/divider_bg" />-->
+        <!-- 下载进度 -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_small_margin"
+            android:padding="@dimen/common_margin_10">
+
+            <TextView
+                android:id="@+id/download_completion_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_data_tv_str"
+                android:textSize="@dimen/ts_button" />
+
+            <TextView
+                android:id="@+id/download_speed_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_small_margin"
+                android:layout_toRightOf="@id/download_completion_tv"
+                android:textSize="@dimen/ts_button" />
+
+            <com.dvp.projectname.common.ui.view.NumberProgressBar
+                android:id="@+id/download_progress_pb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/download_completion_tv"
+                android:layout_marginTop="@dimen/activity_small_margin"
+                app:progress_reached_bar_height="1.5dp"
+                app:progress_reached_color="#3498DB"
+                app:progress_text_color="#3498DB"
+                app:progress_text_size="10sp"
+                app:progress_unreached_bar_height="0.75dp"
+                app:progress_unreached_color="#CCCCCC" />
+        </RelativeLayout>
+
+        <!-- Download Cancel Button -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right">
+
+            <TextView
+                android:id="@+id/download_cancel_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/common_margin_5"
+                android:background="@drawable/list_item_ripple_orange"
+                android:focusable="true"
+                android:padding="@dimen/common_margin_10"
+                android:text="@string/download_not_now"
+                android:textColor="@color/colorPrimary" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

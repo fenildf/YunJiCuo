@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackGround">
+
+    <LinearLayout
+        android:id="@+id/update_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/dialog_dialog_bg"
+        android:orientation="vertical">
+
+        <!-- Title --><!--RelativeLayout原来高度：   ?attr/actionBarSize-->
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/common_margin_10">
+
+            <ImageView
+                android:id="@+id/update_wifi_indicator_iv"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/common_margin_8"
+                android:contentDescription="@string/gprs_condition"
+                android:src="@mipmap/update_wifi_disable"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/common_margin_8"
+                android:layout_toRightOf="@+id/update_wifi_indicator_iv"
+                android:text="@string/update_title"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black"
+
+                />
+
+        </RelativeLayout>
+
+        <!-- split -->
+
+        <!--  <View
+              android:layout_width="fill_parent"
+              android:layout_height="@dimen/app_line"
+              android:background="@drawable/divider_bg" />-->
+        <!-- Content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/common_margin_10"
+            android:layout_marginRight="@dimen/common_margin_10"
+            android:orientation="vertical"
+            android:padding="@dimen/common_margin_10">
+
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/update_content_tv"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="true"
+                        android:textColor="@color/colorPrimary" />
+                </LinearLayout>
+            </ScrollView>
+            <!-- Ignore CheckBox -->
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/update_check_cb"
+                android:layout_width="fill_parent"
+                android:layout_height="32dp"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:buttonTint="@color/colorPrimary"
+                android:padding="@dimen/common_margin_8"
+                android:text="@string/update_ignore"
+                android:textColor="@color/colorPrimary" />
+        </LinearLayout>
+        <!-- OK&Cancel Button -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="@null" />
+
+            <TextView
+                android:id="@+id/update_ok_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/list_item_ripple_orange"
+                android:focusable="true"
+                android:gravity="center"
+                android:padding="@dimen/common_margin_10"
+                android:text="@string/update_now"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/update_cancel_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/list_item_ripple_orange"
+                android:focusable="true"
+                android:gravity="center"
+                android:padding="@dimen/common_margin_10"
+                android:text="@string/update_not_now"
+                android:textColor="@color/colorPrimary" />
+
+            <Button
+                android:id="@+id/update_ignore_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/list_item_ripple_orange"
+                android:focusable="true"
+                android:text="@string/update_ignore"
+                android:textColor="@color/colorPrimary"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
+

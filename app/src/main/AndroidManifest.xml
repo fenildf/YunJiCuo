@@ -97,6 +97,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity android:name=".common.ui.UpdateDialogActivity"
+            ></activity>
+        <activity android:name=".common.ui.DownloadDialogActivity"></activity>
     </application>
 
 </manifest>

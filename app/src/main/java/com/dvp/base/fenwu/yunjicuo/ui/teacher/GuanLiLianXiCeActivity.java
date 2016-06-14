@@ -124,9 +124,10 @@ public class GuanLiLianXiCeActivity extends CommonActivity implements XRecyclerV
     {
         if(var1.equals(getResources().getString(R.string.getlianxice_Trancode)))
         {
-            mDatas.addAll(mModel.getRtnGuanLLianXC().getData());
+
             if (page - 1==1)
             {
+                mDatas= mModel.getRtnGuanLLianXC().getData();
                 adapter = new RecyclerAdapter<RtnGuanLLianXC.DataEntity>(getApplicationContext(), mDatas, R.layout.item_guanli_lianxice_layout)
                 {
                     @Override
@@ -158,6 +159,7 @@ public class GuanLiLianXiCeActivity extends CommonActivity implements XRecyclerV
             }
             else
             {
+                mDatas.addAll(mModel.getRtnGuanLLianXC().getData());
                 xListview.loadMoreComplete();
                 adapter.notifyDataSetChanged();
             }
@@ -177,7 +179,6 @@ public class GuanLiLianXiCeActivity extends CommonActivity implements XRecyclerV
     @Override
     public void onRefresh()
     {
-        mDatas.clear();
         page = 1;
         mModel.getGuanLiLianXCList(getResources().getString(R.string.getlianxice_Trancode), 3, page++, id);
     }
@@ -185,7 +186,6 @@ public class GuanLiLianXiCeActivity extends CommonActivity implements XRecyclerV
     @Override
     public void onLoadMore()
     {
-
         mModel.getGuanLiLianXCList(getResources().getString(R.string.getlianxice_Trancode), 3, page++, id);
     }
 

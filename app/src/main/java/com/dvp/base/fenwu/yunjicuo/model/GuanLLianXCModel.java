@@ -72,7 +72,7 @@ public class GuanLLianXCModel extends AppModel
      */
     public void getGuanLiLianXCList(final String tranCode,final int pageSize,final int page,final String banJBHao)
     {
-        //pd.show();
+        pd.show();
 
         String searchCondition = "[{\"searchVal\":\"00000002\",\"searchPro\":\"banJ.id\"}]";
 
@@ -90,21 +90,34 @@ public class GuanLLianXCModel extends AppModel
                     @Override
                     public void onError(Call call, Exception e)
                     {
-                       /* if (pd.isShowing())
+                        if (pd.isShowing())
                         {
                             pd.dismiss();
-                        }*/
+                        }
                     }
 
                     @Override
                     public void onResponse(String response)
                     {
-                       /* if (pd.isShowing())
+                        if (pd.isShowing())
                         {
                             pd.dismiss();
-                        }*/
+                        }
                         System.out.println("练习册列表===="+response.toString());
                         RtnGuanLLianXC rtn = gson.fromJson(response,RtnGuanLLianXC.class);
+
+                        if(page == 1)
+                        {
+                            if(rtnGuanLLianXC!=null)
+                            {
+                                if( rtnGuanLLianXC.getData()!=null &&  rtnGuanLLianXC.getData().size()>0)
+                                {
+                                    rtnGuanLLianXC.getData().clear();
+                                }
+
+                            }
+
+                        }
                         rtnGuanLLianXC= rtn;
                         totalPages = (rtn.getTotalCount()%3==0)?(rtn.getTotalCount()/3):(rtn.getTotalCount()/3+1);
                         OnHttpResponse(tranCode,null);

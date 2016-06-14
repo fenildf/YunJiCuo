@@ -123,9 +123,10 @@ public class BuZhiZuoYeActivity extends CommonActivity implements XRecyclerView.
     {
         if (var1.equals(getResources().getString(R.string.buzhizuoye_getList_trancode)))
         {
-            mDatas.addAll(mModel.getRtnBuZhiZuoYeList().getData());
+
             if (page - 1 == 1)
             {
+                mDatas = mModel.getRtnBuZhiZuoYeList().getData();
                 adapter = new RecyclerAdapter<RtnBuZhiZuoYeList.DataEntity>(getApplicationContext(), mDatas, R.layout.item_buzhizuoye_layout)
                 {
                     @Override
@@ -187,6 +188,7 @@ public class BuZhiZuoYeActivity extends CommonActivity implements XRecyclerView.
                 xListview.refreshComplete();
             } else
             {
+                mDatas.addAll(mModel.getRtnBuZhiZuoYeList().getData());
                 xListview.loadMoreComplete();
                 adapter.notifyDataSetChanged();
             }
@@ -214,7 +216,6 @@ public class BuZhiZuoYeActivity extends CommonActivity implements XRecyclerView.
     @Override
     public void onRefresh()
     {
-        mDatas.clear();
         page = 1;
         mModel.getBuZhiZuoYeList(getResources().getString(R.string.buzhizuoye_getList_trancode), id, pageSize, page++);
     }

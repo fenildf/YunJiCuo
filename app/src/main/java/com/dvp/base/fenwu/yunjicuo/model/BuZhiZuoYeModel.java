@@ -106,6 +106,18 @@ public class BuZhiZuoYeModel extends AppModel
 
                         System.out.println("布置作业返回数据====="+response.toString());
                         RtnBuZhiZuoYeList rtn = gson.fromJson(response,RtnBuZhiZuoYeList.class);
+                        if(page == 1)
+                        {
+                            if(rtnBuZhiZuoYeList!=null)
+                            {
+                                if( rtnBuZhiZuoYeList.getData()!=null &&  rtnBuZhiZuoYeList.getData().size()>0)
+                                {
+                                    rtnBuZhiZuoYeList.getData().clear();
+                                }
+
+                            }
+                        }
+
                         totalPages = (rtn.getTotalCount()%rtn.getPageSize()==0)?(rtn.getTotalCount()/rtn.getPageSize()):(rtn.getTotalCount()/rtn.getPageSize()+1);
 
                         rtnBuZhiZuoYeList = rtn;

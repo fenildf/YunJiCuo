@@ -109,6 +109,19 @@ public class StuWDBJModel extends AppModel
                         }
                         System.out.println(""+response.toString());
                         RtnStuWDBJList rtn = gson.fromJson(response,RtnStuWDBJList.class);
+
+                        if(page == 1)
+                        {
+                            if(rtnStuWDBJList!=null)
+                            {
+                                if( rtnStuWDBJList.getData()!=null &&  rtnStuWDBJList.getData().size()>0)
+                                {
+                                    rtnStuWDBJList.getData().clear();
+                                }
+
+                            }
+                        }
+
                         mWDBJTotalpages = (rtn.getTotalCount()%rtn.getPageSize()==0)?(rtn.getTotalCount()/rtn.getPageSize()):(rtn.getTotalCount()/rtn.getPageSize()+1);
                         rtnStuWDBJList = rtn;
                         OnHttpResponse(tranCode,null);

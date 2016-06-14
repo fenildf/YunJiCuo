@@ -139,9 +139,10 @@ public class StuGuanLiWDBJActivity extends CommonActivity implements XRecyclerVi
         }
         if(var1.equals(getResources().getString(R.string.stu_wdbj_list_trancode)))
         {
-            mDatas.addAll(mModel.getRtnStuWDBJList().getData());
+
             if (page - 1==1)
             {
+                mDatas = mModel.getRtnStuWDBJList().getData();
                 adapter = new RecyclerAdapter<RtnStuWDBJList.DataEntity>(getApplicationContext(), mDatas, R.layout.item_stu_wdbj_layout)
                 {
                     @Override
@@ -201,6 +202,7 @@ public class StuGuanLiWDBJActivity extends CommonActivity implements XRecyclerVi
             }
             else
             {
+                mDatas.addAll(mModel.getRtnStuWDBJList().getData());
                 xListview.loadMoreComplete();
                 adapter.notifyDataSetChanged();
             }
@@ -220,7 +222,6 @@ public class StuGuanLiWDBJActivity extends CommonActivity implements XRecyclerVi
     @Override
     public void onRefresh()
     {
-        mDatas.clear();
         page = 1;
         mModel.getWDBJList(getResources().getString(R.string.stu_wdbj_list_trancode),stuId,pageSize,page++);
     }

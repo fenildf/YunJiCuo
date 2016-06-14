@@ -100,6 +100,18 @@ public class GuanLBJModel extends AppModel
                 }
                 RtnBanList rtn = gson.fromJson(response, RtnBanList.class);
 
+                if(page == 1)
+                {
+                    if(rtnBanList!=null)
+                    {
+                        if( rtnBanList.getData()!=null &&  rtnBanList.getData().size()>0)
+                        {
+                            rtnBanList.getData().clear();
+                        }
+
+                    }
+
+                }
                 rtnBanList = rtn;
                 totalPages = (rtn.getTotalCount()%3==0)?(rtn.getTotalCount()/3):(rtn.getTotalCount()/3+1);
 

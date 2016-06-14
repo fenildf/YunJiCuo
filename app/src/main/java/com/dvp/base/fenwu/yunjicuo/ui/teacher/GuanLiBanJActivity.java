@@ -172,7 +172,6 @@ public class GuanLiBanJActivity extends CommonActivity implements XRecyclerView.
     public void onRefresh()
     {
 
-        mDatas.clear();
         page = 1;
         mModel.getClassList(getResources().getString(R.string.getBanjiListTranCode), 3, page++, "");
     }
@@ -194,10 +193,11 @@ public class GuanLiBanJActivity extends CommonActivity implements XRecyclerView.
         if (var1.equals(getResources().getString(R.string.getBanjiListTranCode)))
         {
 
-            //mDatas = mModel.getRtnBanList().getData();
-            mDatas.addAll(mModel.getRtnBanList().getData());
+
+            //mDatas.addAll(mModel.getRtnBanList().getData());
             if (page - 1==1)
             {
+                mDatas = mModel.getRtnBanList().getData();
                 adapter = new RecyclerAdapter<RtnBanList.DataEntity>(getApplicationContext(), mDatas, R.layout.fragment_list_item0_layout)
                 {
                     @Override
@@ -232,6 +232,7 @@ public class GuanLiBanJActivity extends CommonActivity implements XRecyclerView.
             }
             else
             {
+                mDatas.addAll(mModel.getRtnBanList().getData());
                 xListview.loadMoreComplete();
                 adapter.notifyDataSetChanged();
             }

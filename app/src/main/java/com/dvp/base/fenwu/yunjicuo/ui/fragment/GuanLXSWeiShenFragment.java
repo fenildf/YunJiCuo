@@ -119,9 +119,10 @@ public class GuanLXSWeiShenFragment extends CommonFragment implements XRecyclerV
 
         if (var1.equals(getActivity().getResources().getString(R.string.xueshengguanli_weishen_trancode)))
         {
-            mDatas.addAll(mModel.getTrnStudentList2().getData());
+
             if (page - 1==1)
             {
+                mDatas = mModel.getTrnStudentList2().getData();
                 adapter = new RecyclerAdapter<RtnStudentList.DataEntity>(getActivity(), mDatas, R.layout.item_xueshengguanli_layout)
                 {
                     @Override
@@ -138,6 +139,7 @@ public class GuanLXSWeiShenFragment extends CommonFragment implements XRecyclerV
             }
             else
             {
+                mDatas.addAll(mModel.getTrnStudentList2().getData());
                 xListview.loadMoreComplete();
                 adapter.notifyDataSetChanged();
             }
@@ -164,9 +166,8 @@ public class GuanLXSWeiShenFragment extends CommonFragment implements XRecyclerV
     @Override
     public void onRefresh()
     {
-        mDatas.clear();
-        page = 1;
 
+        page = 1;
         mModel.getWeiShenXueSList(getActivity().getResources().getString(R.string.xueshengguanli_weishen_trancode), CommonApp.getInstance().getBanJBH(),pageSize,page++);
 
     }

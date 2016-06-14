@@ -453,6 +453,19 @@ public class GuanLBJModel extends AppModel
                         }
                         System.out.println("获取学生已审列表===="+response.toString());
                         RtnStudentList rtn = gson.fromJson(response,RtnStudentList.class);
+                        if(page == 1)
+                        {
+                            if(rtnStudentList1!=null)
+                            {
+                                if( rtnStudentList1.getData()!=null &&  rtnStudentList1.getData().size()>0)
+                                {
+                                    rtnStudentList1.getData().clear();
+                                }
+
+                            }
+
+                        }
+
                         mXueShTotalPages1 = (rtn.getTotalCount()%rtn.getPageSize()==0)?(rtn.getTotalCount()/rtn.getPageSize()):(rtn.getTotalCount()/rtn.getPageSize()+1);
                         rtnStudentList1 = rtn;
                         OnHttpResponse(tranCode,null);
@@ -500,6 +513,20 @@ public class GuanLBJModel extends AppModel
                         }
                         System.out.println("获取学生已审列表===="+response.toString());
                         RtnStudentList rtn = gson.fromJson(response,RtnStudentList.class);
+
+                        if(page == 1)
+                        {
+                            if(trnStudentList2!=null)
+                            {
+                                if( trnStudentList2.getData()!=null &&  trnStudentList2.getData().size()>0)
+                                {
+                                    trnStudentList2.getData().clear();
+                                }
+
+                            }
+
+                        }
+
                         mXueShTotalPages2 = (rtn.getTotalCount()%rtn.getPageSize()==0)?(rtn.getTotalCount()/rtn.getPageSize()):(rtn.getTotalCount()/rtn.getPageSize()+1);
                         trnStudentList2 = rtn;
                         OnHttpResponse(tranCode,null);

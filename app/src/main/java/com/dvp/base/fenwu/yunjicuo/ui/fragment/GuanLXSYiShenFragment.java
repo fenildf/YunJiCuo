@@ -131,9 +131,10 @@ public class GuanLXSYiShenFragment extends CommonFragment implements XRecyclerVi
         }
         if (var1.equals(getActivity().getResources().getString(R.string.xueshengguanli_yishen_trancode)))
         {
-            mDatas.addAll(mModel.getRtnStudentList1().getData());
+
             if (page - 1==1)
             {
+                mDatas = mModel.getRtnStudentList1().getData();
                 adapter = new RecyclerAdapter<RtnStudentList.DataEntity>(getActivity(), mDatas, R.layout.item_xueshengguanli_layout)
                 {
                     @Override
@@ -158,6 +159,8 @@ public class GuanLXSYiShenFragment extends CommonFragment implements XRecyclerVi
             }
             else
             {
+                mDatas.addAll(mModel.getRtnStudentList1().getData());
+
                 xListview.loadMoreComplete();
                 adapter.notifyDataSetChanged();
             }
@@ -184,7 +187,6 @@ public class GuanLXSYiShenFragment extends CommonFragment implements XRecyclerVi
     @Override
     public void onRefresh()
     {
-        mDatas.clear();
         page = 1;
 
         mModel.getYiShenXueSList(getActivity().getResources().getString(R.string.xueshengguanli_yishen_trancode), CommonApp.getInstance().getBanJBH(),pageSize,page++);

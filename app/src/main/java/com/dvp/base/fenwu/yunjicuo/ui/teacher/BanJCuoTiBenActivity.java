@@ -123,8 +123,6 @@ public class BanJCuoTiBenActivity extends CommonActivity implements XRecyclerVie
     @Override
     public void onRefresh()
     {
-
-        mDatas.clear();
         page = 1;
         mModel.getBanJCTBList(getResources().getString(R.string.getbanjicuotibenListTrancode), pageSize, page++, "");
     }
@@ -140,10 +138,10 @@ public class BanJCuoTiBenActivity extends CommonActivity implements XRecyclerVie
     {
         if(var1.equals(getResources().getString(R.string.getbanjicuotibenListTrancode)))
         {
-            mDatas.addAll(mModel.getRtnBanList().getData());
 
             if (page - 1==1)
             {
+                mDatas = mModel.getRtnBanList().getData();
                 adapter = new RecyclerAdapter<RtnBanList.DataEntity>(getApplicationContext(), mDatas, R.layout.item_banjicuotiben_layout)
                 {
                     @Override
@@ -189,6 +187,7 @@ public class BanJCuoTiBenActivity extends CommonActivity implements XRecyclerVie
             }
             else
             {
+                mDatas.addAll(mModel.getRtnBanList().getData());
                 xListview.loadMoreComplete();
                 adapter.notifyDataSetChanged();
             }

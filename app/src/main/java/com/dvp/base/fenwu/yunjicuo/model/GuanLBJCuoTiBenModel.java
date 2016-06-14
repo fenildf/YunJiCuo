@@ -99,6 +99,18 @@ public class GuanLBJCuoTiBenModel extends AppModel
                 System.out.println("班级错题本列表====="+response.toString());
                 RtnBanList rtn = gson.fromJson(response, RtnBanList.class);
 
+                if(page == 1)
+                {
+                    if(rtnBanList!=null)
+                    {
+                        if( rtnBanList.getData()!=null &&  rtnBanList.getData().size()>0)
+                        {
+                            rtnBanList.getData().clear();
+                        }
+
+                    }
+
+                }
                 rtnBanList = rtn;
                 totalPages = (rtn.getTotalCount()%rtn.getPageSize()==0)?(rtn.getTotalCount()/rtn.getPageSize()):(rtn.getTotalCount()/rtn.getPageSize()+1);
 

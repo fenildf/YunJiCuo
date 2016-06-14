@@ -679,7 +679,6 @@ public class GuanLBJModel extends AppModel
                     }
                 });
     }
-
 }
 
 

@@ -118,9 +118,10 @@ public class FenCeCuoTiListActivity extends CommonActivity implements XRecyclerV
     {
         if (var1.equals(getResources().getString(R.string.fence_cuoti_list_trancode)))
         {
-            mDatas.addAll(mModel.getRtnFenCeCuoTList().getData());
+
             if (page - 1==1)
             {
+                mDatas = mModel.getRtnFenCeCuoTList().getData();
                 adapter = new RecyclerAdapter<RtnFenCeCuoTList.DataEntity>(getApplicationContext(), mDatas, R.layout.item_fence_cuoti_list_layout)
                 {
                     @Override
@@ -158,6 +159,7 @@ public class FenCeCuoTiListActivity extends CommonActivity implements XRecyclerV
             }
             else
             {
+                mDatas.addAll(mModel.getRtnFenCeCuoTList().getData());
                 xListview.loadMoreComplete();
                 adapter.notifyDataSetChanged();
             }
@@ -177,7 +179,6 @@ public class FenCeCuoTiListActivity extends CommonActivity implements XRecyclerV
     @Override
     public void onRefresh()
     {
-        mDatas.clear();
         page = 1;
         mModel.getFenCeCuoTiList(getResources().getString(R.string.fence_cuoti_list_trancode),banJBH,paperId,page++,pageSize);
     }

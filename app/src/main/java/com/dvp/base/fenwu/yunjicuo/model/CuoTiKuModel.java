@@ -157,6 +157,20 @@ public class CuoTiKuModel extends AppModel
                         }
                         System.out.println("获取分册错题列表===="+response.toString());
                         RtnFenCeCuoTList rtn  = gson.fromJson(response,RtnFenCeCuoTList.class);
+
+
+                        if(page == 1)
+                        {
+                            if(rtnFenCeCuoTList!=null)
+                            {
+                                if( rtnFenCeCuoTList.getData()!=null &&  rtnFenCeCuoTList.getData().size()>0)
+                                {
+                                    rtnFenCeCuoTList.getData().clear();
+                                }
+
+                            }
+
+                        }
                         rtnFenCeCuoTList = rtn;
                         mFenCeTotalPages = (rtn.getTotalCount()%rtn.getPageSize()==0)?(rtn.getTotalCount()/rtn.getPageSize()):(rtn.getTotalCount()/rtn.getPageSize()+1);
                         OnHttpResponse(tranCode,null);

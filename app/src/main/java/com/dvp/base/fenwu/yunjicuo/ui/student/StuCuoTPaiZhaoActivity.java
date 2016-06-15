@@ -278,6 +278,14 @@ public class StuCuoTPaiZhaoActivity extends CommonActivity
     @OnClick(R.id.submit_btn)
     public void onClick()
     {
-        upLoadPic(mDataList, 0);
+        if(mDataList.size()==0)
+        {
+            DialogUtil.showToast(getApplicationContext(),"没有要上传的照片");
+        }
+        else
+        {
+            upLoadPic(mDataList, 0);
+        }
+
     }
 }

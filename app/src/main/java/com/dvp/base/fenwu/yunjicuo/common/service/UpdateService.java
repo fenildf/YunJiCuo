@@ -106,8 +106,8 @@ public class UpdateService extends Service implements HttpResponse
                         }
                     } else {
                         // 提示当前为最新版本
-                        if (UpdateConfig.isUpdateAutoPopup() &&
-                                !UpdateConfig.isUpdateAuto()) {
+                       /* if (UpdateConfig.isUpdateAutoPopup() &&
+                                !UpdateConfig.isUpdateAuto()) {*/
                             new Handler(Looper.getMainLooper()).
                                     post(new Runnable() {
 
@@ -116,7 +116,7 @@ public class UpdateService extends Service implements HttpResponse
                                             DialogUtil.showToast(UpdateService.this, "当前程序为最新版本");
                                         }
                                     });
-                        }
+                       // }
                     }
                 } else {
                     //提示版本信息错误

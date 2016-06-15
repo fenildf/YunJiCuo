@@ -26,6 +26,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.dvp.base.activity.BaseActivity;
 import com.dvp.base.fenwu.yunjicuo.R;
 import com.dvp.base.fenwu.yunjicuo.common.CommonActivity;
+import com.dvp.base.fenwu.yunjicuo.common.update.UpdateAgent;
 import com.dvp.base.fenwu.yunjicuo.common.util.DialogUtil;
 import com.dvp.base.fenwu.yunjicuo.domain.user.User;
 import com.dvp.base.fenwu.yunjicuo.model.LoginModel;
@@ -154,6 +155,11 @@ public class MainActivity extends CommonActivity
 
         }
 
+        if(id == R.id.personcenter_item)
+        {
+            //检测是否有新版本
+            UpdateAgent.autoUpdate(MainActivity.this);
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
        // drawer.closeDrawer(GravityCompat.END);

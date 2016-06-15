@@ -65,7 +65,7 @@ public class UpdateService extends Service implements HttpResponse
        /* if ((UpdateConfig.isUpdateOnlyWifi() && netType.equals("wifi")) ||
                 !UpdateConfig.isUpdateOnlyWifi()) {*/
             updateVersionModel.checkUpdate(updateTranCode);
-        /*} else {
+       /* } else {
             stopSelf();
         }*/
 
@@ -113,7 +113,7 @@ public class UpdateService extends Service implements HttpResponse
 
                                         @Override
                                         public void run() {
-                                            DialogUtil.showToast(getApplicationContext(), "当前程序为最新版本");
+                                            DialogUtil.showToast(UpdateService.this, "当前程序为最新版本");
                                         }
                                     });
                         }
@@ -125,7 +125,7 @@ public class UpdateService extends Service implements HttpResponse
 
                                 @Override
                                 public void run() {
-                                    DialogUtil.showToast(getApplicationContext(), "版本信息错误");
+                                    DialogUtil.showToast(UpdateService.this, "版本信息错误");
                                 }
                             });
                 }

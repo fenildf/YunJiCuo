@@ -189,19 +189,18 @@
         android:layout_below="@+id/login"
         android:layout_alignStart="@+id/relativeLayout1"/>
 
-    <!--  <LinearLayout
+      <LinearLayout
          android:layout_width="match_parent"
          android:layout_height="@dimen/title_lh"
          android:layout_alignParentBottom="true"
-         android:background="@color/style_now"
+         android:background="@color/colorPrimary"
          android:gravity="center" >
 
          <TextView
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:gravity="center"
-             android:text="客服电话：400-653-0677"
+             android:text="欢迎使用云计错"
              android:textColor="@color/white" />
      </LinearLayout>
-  -->
 </RelativeLayout>

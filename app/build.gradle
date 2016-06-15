@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.dvp.base.fenwu.yunjicuo"
-        minSdkVersion 19
+        minSdkVersion 17
         targetSdkVersion 23
         versionCode 3
         versionName "1.0"
@@ -40,6 +40,8 @@ dependencies {
     /* material各种控件*/
     // compile 'com.github.navasmdc:MaterialDesign:1.5@aar'
 
+    //为了实现沉浸式状态栏
+    compile 'com.jaeger.statusbaruitl:library:1.0.0'
 
     //OKhttp工具类   版本升级这个用的这个库
     compile 'com.lzy.net:okhttputils:1.5.1'

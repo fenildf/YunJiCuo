@@ -4,11 +4,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -18,12 +16,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.dvp.base.activity.BaseActivity;
 import com.dvp.base.fenwu.yunjicuo.R;
 import com.dvp.base.fenwu.yunjicuo.common.CommonActivity;
 import com.dvp.base.fenwu.yunjicuo.common.update.UpdateAgent;
@@ -72,7 +68,11 @@ public class MainActivity extends CommonActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_main);
+
+
         ButterKnife.bind(this);
 
         initDawLayout();
@@ -115,6 +115,9 @@ public class MainActivity extends CommonActivity
         //左边滑动菜单
         navView.setNavigationItemSelectedListener(this);
 
+      /*  需要的是彩色的图标，而不是统一的图标颜色。
+        解决方法是调用 NavigationView 的 setItemIconTintList(ColorStateList tint) 方法，传入 null 参数：*/
+        navView.setItemIconTintList(null);
         //右边滑动菜单
        // navrightView.setNavigationItemSelectedListener(this);
     }

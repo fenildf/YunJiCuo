@@ -9,12 +9,17 @@
     <color name="textColorPrimary">#FFFFFF</color>
     <!--以上程序颜色配置-->
 
+    <!--程序颜色配置-->
+  <!--  <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#1976D2</color>
+    <color name="colorAccent">#03A9F4</color>
+    <color name="windowBackGround">#EFEFEF</color>
+    <color name="textColorPrimary">#FFFFFF</color>-->
+    <!--以上程序颜色配置-->
+
+
     <color name="card_background_light">@android:color/white</color>
-
-
     <color name="float_transparent">#00000000</color>
-
-
     <color name="btn_gray">#d1d1d1</color><!-- 灰色按钮 -->
     <color name="bg_gray">#e1e1e1</color><!-- 灰色 -->
     <!-- 列表Item点击颜色 -->

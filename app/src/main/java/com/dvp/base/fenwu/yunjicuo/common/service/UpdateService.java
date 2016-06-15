@@ -93,7 +93,6 @@ public class UpdateService extends Service implements HttpResponse
                         if (UpdateConfig.isSilentDownload()) {
                             //下载
                             downloadManager.addTask(updateVersionModel.clientVersion.getUrl(), null);
-
                             downloadServiceListener = new DownloadServiceListener();
                             downloadServiceListener.setUserTag(UpdateService.this);
                             downloadManager.getTaskByUrl(updateVersionModel.clientVersion.getUrl()).setListener(downloadServiceListener);

@@ -1,9 +1,11 @@
 package com.dvp.base.fenwu.yunjicuo.common;
 
 import android.content.Context;
+import android.content.Intent;
 
 import com.dvp.base.app.APP;
 import com.dvp.base.fenwu.yunjicuo.R;
+import com.dvp.base.fenwu.yunjicuo.common.service.NetworkStateService;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.lzy.okhttputils.OkHttpUtils;
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
@@ -62,6 +64,10 @@ public class CommonApp extends APP
         //图片缓存框架
         initImageLoader(getApplicationContext());
         Fresco.initialize(getApplicationContext());
+
+        //网络状态监听
+        Intent intent = new Intent(getApplicationContext(), NetworkStateService.class);
+        startService(intent);
 
         //更新apk的okhttp初始化
         initOkHttp();

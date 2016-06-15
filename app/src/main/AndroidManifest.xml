@@ -3,6 +3,9 @@
           xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <application
         android:name=".common.CommonApp"
         android:allowBackup="true"
@@ -101,6 +104,16 @@
         <activity android:name=".common.ui.UpdateDialogActivity"
             ></activity>
         <activity android:name=".common.ui.DownloadDialogActivity"></activity>
+
+        <service android:name=".common.service.UpdateService"
+                 android:enabled="true"
+                 android:exported="true"
+            ></service>
+
+        <service android:name=".common.service.NetworkStateService"
+                 android:enabled="true"
+                 android:exported="true"
+            ></service>
     </application>
 
 </manifest>

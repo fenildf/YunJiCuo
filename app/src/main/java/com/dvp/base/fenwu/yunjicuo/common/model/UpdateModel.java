@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 
 import com.dvp.base.fenwu.yunjicuo.R;
 import com.dvp.base.fenwu.yunjicuo.common.domain.ClientVersion;
+import com.dvp.base.fenwu.yunjicuo.common.domain.RtnClient;
 import com.dvp.base.fenwu.yunjicuo.common.domain.RtnClientVersion;
 import com.dvp.base.fenwu.yunjicuo.common.webservice.AppModel;
 import com.google.gson.Gson;
@@ -18,25 +19,45 @@ public class UpdateModel extends AppModel
 {
 
     private Gson gson;
-    public ClientVersion clientVersion;
+
+    public ClientVersion getClientVersion()
+    {
+        return clientVersion;
+    }
+
+    public void setClientVersion(ClientVersion clientVersion)
+    {
+        this.clientVersion = clientVersion;
+    }
+
+    public ClientVersion clientVersion = new ClientVersion();
 
     public UpdateModel(Context context) {
         super(context);
         gson = new Gson();
+
     }
 
     public void checkUpdate(final String apiCode) {
         OkHttpUtils
-                .get(mContext.getResources().getString(R.string.app_url) + apiCode)
+                .get(mContext.getResources().getString(R.string.http_request_url)+mContext.getResources().getString(R.string.app_request_url)/* + apiCode*/)
                 .tag(mContext)
                 .execute(new StringCallback() {
                     @Override
                     public void onResponse(boolean isFromCache, String s, Request request, @Nullable Response response) {
                         try {
                             //获取数据   得到json数据，并解析
-                            RtnClientVersion rtnClientVersion = gson.fromJson(s, RtnClientVersion.class);
-                            if (null != rtnClientVersion.getClientVersion()) {
-                                clientVersion = rtnClientVersion.getClientVersion();
+                            RtnClient rtnClientVersion = gson.fromJson(s,RtnClient.class);
+                            //RtnClientVersion rtnClientVersion = gson.fromJson(s, RtnClientVersion.class);
+                            if (null != rtnClientVersion.getVersion()) {
+                                //clientVersion = rtnClientVersion.getClientVersion();
+
+                                clientVersion.setVersion(rtnClientVersion.getVersion());
+                                clientVersion.setApplicationCode(rtnClientVersion.getApplicationCode());
+                                clientVersion.setDescription(rtnClientVersion.getDescription());
+                                //clientVersion.setFilePath(mContext.getResources().getString(R.string.http_request_url)+rtnClientVersion.getAttach().get(0).getFilePath());
+                                clientVersion.setIsMandatory(rtnClientVersion.getIsMandatory());
+                                clientVersion.setUrl(mContext.getResources().getString(R.string.http_request_url)+rtnClientVersion.getAttach().get(0).getFilePath());
                                 if (clientVersion.getApkName() == null || clientVersion.getApkName().equals("")) {
                                     //设置apk名称
                                     clientVersion.setApkName(mContext.getResources().getString(

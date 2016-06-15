@@ -62,12 +62,12 @@ public class UpdateService extends Service implements HttpResponse
         updateVersionModel.addResponseListener(this);
         //判断网络状态
         String netType = CommonApp.getInstance().getAppConfig().getString("netType", "");
-        if ((UpdateConfig.isUpdateOnlyWifi() && netType.equals("wifi")) ||
-                !UpdateConfig.isUpdateOnlyWifi()) {
+       /* if ((UpdateConfig.isUpdateOnlyWifi() && netType.equals("wifi")) ||
+                !UpdateConfig.isUpdateOnlyWifi()) {*/
             updateVersionModel.checkUpdate(updateTranCode);
-        } else {
+        /*} else {
             stopSelf();
-        }
+        }*/
 
     }
 

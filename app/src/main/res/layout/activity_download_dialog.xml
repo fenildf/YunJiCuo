@@ -71,7 +71,7 @@
                 android:layout_toRightOf="@id/download_completion_tv"
                 android:textSize="@dimen/ts_button" />
 
-            <com.dvp.projectname.common.ui.view.NumberProgressBar
+            <com.dvp.base.fenwu.yunjicuo.common.view.NumberProgressBar
                 android:id="@+id/download_progress_pb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

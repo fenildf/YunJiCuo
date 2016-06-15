@@ -71,8 +71,8 @@
     <!--<string name="http_request_url">http://172.16.1.158:8090/zy</string>-->
 
     <!--apk更新地址-->
-    <string name="app_url">http://172.16.1.146/tp/home/app/</string>
-    <string name="update_apicode">update</string>
+    <string name="app_request_url">/ct/dynamicpage/ff808081554cd48501554cdb88ba0041/datum/e549102455519f17015551a59a830003</string>
+    <string name="update_apicode">3000</string>
 
 
 

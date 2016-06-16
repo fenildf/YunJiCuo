@@ -121,27 +121,12 @@ public class RtnBuZXiTList
         {
             private String kaiShShJ;
             private String id;
-            /**
-             * id : 2c90813a5074c128015074cb6707000b
-             * name : 数学
-             * orderId : 1
-             * rcsField : name
-             * rcsKey : 2c90813a5074c128015074cb6707000b
-             * rcsValue : 数学
-             */
 
             private KeMEntity keM;
             private String remark;
             private String banJName;
             private String jieShShJ;
-            /**
-             * id : e549102451d1df630151ddfce0d30fb8
-             * createTime : 2015-12-26 19:11:56
-             * name : 王姝涵
-             * state : 正常
-             * mobile : 13703586161
-             * loginName : 13703586161
-             */
+
 
             private UserEntity user;
             private String banJID;
@@ -657,75 +642,24 @@ public class RtnBuZXiTList
 
             public static class PaperEntity
             {
-                /**
-                 * id : 2c90813a5092715d015092788b9b0123
-                 * name : 北师大
-                 * orderId : 0
-                 * rcsField : name
-                 * rcsKey : 2c90813a5092715d015092788b9b0123
-                 * rcsValue : 北师大
-                 */
+
 
                 private BanBenEntity banBen;
                 private String examRcsValue;
-                /**
-                 * id : 402881ed50942cdc0150942e12850041
-                 * name : 全一册
-                 * orderId : 0
-                 * rcsField : name
-                 * rcsKey : 402881ed50942cdc0150942e12850041
-                 * rcsValue : 全一册
-                 */
 
                 private FenCeEntity fenCe;
                 private int fullScore;
                 private String id;
-                /**
-                 * id : 2c90813a5074c128015074cb6707000b
-                 * name : 数学
-                 * orderId : 1
-                 * rcsField : name
-                 * rcsKey : 2c90813a5074c128015074cb6707000b
-                 * rcsValue : 数学
-                 */
 
                 private KeMEntity keM;
                 private String name;
-                /**
-                 * id : 402881ed50943a980150945c72780256
-                 * name : 初三
-                 * orderId : 9
-                 * rcsField : name
-                 * rcsKey : 402881ed50943a980150945c72780256
-                 * rcsValue : 初三
-                 * xueD : {"id":"402881ed50943a9801509459f81d0229","name":"初中","orderId":"2","rcsField":"name","rcsKey":"402881ed50943a9801509459f81d0229","rcsValue":"初中"}
-                 */
-
                 private NianJEntity nianJ;
                 private int orderId;
                 private String rcsField;
                 private String rcsKey;
                 private String rcsValue;
-                /**
-                 * id : 2c90813a5074c128015074d6f93c007f
-                 * name : 2015-2016
-                 * orderId : 3
-                 * rcsField : name
-                 * rcsKey : 2c90813a5074c128015074d6f93c007f
-                 * rcsValue : 2015-2016
-                 */
-
                 private ShiJNFEntity shiJNF;
                 private String type;
-                /**
-                 * id : 402881ed50943a9801509459f81d0229
-                 * name : 初中
-                 * orderId : 2
-                 * rcsField : name
-                 * rcsKey : 402881ed50943a9801509459f81d0229
-                 * rcsValue : 初中
-                 */
-
                 private XueDuanEntity xueDuan;
 
                 public BanBenEntity getBanBen()
@@ -1481,16 +1415,6 @@ public class RtnBuZXiTList
 
                 public static class ZhangJEntity
                 {
-                    /**
-                     * id : e549102453838ab30153a21c5d0a3023
-                     * name : 基础过关
-                     * orderId : 0
-                     * paper : {"banBen":{"id":"2c90813a5092715d015092788b9b0123","name":"北师大","orderId":0,"rcsField":"name","rcsKey":"2c90813a5092715d015092788b9b0123","rcsValue":"北师大"},"examRcsValue":"3年中考2年模拟数学初三null","fenCe":{"id":"402881ed50942cdc0150942e12850041","name":"全一册","orderId":0,"rcsField":"name","rcsKey":"402881ed50942cdc0150942e12850041","rcsValue":"全一册"},"fullScore":0,"id":"e549102453838ab30153a21accd53020","keM":{"id":"2c90813a5074c128015074cb6707000b","name":"数学","orderId":1,"rcsField":"name","rcsKey":"2c90813a5074c128015074cb6707000b","rcsValue":"数学"},"name":"3年中考2年模拟","nianJ":{"id":"402881ed50943a980150945c72780256","name":"初三","orderId":9,"rcsField":"name","rcsKey":"402881ed50943a980150945c72780256","rcsValue":"初三","xueD":{"id":"402881ed50943a9801509459f81d0229","name":"初中","orderId":"2","rcsField":"name","rcsKey":"402881ed50943a9801509459f81d0229","rcsValue":"初中"}},"orderId":0,"rcsField":"name","rcsKey":"e549102453838ab30153a21accd53020","rcsValue":"3年中考2年模拟全一册数学初三北师大","shiJNF":{"id":"2c90813a5074c128015074d6f93c007f","name":"2015-2016","orderId":3,"rcsField":"name","rcsKey":"2c90813a5074c128015074d6f93c007f","rcsValue":"2015-2016"},"type":"0","xueDuan":{"id":"402881ed50943a9801509459f81d0229","name":"初中","orderId":"2","rcsField":"name","rcsKey":"402881ed50943a9801509459f81d0229","rcsValue":"初中"}}
-                     * rcsField : name
-                     * rcsKey : e549102453838ab30153a21c5d0a3023
-                     * rcsValue : 基础过关
-                     */
-
                     private DanYEntity danY;
                     private String id;
                     private String name;
@@ -1574,24 +1498,6 @@ public class RtnBuZXiTList
                         private String id;
                         private String name;
                         private int orderId;
-                        /**
-                         * banBen : {"id":"2c90813a5092715d015092788b9b0123","name":"北师大","orderId":0,"rcsField":"name","rcsKey":"2c90813a5092715d015092788b9b0123","rcsValue":"北师大"}
-                         * examRcsValue : 3年中考2年模拟数学初三null
-                         * fenCe : {"id":"402881ed50942cdc0150942e12850041","name":"全一册","orderId":0,"rcsField":"name","rcsKey":"402881ed50942cdc0150942e12850041","rcsValue":"全一册"}
-                         * fullScore : 0
-                         * id : e549102453838ab30153a21accd53020
-                         * keM : {"id":"2c90813a5074c128015074cb6707000b","name":"数学","orderId":1,"rcsField":"name","rcsKey":"2c90813a5074c128015074cb6707000b","rcsValue":"数学"}
-                         * name : 3年中考2年模拟
-                         * nianJ : {"id":"402881ed50943a980150945c72780256","name":"初三","orderId":9,"rcsField":"name","rcsKey":"402881ed50943a980150945c72780256","rcsValue":"初三","xueD":{"id":"402881ed50943a9801509459f81d0229","name":"初中","orderId":"2","rcsField":"name","rcsKey":"402881ed50943a9801509459f81d0229","rcsValue":"初中"}}
-                         * orderId : 0
-                         * rcsField : name
-                         * rcsKey : e549102453838ab30153a21accd53020
-                         * rcsValue : 3年中考2年模拟全一册数学初三北师大
-                         * shiJNF : {"id":"2c90813a5074c128015074d6f93c007f","name":"2015-2016","orderId":3,"rcsField":"name","rcsKey":"2c90813a5074c128015074d6f93c007f","rcsValue":"2015-2016"}
-                         * type : 0
-                         * xueDuan : {"id":"402881ed50943a9801509459f81d0229","name":"初中","orderId":"2","rcsField":"name","rcsKey":"402881ed50943a9801509459f81d0229","rcsValue":"初中"}
-                         */
-
                         private PaperEntity paper;
                         private String rcsField;
                         private String rcsKey;

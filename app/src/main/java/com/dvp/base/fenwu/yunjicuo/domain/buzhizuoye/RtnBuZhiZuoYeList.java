@@ -616,16 +616,6 @@ public class RtnBuZhiZuoYeList
                 {
                     private String climeName;
                     private String id;
-                    /**
-                     * climeName : 忻州
-                     * id : 1
-                     * rcsField : climeName
-                     * rcsKey : 1
-                     * rcsParentField : parentClime
-                     * rcsParentKey :
-                     * rcsValue : 忻州
-                     */
-
                     private ParentClimeEntity parentClime;
                     private String rcsField;
                     private String rcsKey;

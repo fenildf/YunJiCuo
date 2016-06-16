@@ -84,7 +84,7 @@
 
     <dimen name="bianju">12dp</dimen>
 
-    <dimen name="home_menu_item_height">80dp</dimen>
+    <dimen name="home_menu_item_height">100dp</dimen>
 
     <dimen name="dp_10">10dp</dimen>
 

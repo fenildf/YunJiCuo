@@ -124,7 +124,7 @@ public class NewLoginActivity extends CommonActivity
                             .setTransformationMethod(PasswordTransformationMethod
                                     .getInstance());
 
-                    imgMmqh.setImageResource(R.mipmap.ic_mm_bxs);
+                    imgMmqh.setImageResource(R.mipmap.img_mm_qh);
                 } else {
                     // 暗文
                     password

@@ -117,7 +117,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:background="@drawable/img_mm_qh" />
+                android:background="@mipmap/img_mm_qh" />
         </LinearLayout>
 
         <View

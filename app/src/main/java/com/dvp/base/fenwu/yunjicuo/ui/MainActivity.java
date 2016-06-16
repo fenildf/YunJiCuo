@@ -98,7 +98,7 @@ public class MainActivity extends CommonActivity
         setTitle("云计错");
         //toolbar.setOnMenuItemClickListener(onMenuItemClick);
 
-        toolbar.setNavigationIcon(R.mipmap.maintouxiang);
+        toolbar.setNavigationIcon(R.mipmap.yh);
         toolbar.setNavigationOnClickListener(new View.OnClickListener()
         {
             @Override

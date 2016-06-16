@@ -80,6 +80,31 @@
                             android:layout_height="wrap_content"/>
                     </LinearLayout>
 
+
+
+                    <me.zhanghai.android.materialedittext.MaterialTextInputLayout
+                        android:id="@+id/tianxieyanzhengma_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/card_content_horizontal_margin_with_4dp_padding"
+                        android:layout_marginRight="@dimen/card_content_horizontal_margin_with_4dp_padding"
+                        android:orientation="horizontal"
+                        app:errorEnabled="true">
+
+                        <me.zhanghai.android.materialedittext.MaterialEditText
+                            android:id="@+id/tianxieyanzhengma_edittext"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="请填写手机收到的6位短信验证码"
+                            android:textSize="@dimen/ts_xmiddle"
+                            android:textColor="@color/black"
+                            android:numeric="integer"
+                            android:maxLines="1" />
+
+
+                    </me.zhanghai.android.materialedittext.MaterialTextInputLayout>
+
+
                     <me.zhanghai.android.materialedittext.MaterialTextInputLayout
                         android:id="@+id/pictuxingyanzhengma_layout"
                         android:layout_width="match_parent"
@@ -114,29 +139,6 @@
                             fresco:roundingBorderColor="@color/red"></com.facebook.drawee.view.SimpleDraweeView>
 
                     </me.zhanghai.android.materialedittext.MaterialTextInputLayout>
-
-                    <me.zhanghai.android.materialedittext.MaterialTextInputLayout
-                        android:id="@+id/tianxieyanzhengma_layout"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/card_content_horizontal_margin_with_4dp_padding"
-                        android:layout_marginRight="@dimen/card_content_horizontal_margin_with_4dp_padding"
-                        android:orientation="horizontal"
-                        app:errorEnabled="true">
-
-                        <me.zhanghai.android.materialedittext.MaterialEditText
-                            android:id="@+id/tianxieyanzhengma_edittext"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="请填写手机收到的6位短信验证码"
-                            android:textSize="@dimen/ts_xmiddle"
-                            android:textColor="@color/black"
-                            android:numeric="integer"
-                            android:maxLines="1" />
-
-
-                    </me.zhanghai.android.materialedittext.MaterialTextInputLayout>
-
                     <Button
                         android:id="@+id/queding_btn"
                         style="@style/btn_style"

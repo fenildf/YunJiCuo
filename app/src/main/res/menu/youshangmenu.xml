@@ -6,6 +6,6 @@
         android:id="@+id/add"
         android:orderInCategory="80"
         android:title="添加"
-        android:icon="@mipmap/jiaru"
+        android:icon="@mipmap/attendbj"
         app:showAsAction="always"/>
 </menu>

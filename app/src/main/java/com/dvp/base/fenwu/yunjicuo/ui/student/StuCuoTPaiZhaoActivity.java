@@ -1,6 +1,7 @@
 package com.dvp.base.fenwu.yunjicuo.ui.student;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -18,11 +19,25 @@ import com.dvp.base.fenwu.yunjicuo.common.pictureselect.ui.activity.MultiImageSe
 import com.dvp.base.fenwu.yunjicuo.common.pictureselect.ui.activity.MultiImageZoomActivity;
 import com.dvp.base.fenwu.yunjicuo.common.util.DialogUtil;
 import com.dvp.base.fenwu.yunjicuo.model.StuWDZYModel;
+import com.dvp.base.util.FileUtil;
 import com.dvp.base.view.NestedGridView;
+import com.facebook.binaryresource.BinaryResource;
+import com.facebook.binaryresource.FileBinaryResource;
+import com.facebook.cache.common.CacheKey;
+import com.facebook.common.references.CloseableReference;
+import com.facebook.datasource.DataSource;
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.imagepipeline.cache.DefaultCacheKeyFactory;
+import com.facebook.imagepipeline.core.ImagePipelineFactory;
+import com.facebook.imagepipeline.memory.PooledByteBuffer;
+import com.facebook.imagepipeline.request.ImageRequest;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 import butterknife.Bind;
@@ -135,18 +150,94 @@ public class StuCuoTPaiZhaoActivity extends CommonActivity
                     startActivityForResult(intent, 0x123);
                 } else
                 {
-                    Intent intent = new Intent(StuCuoTPaiZhaoActivity.this,
-                            MultiImageZoomActivity.class);
-                    intent.putStringArrayListExtra("image_list", mDataList);
-                    Log.e("集合", mDataList.get(0));
-                    intent.putExtra(CommonApp.EXTRA_CURRENT_IMG_POSITION, position);
-                    //类型
-                    intent.putExtra(MultiImageSelectorActivity.EXTRA_TYPE, TAG);
-                    startActivity(intent);
+                    if(mark == 1)
+                    {
+                       /* DataSource<CloseableReference<PooledByteBuffer>> dataSource = Fresco.getImagePipeline().fetchEncodedImage(ImageRequest.fromUri(imageUri), getActivity());
+                        try {
+                            CloseableReference<PooledByteBuffer> bytes = dataSource.getResult();
+                            if (bytes != null) {
+                                try {
+                                    PooledByteBuffer pooledByteBuffer = bytes.get();
+                                    File tempFile = File.createTempFile("t", "jpg");
+                                    FileUtil.writeFile(tempFile,(pooledByteBuffer.read(pooledByteBuffer.size())));
+                                   // FileUtil.writeToFile(tempFile, pooledByteBuffer.getStream());
+                                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                                    intent.setDataAndType(Uri.fromFile(tempFile), "image*//*");
+                                    startActivity(intent);
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                } finally {
+                                    CloseableReference.closeSafely(bytes);
+                                }
+                            }
+                        } finally {
+                            dataSource.close();
+                        }*/
+
+                        if(isImageDownloaded(Uri.parse(mDataList.get(0))))
+                        {
+                            File file = null;
+                            File tempFile = null;
+                            try
+                            {
+                                file = getCachedImageOnDisk(Uri.parse(mDataList.get(0)));
+                                InputStream in = new FileInputStream(file);
+                             /*   byte b[]=new byte[(int)f.length()];     //创建合适文件大小的数组
+                                in.read(b);    //读取文件中的内容到b[]数组*/
+
+                                 tempFile = File.createTempFile("t", "jpg",getExternalCacheDir());
+                                FileUtil.writeFile(tempFile,in);
+                                in.close();
+                            } catch (IOException e)
+                            {
+                                e.printStackTrace();
+                            }
+                            Intent intent = new Intent(Intent.ACTION_VIEW);
+                            intent.setDataAndType(Uri.fromFile(tempFile), "image*//*");
+                            startActivity(intent);
+                        }
+                    }
+                    else
+                    {
+                        Intent intent = new Intent(StuCuoTPaiZhaoActivity.this,
+                                MultiImageZoomActivity.class);
+                        intent.putStringArrayListExtra("image_list", mDataList);
+                        Log.e("集合", mDataList.get(0));
+                        intent.putExtra(CommonApp.EXTRA_CURRENT_IMG_POSITION, position);
+                        //类型
+                        intent.putExtra(MultiImageSelectorActivity.EXTRA_TYPE, TAG);
+                        startActivity(intent);
+                    }
+
                 }
             }
         });
     }
+
+    public static boolean isImageDownloaded(Uri loadUri) {
+        if (loadUri == null) {
+            return false;
+        }
+        CacheKey cacheKey = DefaultCacheKeyFactory.getInstance().getEncodedCacheKey(ImageRequest.fromUri(loadUri));
+        return ImagePipelineFactory.getInstance().getMainDiskStorageCache().hasKey(cacheKey) || ImagePipelineFactory.getInstance().getSmallImageDiskStorageCache().hasKey(cacheKey);
+    }
+
+    //return file or null
+    public static File getCachedImageOnDisk(Uri loadUri) {
+        File localFile = null;
+        if (loadUri != null) {
+            CacheKey cacheKey = DefaultCacheKeyFactory.getInstance().getEncodedCacheKey(ImageRequest.fromUri(loadUri));
+            if (ImagePipelineFactory.getInstance().getMainDiskStorageCache().hasKey(cacheKey)) {
+                BinaryResource resource = ImagePipelineFactory.getInstance().getMainDiskStorageCache().getResource(cacheKey);
+                localFile = ((FileBinaryResource) resource).getFile();
+            } else if (ImagePipelineFactory.getInstance().getSmallImageDiskStorageCache().hasKey(cacheKey)) {
+                BinaryResource resource = ImagePipelineFactory.getInstance().getSmallImageDiskStorageCache().getResource(cacheKey);
+                localFile = ((FileBinaryResource) resource).getFile();
+            }
+        }
+        return localFile;
+    }
+
 
     private int getDataSize()
     {

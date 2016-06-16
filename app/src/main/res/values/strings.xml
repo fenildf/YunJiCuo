@@ -45,7 +45,6 @@
     <string name="picture">图片</string>
 
 
-
     <!-- 更新 -->
     <string name="gprs_condition">（提示：非WIFI环境）</string>
     <string name="update_title">发现新版本</string>
@@ -73,8 +72,6 @@
     <!--apk更新地址-->
     <string name="app_request_url">/ct/dynamicpage/ff808081554cd48501554cdb88ba0041/datum/e549102455519f17015551a59a830003</string>
     <string name="update_apicode">3000</string>
-
-
 
 
     <!--登陆地址-->

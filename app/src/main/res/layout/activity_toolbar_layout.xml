@@ -28,14 +28,15 @@
 
     <com.flyco.tablayout.SegmentTabLayout
         android:id="@+id/tl_1"
-        android:layout_width="200dip"
-        android:layout_height="32dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        app:tl_bar_color="#FFFFFF"
-        app:tl_indicator_color="#448AFF"
-        app:tl_textUnselectColor="#448AFF"
-        tl:tl_indicator_corner_radius="5dp"
+        android:layout_width="130dip"
+        android:layout_height="@dimen/top_menu_height"
+        android:layout_gravity="center"
+        app:tl_textSelectColor="@color/colorPrimary"
+        app:tl_bar_stroke_color="@color/white"
+        app:tl_bar_color="@color/colorPrimary"
+        app:tl_indicator_color="@color/white"
+        app:tl_textUnselectColor="@color/white"
+        tl:tl_indicator_corner_radius="1dp"
         tl:tl_tab_padding="20dp"
         />
 </android.support.v7.widget.Toolbar>

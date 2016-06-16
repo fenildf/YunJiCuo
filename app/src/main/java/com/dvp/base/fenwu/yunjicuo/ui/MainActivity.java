@@ -26,6 +26,8 @@ import com.dvp.base.fenwu.yunjicuo.common.update.UpdateAgent;
 import com.dvp.base.fenwu.yunjicuo.common.util.DialogUtil;
 import com.dvp.base.fenwu.yunjicuo.domain.user.User;
 import com.dvp.base.fenwu.yunjicuo.model.LoginModel;
+import com.dvp.base.fenwu.yunjicuo.ui.fragment.NewStudentFragment;
+import com.dvp.base.fenwu.yunjicuo.ui.fragment.NewTeacherMenuFragment;
 import com.dvp.base.fenwu.yunjicuo.ui.fragment.StudentMenuFragment;
 import com.dvp.base.fenwu.yunjicuo.ui.fragment.TeacherMenuFragment;
 import com.dvp.base.util.DoubleClickExitDetector;
@@ -72,7 +74,6 @@ public class MainActivity extends CommonActivity
 
 
         ButterKnife.bind(this);
-
         initDawLayout();
         initTab();
         init();
@@ -123,8 +124,8 @@ public class MainActivity extends CommonActivity
     private void initTab()
     {
 
-        mFragments3.add(TeacherMenuFragment.getInstance("TeacherMenuFragment"));
-        mFragments3.add(StudentMenuFragment.getInstance("StudentFragment"));
+        mFragments3.add(NewTeacherMenuFragment.getInstance("TeacherMenuFragment"));
+        mFragments3.add(NewStudentFragment.getInstance("StudentFragment"));
         tl1.setTabData(mTitles, this, R.id.fl_content, mFragments3);
     }
 

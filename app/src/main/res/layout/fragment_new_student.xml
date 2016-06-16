@@ -1,0 +1,399 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:fresco="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:background="@color/home_background"
+              tools:context="com.dvp.base.fenwu.yunjicuo.ui.fragment.TeacherMenuFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_marginBottom="@dimen/bianju"
+                android:layout_marginLeft="@dimen/bianju"
+                android:layout_marginRight="@dimen/bianju"
+                android:layout_marginTop="@dimen/bianju"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/home_menu_item_height"
+                >
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/menu_cardview1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    >
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <RelativeLayout
+                            android:layout_width="@dimen/pic_zhanwei_width"
+                            android:layout_height="match_parent">
+
+
+                            <ImageView
+                                android:src="@mipmap/sj"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_centerHorizontal="true"
+                                android:id="@+id/imageview1"/>
+                        </RelativeLayout>
+                        <TextView
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@color/home_background"
+                            android:layout_width="1dip"
+                            android:layout_height="match_parent"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:text="学生书架，丰富阅读"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/textView4"
+                                android:textColor="@color/home_menu_sub_title"
+                                android:textSize="@dimen/ts_xsmall"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignStart="@+id/textView3"
+                                android:layout_marginBottom="17dp"/>
+
+                            <TextView
+                                android:text="我的书架"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="23dp"
+                                android:id="@+id/textView3"
+                                android:textColor="@color/home_menu_title"
+                                android:textSize="@dimen/ts_title"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginTop="15dp"/>
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+
+
+
+            <LinearLayout
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_marginBottom="@dimen/bianju"
+                android:layout_marginLeft="@dimen/bianju"
+                android:layout_marginRight="@dimen/bianju"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/home_menu_item_height"
+                >
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/menu_cardview2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    >
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <RelativeLayout
+                            android:layout_width="@dimen/pic_zhanwei_width"
+                            android:layout_height="match_parent">
+
+
+                            <ImageView
+                                android:src="@mipmap/bj"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_centerHorizontal="true"
+                                android:id="@+id/imageview2"/>
+                        </RelativeLayout>
+                        <TextView
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@color/home_background"
+                            android:layout_width="1dip"
+                            android:layout_height="match_parent"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:text="所在的班级列表"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/home_menu_sub_title"
+                                android:textSize="@dimen/ts_xsmall"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignStart="@+id/glbj_tv"
+                                android:layout_marginBottom="17dp"/>
+
+                            <TextView
+                                android:text="我的班级"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="23dp"
+                                android:id="@+id/glbj_tv"
+                                android:textColor="@color/home_menu_title"
+                                android:textSize="@dimen/ts_title"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginTop="15dp"/>
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+
+
+
+            <LinearLayout
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_marginBottom="@dimen/bianju"
+                android:layout_marginLeft="@dimen/bianju"
+                android:layout_marginRight="@dimen/bianju"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/home_menu_item_height"
+                >
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/menu_cardview3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    >
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <RelativeLayout
+                            android:layout_width="@dimen/pic_zhanwei_width"
+                            android:layout_height="match_parent">
+
+
+                            <ImageView
+                                android:src="@mipmap/ctb"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_centerHorizontal="true"
+                                android:id="@+id/imageview6"/>
+                        </RelativeLayout>
+                        <TextView
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@color/home_background"
+                            android:layout_width="1dip"
+                            android:layout_height="match_parent"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:text="拥有的错题本"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/home_menu_sub_title"
+                                android:textSize="@dimen/ts_xsmall"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignStart="@+id/dacx_tv"
+                                android:layout_marginBottom="17dp"/>
+
+                            <TextView
+                                android:text="我的错题本"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="23dp"
+                                android:id="@+id/dacx_tv"
+                                android:textColor="@color/home_menu_title"
+                                android:textSize="@dimen/ts_title"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginTop="15dp"/>
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_marginBottom="@dimen/bianju"
+                android:layout_marginLeft="@dimen/bianju"
+                android:layout_marginRight="@dimen/bianju"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/home_menu_item_height"
+                >
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/menu_cardview4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    >
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <RelativeLayout
+                            android:layout_width="@dimen/pic_zhanwei_width"
+                            android:layout_height="match_parent">
+
+
+                            <ImageView
+                                android:src="@mipmap/zy"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_centerHorizontal="true"
+                                android:id="@+id/imageview5"/>
+                        </RelativeLayout>
+                        <TextView
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@color/home_background"
+                            android:layout_width="1dip"
+                            android:layout_height="match_parent"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:text="需要完成的作业"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/home_menu_sub_title"
+                                android:textSize="@dimen/ts_xsmall"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignStart="@+id/wdctb_tv"
+                                android:layout_marginBottom="17dp"/>
+
+                            <TextView
+                                android:text="我的作业"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="23dp"
+                                android:id="@+id/wdctb_tv"
+                                android:textColor="@color/home_menu_title"
+                                android:textSize="@dimen/ts_title"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginTop="15dp"/>
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_marginBottom="@dimen/bianju"
+                android:layout_marginLeft="@dimen/bianju"
+                android:layout_marginRight="@dimen/bianju"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/home_menu_item_height"
+                >
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/menu_cardview5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    >
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <RelativeLayout
+                            android:layout_width="@dimen/pic_zhanwei_width"
+                            android:layout_height="match_parent">
+
+
+                            <ImageView
+                                android:src="@mipmap/dacx"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_centerHorizontal="true"
+                                android:id="@+id/imageview4"/>
+                        </RelativeLayout>
+                        <TextView
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@color/home_background"
+                            android:layout_width="1dip"
+                            android:layout_height="match_parent"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:text="查询正确答案"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/home_menu_sub_title"
+                                android:textSize="@dimen/ts_xsmall"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignStart="@+id/bzzy_tv"
+                                android:layout_marginBottom="17dp"/>
+
+                            <TextView
+                                android:text="答案查询"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="23dp"
+                                android:id="@+id/bzzy_tv"
+                                android:textColor="@color/home_menu_title"
+                                android:textSize="@dimen/ts_title"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginTop="15dp"/>
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

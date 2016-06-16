@@ -2,9 +2,9 @@
 <resources>
 
     <!--程序颜色配置-->
-    <color name="colorPrimary">#4CAF50</color>
-    <color name="colorPrimaryDark">#4CAF50</color>
-    <color name="colorAccent">#4CAF50</color>
+    <color name="colorPrimary">#009e96</color>
+    <color name="colorPrimaryDark">#009e96</color>
+    <color name="colorAccent">#009e96</color>
     <color name="windowBackGround">#FFFFFF</color>
     <color name="textColorPrimary">#FFFFFF</color>
     <!--以上程序颜色配置-->
@@ -31,4 +31,7 @@
     <color name="light_gray">#999999</color>
     <color name="white">#FFFFFF</color>
 
+    <color name="home_background">#f2f2f2</color>
+    <color name="home_menu_title">#333333</color>
+    <color name="home_menu_sub_title">#999999</color>
 </resources>

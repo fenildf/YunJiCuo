@@ -28,8 +28,6 @@ import com.dvp.base.fenwu.yunjicuo.domain.user.User;
 import com.dvp.base.fenwu.yunjicuo.model.LoginModel;
 import com.dvp.base.fenwu.yunjicuo.ui.fragment.NewStudentFragment;
 import com.dvp.base.fenwu.yunjicuo.ui.fragment.NewTeacherMenuFragment;
-import com.dvp.base.fenwu.yunjicuo.ui.fragment.StudentMenuFragment;
-import com.dvp.base.fenwu.yunjicuo.ui.fragment.TeacherMenuFragment;
 import com.dvp.base.util.DoubleClickExitDetector;
 import com.flyco.tablayout.SegmentTabLayout;
 

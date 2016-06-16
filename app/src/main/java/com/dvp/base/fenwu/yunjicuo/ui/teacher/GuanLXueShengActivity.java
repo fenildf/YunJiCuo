@@ -12,8 +12,6 @@ import com.dvp.base.fenwu.yunjicuo.R;
 import com.dvp.base.fenwu.yunjicuo.common.CommonActivity;
 import com.dvp.base.fenwu.yunjicuo.ui.fragment.GuanLXSWeiShenFragment;
 import com.dvp.base.fenwu.yunjicuo.ui.fragment.GuanLXSYiShenFragment;
-import com.dvp.base.fenwu.yunjicuo.ui.fragment.StudentMenuFragment;
-import com.dvp.base.fenwu.yunjicuo.ui.fragment.TeacherMenuFragment;
 import com.flyco.tablayout.SegmentTabLayout;
 
 import java.util.ArrayList;

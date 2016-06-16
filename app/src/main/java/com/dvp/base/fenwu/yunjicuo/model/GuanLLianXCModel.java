@@ -221,6 +221,36 @@ public class GuanLLianXCModel extends AppModel
                     }
                 });
     }
+
+
+    /**
+     * 删除练习册接口
+     * @param tranCode
+     * @param lianxiceId
+     */
+    public void deleteLXC(final String tranCode,final String lianxiceId)
+    {
+
+        OkHttpUtils.post()
+                .url(mContext.getResources().getString(R.string.http_request_url)+"/banjipaper/data?_method=DELETE")
+                .addParams("id",lianxiceId)
+                .build()
+                .execute(new StringCallback()
+                {
+                    @Override
+                    public void onError(Call call, Exception e)
+                    {
+
+                    }
+
+                    @Override
+                    public void onResponse(String response)
+                    {
+                        System.out.println("删除练习册成功"+response.toString());
+                        OnHttpResponse(tranCode,null);
+                    }
+                });
+    }
 }
 
 

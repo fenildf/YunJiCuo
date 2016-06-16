@@ -2,6 +2,7 @@ package com.dvp.base.fenwu.yunjicuo.ui.teacher;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
@@ -11,6 +12,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.afollestad.materialdialogs.internal.MDButton;
 import com.dvp.base.adapter.recyviewadapter.adapter.RecyclerAdapter;
 import com.dvp.base.adapter.recyviewadapter.adapter.RecyclerHolder;
@@ -18,6 +21,7 @@ import com.dvp.base.adapter.recyviewadapter.view.ProgressStyle;
 import com.dvp.base.adapter.recyviewadapter.view.XRecyclerView;
 import com.dvp.base.fenwu.yunjicuo.R;
 import com.dvp.base.fenwu.yunjicuo.common.CommonActivity;
+import com.dvp.base.fenwu.yunjicuo.common.util.DialogUtil;
 import com.dvp.base.fenwu.yunjicuo.domain.guanlilianxice.RtnGuanLLianXC;
 import com.dvp.base.fenwu.yunjicuo.model.GuanLLianXCModel;
 
@@ -122,6 +126,11 @@ public class GuanLiLianXiCeActivity extends CommonActivity implements XRecyclerV
     @Override
     public void OnHttpResponse(String var1, String var2)
     {
+        if(var1.equals(getResources().getString(R.string.delete_lianxice_trancode)))
+        {
+            DialogUtil.showToast(getApplicationContext(),"删除成功");
+        }
+
         if(var1.equals(getResources().getString(R.string.getlianxice_Trancode)))
         {
 
@@ -131,7 +140,7 @@ public class GuanLiLianXiCeActivity extends CommonActivity implements XRecyclerV
                 adapter = new RecyclerAdapter<RtnGuanLLianXC.DataEntity>(getApplicationContext(), mDatas, R.layout.item_guanli_lianxice_layout)
                 {
                     @Override
-                    public void convert(RecyclerHolder recycleHolder, RtnGuanLLianXC.DataEntity classManageItem, int i)
+                    public void convert(RecyclerHolder recycleHolder, final RtnGuanLLianXC.DataEntity classManageItem, int i)
                     {
                         recycleHolder.setText(R.id.lianxecename_tv,classManageItem.getPaper().getName());
                         String str1 = (classManageItem.getPaper().getFenCe()!=null)?classManageItem.getPaper().getFenCe().getName():"  ";
@@ -148,7 +157,17 @@ public class GuanLiLianXiCeActivity extends CommonActivity implements XRecyclerV
                             @Override
                             public void onClick(View v)
                             {
-                                Toast.makeText(GuanLiLianXiCeActivity.this, "点击删除", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(GuanLiLianXiCeActivity.this, "点击删除", Toast.LENGTH_SHORT).show();
+
+                                DialogUtil.getBasicDialog(GuanLiLianXiCeActivity.this, null, "删除练习册", "确定删除练习册么？", 0, new MaterialDialog.SingleButtonCallback()
+                                {
+                                    @Override
+                                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which)
+                                    {
+                                        mModel.deleteLXC(getResources().getString(R.string.delete_lianxice_trancode),classManageItem.getId());
+
+                                    }
+                                }).show();
                             }
                         });
                     }

@@ -185,6 +185,8 @@
     <string name="tea_cuotitongji_getyema_trancode">1028</string>
 
     <string name="get_user_info_trancode">1029</string>
+
+    <string name="delete_lianxice_trancode">1030</string>
     <!--===========================================================================================-->
     <!--学生界面接口如下-->
 

@@ -35,7 +35,6 @@ import butterknife.OnClick;
  */
 public class AddWDCTBActivity extends CommonActivity implements SelectDialog.ItemClickInterface,MultiSelectDialog.multiselectCallBack
 {
-
     @Bind(R.id.middleTitle_tv)
     TextView middleTitleTv;
     @Bind(R.id.toolbar)

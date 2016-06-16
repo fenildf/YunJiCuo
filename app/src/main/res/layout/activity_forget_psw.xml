@@ -105,6 +105,21 @@
                     </me.zhanghai.android.materialedittext.MaterialTextInputLayout>
 
 
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/picyanzhengma_webview"
+                        android:layout_width="100dip"
+                        android:layout_height="50dip"
+                        android:scaleType="center"
+                        android:layout_marginLeft="@dimen/card_content_horizontal_margin_with_4dp_padding"
+                        fresco:placeholderImageScaleType="centerInside"
+                        fresco:roundedCornerRadius="5dp"
+                        fresco:roundBottomLeft="false"
+                        fresco:roundBottomRight="false"
+                        fresco:roundWithOverlayColor="@color/blue"
+                        fresco:roundingBorderWidth="1dp"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                        fresco:roundingBorderColor="@color/red"></com.facebook.drawee.view.SimpleDraweeView>
+
                     <me.zhanghai.android.materialedittext.MaterialTextInputLayout
                         android:id="@+id/pictuxingyanzhengma_layout"
                         android:layout_width="match_parent"
@@ -124,19 +139,7 @@
                             android:maxLines="1" />
 
 
-                        <com.facebook.drawee.view.SimpleDraweeView
-                            android:id="@+id/picyanzhengma_webview"
-                            android:layout_width="100dip"
-                            android:layout_height="50dip"
-                            android:scaleType="center"
-                            fresco:placeholderImageScaleType="centerInside"
-                            fresco:roundedCornerRadius="5dp"
-                            fresco:roundBottomLeft="false"
-                            fresco:roundBottomRight="false"
-                            fresco:roundWithOverlayColor="@color/blue"
-                            fresco:roundingBorderWidth="1dp"
-                            android:layout_marginRight="@dimen/activity_horizontal_margin"
-                            fresco:roundingBorderColor="@color/red"></com.facebook.drawee.view.SimpleDraweeView>
+
 
                     </me.zhanghai.android.materialedittext.MaterialTextInputLayout>
                     <Button

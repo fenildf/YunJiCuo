@@ -35,7 +35,7 @@ public class CodeUtils {
     private static final int BASE_PADDING_TOP = 42;//上边距  
     private static final int RANGE_PADDING_TOP = 15;//上边距范围值  
     private static final int DEFAULT_WIDTH = 200;//默认宽度.图片的总宽  
-    private static final int DEFAULT_HEIGHT = 100;//默认高度.图片的总高  
+    private static final int DEFAULT_HEIGHT = 60;//默认高度.图片的总高
     private static final int DEFAULT_COLOR = 0xDF;//默认背景颜色值  
   
     public static CodeUtils getInstance() {  

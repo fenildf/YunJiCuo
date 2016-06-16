@@ -93,9 +93,7 @@ public class ForgetPswActivity extends CommonActivity implements Countdown.TextV
             mModel = new ForgetPswModel(this);
         }
         mModel.addResponseListener(this);
-        //mModel.createTuXingYanZhengMa(getResources().getString(R.string.forget_psw_getpicviladata_trancode));
         clearFrescoCache();
-        //picyanzhengmaWebview.setImageURI(Uri.parse(getResources().getString(R.string.http_request_url) + "/system/createvalicode"));
         picyanzhengmaWebview.setImageBitmap(CodeUtils.getInstance().createBitmap());
         pictuxingyanzhengmaEdittext.addTextChangedListener(textWatcher);
     }
@@ -137,17 +135,12 @@ public class ForgetPswActivity extends CommonActivity implements Countdown.TextV
                 {
                     DialogUtil.showToast(getApplicationContext(),"图形验证码错误");
                 }
-                //mModel.checkValidata(getResources().getString(R.string.forget_psw_checkviladata_trancode), pictuxingyanzhengmaEdittext.getText().toString());
             }
         }
     };
     @Override
     public void OnHttpResponse(String var1, String var2)
     {
-       /* if (var1.equals(getResources().getString(R.string.forget_psw_getpicviladata_trancode)))
-        {
-
-        }*/
 
         if(var1.equals(getResources().getString(R.string.forget_psw_checkviladata_trancode)))//图形验证码是否正确
         {
@@ -191,7 +184,6 @@ public class ForgetPswActivity extends CommonActivity implements Countdown.TextV
                 bundle.putString("username",shoujihaoEdittext.getText().toString());
                 startActivity(ResetPswActivity.class,bundle);
                 finish();
-                //mModel.postSignUp(getResources().getString(R.string.zhuce_submit),username.getText().toString(),password.getText().toString(),querenPassword.getText().toString(),mSchoolId,shoujihaoEdittext.getText().toString(),tianxieyanzhengmaEdittext.getText().toString());
             }
         }
     }
@@ -247,7 +239,6 @@ public class ForgetPswActivity extends CommonActivity implements Countdown.TextV
             case R.id.picyanzhengma_webview://
                 clearFrescoCache();
                 picyanzhengmaWebview.setImageBitmap(CodeUtils.getInstance().createBitmap());
-                //picyanzhengmaWebview.setImageURI(Uri.parse(getResources().getString(R.string.http_request_url) + "/system/createvalicode"));
                 break;
             case R.id.queding_btn:
                 shoujihaoEdittext.setError(null);

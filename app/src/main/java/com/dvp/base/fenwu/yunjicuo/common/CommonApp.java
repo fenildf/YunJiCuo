@@ -18,6 +18,8 @@ import com.nostra13.universalimageloader.utils.StorageUtils;
 
 import java.io.File;
 
+import static java.util.concurrent.TimeUnit.MILLISECONDS;
+
 /**
  * 类: ProjectNameApp
  * 功能描述:
@@ -68,6 +70,11 @@ public class CommonApp extends APP
         //网络状态监听
         Intent intent = new Intent(getApplicationContext(), NetworkStateService.class);
         startService(intent);
+
+        //设置所有网络请求的okhttp的初始化
+        com.zhy.http.okhttp.OkHttpUtils.getInstance().setConnectTimeout(100000,MILLISECONDS);
+        com.zhy.http.okhttp.OkHttpUtils.getInstance().setReadTimeout(100000,MILLISECONDS);
+        com.zhy.http.okhttp.OkHttpUtils.getInstance().setWriteTimeout(100000,MILLISECONDS);
 
         //更新apk的okhttp初始化
         initOkHttp();

@@ -89,5 +89,7 @@
     <dimen name="dp_10">10dp</dimen>
 
     <dimen name="pic_zhanwei_width">100dip</dimen>
-
+    <dimen name="margin_start">23dp</dimen>
+    <dimen name="margin_top">21dp</dimen>
+    <dimen name="margin_top2">10dp</dimen>
 </resources>

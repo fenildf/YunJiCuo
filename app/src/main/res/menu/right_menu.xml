@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="新版本检测">
+   <!-- <item android:title="新版本检测">
         <menu>
-            <group android:checkableBehavior="single">
+            <group android:checkableBehavior="single">-->
                 <item
                     android:id="@+id/personcenter_item"
                     android:icon="@mipmap/gengxin"
                     android:title="检测新版本"/>
-            </group>
+            <!--</group>
         </menu>
-    </item>
+    </item>-->
 
 
-    <item android:title="退出当前账号">
+  <!--  <item android:title="退出当前账号">
         <menu>
-            <group android:checkableBehavior="single">
+            <group android:checkableBehavior="single">-->
                 <item
                     android:id="@+id/exit_item"
                     android:icon="@mipmap/signout"
                     android:title="退出当前账号"/>
-            </group>
+            <!--</group>
         </menu>
-    </item>
+    </item>-->
 </menu>

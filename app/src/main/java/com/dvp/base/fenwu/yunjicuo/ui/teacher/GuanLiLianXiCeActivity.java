@@ -165,7 +165,6 @@ public class GuanLiLianXiCeActivity extends CommonActivity implements XRecyclerV
                                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which)
                                     {
                                         mModel.deleteLXC(getResources().getString(R.string.delete_lianxice_trancode),classManageItem.getId());
-
                                     }
                                 }).show();
                             }

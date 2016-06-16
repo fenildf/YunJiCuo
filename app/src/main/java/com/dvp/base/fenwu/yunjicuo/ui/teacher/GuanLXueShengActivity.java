@@ -40,7 +40,7 @@ public class GuanLXueShengActivity extends CommonActivity
 
 
     private ArrayList<Fragment> mFragments3 = new ArrayList<>();//用户切换Fragment，不可滑动
-    private String[] mTitles = {"老师", "学生"};//第一种样式tab的标题文字
+    private String[] mTitles = {"已审", "未审"};//第一种样式tab的标题文字
 
     @Override
     protected void onCreate(Bundle savedInstanceState)

@@ -9,9 +9,6 @@
         android:id="@+id/x_listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:listSelector="@color/item_hover"
-        android:dividerHeight="0.8dip"
-        android:divider="#efefef"
         ></com.dvp.base.adapter.recyviewadapter.view.XRecyclerView>
 
 </LinearLayout>

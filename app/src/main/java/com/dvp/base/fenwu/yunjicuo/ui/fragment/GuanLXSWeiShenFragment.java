@@ -86,7 +86,7 @@ public class GuanLXSWeiShenFragment extends CommonFragment implements XRecyclerV
         //listview.addItemDecoration(new DividerItemDecoration(getActivity(),0));
         // xRecyclerview.addItemDecoration(new DividerItemDecoration(this, 1));
         xListview.setLoadingListener(this);
-        xListview.setItemAnimator(new DefaultItemAnimator());
+        //xListview.setItemAnimator(new DefaultItemAnimator());
         xListview.setPullRefreshEnabled(true);
         xListview.setLoadingMoreEnabled(true);
 

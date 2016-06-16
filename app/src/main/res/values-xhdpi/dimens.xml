@@ -92,4 +92,7 @@
     <dimen name="margin_start">23dp</dimen>
     <dimen name="margin_top">21dp</dimen>
     <dimen name="margin_top2">10dp</dimen>
+
+    <dimen name="card_margin_dibu">2dp</dimen>
+    <dimen name="card_yin_yin">2dp</dimen>
 </resources>

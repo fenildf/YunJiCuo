@@ -126,7 +126,7 @@ public class GuanLiLianXiCeActivity extends CommonActivity implements XRecyclerV
         {
 
             if (page - 1==1)
-            {
+                {
                 mDatas= mModel.getRtnGuanLLianXC().getData();
                 adapter = new RecyclerAdapter<RtnGuanLLianXC.DataEntity>(getApplicationContext(), mDatas, R.layout.item_guanli_lianxice_layout)
                 {

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
+    android:background="@color/home_background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.teacher.GuanLiBanJActivity">
 
@@ -33,7 +34,6 @@
         android:layout_height="match_parent"
         android:divider="@null"
         android:dividerHeight="@dimen/card_list_item"
-        android:animateLayoutChanges="false"
-        android:focusableInTouchMode="true"
+        android:background="@null"
         ></com.dvp.base.adapter.recyviewadapter.view.XRecyclerView>
 </LinearLayout>

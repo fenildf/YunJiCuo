@@ -74,7 +74,7 @@
                     <TextView
                         android:id="@+id/fence_tv"
                         android:layout_weight="3"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/ts_normal"
                         android:textColor="@color/light_gray"
@@ -92,7 +92,7 @@
                     <TextView
                         android:id="@+id/nianji_tv"
                         android:layout_weight="6"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/ts_normal"
                         android:textColor="@color/light_gray"
@@ -115,8 +115,8 @@
                         />
                     <TextView
                         android:id="@+id/kemu_tv"
-                        android:layout_weight="4.8"
-                        android:layout_width="wrap_content"
+                        android:layout_weight="3"
+                        android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:text="数学"
                         android:textColor="@color/light_gray"
@@ -134,7 +134,7 @@
                     <TextView
                         android:id="@+id/banben_tv"
                         android:layout_weight="6"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/ts_normal"
                         android:textColor="@color/light_gray"

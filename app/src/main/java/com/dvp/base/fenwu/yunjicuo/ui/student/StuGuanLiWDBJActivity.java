@@ -32,7 +32,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * 学生我的班级界面
+ * 学生我的班级界面 需要修改
  */
 public class StuGuanLiWDBJActivity extends CommonActivity implements XRecyclerView.LoadingListener
 {

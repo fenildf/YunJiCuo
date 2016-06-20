@@ -14,6 +14,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.internal.MDButton;
@@ -142,27 +143,45 @@ public class SouSuoBanjActivity extends CommonActivity implements SearchView.OnQ
         searchView.setBackgroundColor(Color.parseColor("#00FFFFFF"));
         //=================
 
+        //设置搜索框的位置和高度
+        LinearLayout searchLayout  = (LinearLayout)searchView.findViewById(R.id.search_plate);
+        searchLayout.setBackgroundDrawable(getResources().getDrawable(R.drawable.edit_search_bg));//给EditText加个边框
+        LinearLayout.LayoutParams linearParams =(LinearLayout.LayoutParams) searchLayout.getLayoutParams(); //取控件textView当前的布局参数
+        linearParams.height = 50;// 控件的高强制设成20
+
+        linearParams.width = 300;// 控件的宽强制设成30
+        linearParams.setMargins(12,12,12,12);
+        searchLayout.setLayoutParams(linearParams);
+
         /*SearchView.SearchAutoComplete*/
         textView = (SearchView.SearchAutoComplete) searchView.findViewById(R.id.search_src_text);
         //textView.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);//设置底部下划线
+        LinearLayout.LayoutParams linearParams1 =(LinearLayout.LayoutParams) textView.getLayoutParams(); //取控件textView当前的布局参数
+        linearParams1.height = 50;// 控件的高强制设成20
+
+        linearParams1.width = 300;// 控件的宽强制设成30
+        textView.setLayoutParams(linearParams1);
+
         textView.setHint("请输入班级编号···");
-        textView.setBackgroundDrawable(getResources().getDrawable(R.drawable.edit_search_bg));//给EditText加个边框
+       // textView.setBackgroundDrawable(getResources().getDrawable(R.drawable.edit_search_bg));//给EditText加个边框
+
+
         //修改ToolBar上SearView的搜索图标
         ImageView searchButton = (ImageView)searchView.findViewById(R.id.search_button);
-        searchButton.setImageResource(R.mipmap.sousuo);
+        searchButton.setImageResource(R.mipmap.searchicon);
         //修改SearView的搜索图标
         ImageView searchGo = (ImageView)searchView.findViewById(R.id.search_go_btn);
-        searchGo.setImageResource(R.mipmap.sousuo);
+        searchGo.setImageResource(R.mipmap.searchicon);
 
         ImageView searchClose = (ImageView)searchView.findViewById(R.id.search_close_btn);
-        searchClose.setImageResource(R.mipmap.clearedit);
+        searchClose.setImageResource(R.mipmap.clearicon);
 
 
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         searchView.setIconifiedByDefault(true);
         searchView.setOnQueryTextListener(this);
         searchView.setSubmitButtonEnabled(true);
-      /*  //这里为了不让显示  ···  就加了搜索两个字
+        //这里为了不让显示  ···  就加了搜索两个字
         searchView.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener()
         {
             @Override
@@ -173,12 +192,12 @@ public class SouSuoBanjActivity extends CommonActivity implements SearchView.OnQ
                     middleTitleTv.setVisibility(View.GONE);
                 } else
                 {
-                    middleTitleTv.setVisibility(View.VISIBLE);
+                    middleTitleTv.setVisibility(View.GONE);
                 }
             }
         });
 
-        toolbar.isTitleTruncated();*/
+        toolbar.isTitleTruncated();
     }
 
     //返回按钮监听

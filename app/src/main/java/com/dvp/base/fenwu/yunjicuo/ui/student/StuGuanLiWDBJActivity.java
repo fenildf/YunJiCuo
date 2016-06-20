@@ -159,7 +159,6 @@ public class StuGuanLiWDBJActivity extends CommonActivity implements XRecyclerVi
                             @Override
                             public void onClick(View v)
                             {
-                                //DialogUtil.showToast(getApplicationContext(),"错题库");
                                 Bundle bundle = new Bundle();
                                 bundle.putString("banjbh",classManageItem.getBanJ().getId());
                                 startActivity(StuWDBJCuoTiKuActivity.class,bundle);
@@ -171,7 +170,6 @@ public class StuGuanLiWDBJActivity extends CommonActivity implements XRecyclerVi
                             @Override
                             public void onClick(View v)
                             {
-                                //DialogUtil.showToast(getApplicationContext(),"错题统计");
                                 Bundle bundle = new Bundle();
                                 bundle.putString("bianhao",classManageItem.getBanJ().getId());
                                 startActivity(StuWDBJCuoTTJActivity.class,bundle);
@@ -183,7 +181,6 @@ public class StuGuanLiWDBJActivity extends CommonActivity implements XRecyclerVi
                             @Override
                             public void onClick(View v)
                             {
-                                //DialogUtil.showToast(getApplicationContext(),"退出班级");
                                 DialogUtil.getBasicDialog(StuGuanLiWDBJActivity.this, null, "退出班级", "确定退出班级么？", 0, new MaterialDialog.SingleButtonCallback()
                                 {
                                     @Override

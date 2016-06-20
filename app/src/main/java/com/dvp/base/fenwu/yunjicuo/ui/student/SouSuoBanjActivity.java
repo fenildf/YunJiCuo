@@ -14,6 +14,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.afollestad.materialdialogs.internal.MDButton;
 import com.dvp.base.adapter.recyviewadapter.adapter.DividerItemDecoration;
@@ -39,8 +40,8 @@ import butterknife.OnClick;
 public class SouSuoBanjActivity extends CommonActivity implements SearchView.OnQueryTextListener, XRecyclerView.LoadingListener
 {
 
-   /* @Bind(R.id.middleTitle_tv)
-    TextView middleTitleTv;*/
+    @Bind(R.id.middleTitle_tv)
+    TextView middleTitleTv;
     @Bind(R.id.toolbar)
     Toolbar toolbar;
     @Bind(R.id.x_listview)
@@ -85,9 +86,9 @@ public class SouSuoBanjActivity extends CommonActivity implements SearchView.OnQ
         stuId = getAPP().getAppConfig().getConfig(User.class).getStaffId();
         mDatas = new ArrayList<>();
         setSupportActionBar(toolbar);
-        setTitle("加入班级");
+        setTitle("");
 
-       // middleTitleTv.setText("加入班级");
+       middleTitleTv.setText("加入班级");
         toolbar.setTitleTextColor(Color.parseColor("#FFFFFF"));
         toolbar.setNavigationIcon(R.mipmap.back_btn);
         toolbar.setNavigationOnClickListener(new View.OnClickListener()

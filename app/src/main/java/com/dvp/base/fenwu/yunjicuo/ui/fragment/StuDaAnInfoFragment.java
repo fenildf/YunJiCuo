@@ -114,7 +114,6 @@ public class StuDaAnInfoFragment extends CommonFragment
         {
             DialogUtil.showToast(getActivity(),"保存成功");
         }
-
     }
 
     @Override

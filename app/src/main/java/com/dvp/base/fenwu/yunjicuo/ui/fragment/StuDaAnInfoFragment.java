@@ -97,12 +97,15 @@ public class StuDaAnInfoFragment extends CommonFragment
     {
         if (var1.equals(getActivity().getResources().getString(R.string.stu_daanchaxun_byxitiid_trancode)))
         {
+            //封装成html在webview中调用本地网页
             String timu = "<html><head></head><body>" + mModel.getRtnDaAnInfo().getTiM().toString() + "</body></html>";
             timuWebview.loadData(timu, "text/html; charset=UTF-8", null);
 
+            //封装成html在webview中调用本地网页
             String daan = "<html><head></head><body>" + mModel.getRtnDaAnInfo().getDaA().toString() + "</body></html>";
             daanWebview.loadData(daan, "text/html; charset=UTF-8", null);
 
+            //封装成html在webview中调用本地网页
             String fenxi = "<html><head></head><body>" + mModel.getRtnDaAnInfo().getFenX().toString() + "</body></html>";
             fenxiWebview.loadData(fenxi, "text/html; charset=UTF-8", null);
         }

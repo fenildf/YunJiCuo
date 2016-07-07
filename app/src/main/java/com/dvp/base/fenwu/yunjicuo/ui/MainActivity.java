@@ -226,6 +226,11 @@ public class MainActivity extends CommonActivity
         return true;
     }
 
+    /**
+     * 回调函数
+     * @param var1
+     * @param var2
+     */
     @Override
     public void OnHttpResponse(String var1, String var2)
     {

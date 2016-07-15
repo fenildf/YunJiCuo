@@ -9,6 +9,7 @@
                                    android:background="?attr/colorPrimary"
                                    android:minHeight="?attr/actionBarSize"
                                    app:navigationIcon="@mipmap/ic_grzx"
+                                   app:layout_collapseMode="pin"
                                    app:layout_scrollFlags="scroll|enterAlways"
                                    app:title=" ">
 

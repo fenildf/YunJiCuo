@@ -2,6 +2,7 @@ package com.dvp.base.fenwu.yunjicuo.ui;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -28,6 +29,8 @@ import com.dvp.base.fenwu.yunjicuo.domain.user.User;
 import com.dvp.base.fenwu.yunjicuo.model.LoginModel;
 import com.dvp.base.fenwu.yunjicuo.ui.fragment.NewStudentFragment;
 import com.dvp.base.fenwu.yunjicuo.ui.fragment.NewTeacherMenuFragment;
+import com.dvp.base.fenwu.yunjicuo.ui.fragment.StuRecycleFragment;
+import com.dvp.base.fenwu.yunjicuo.ui.fragment.TeaRecycleFragment;
 import com.dvp.base.util.DoubleClickExitDetector;
 import com.flyco.tablayout.SegmentTabLayout;
 import com.tencent.mm.sdk.openapi.IWXAPI;
@@ -108,6 +111,9 @@ public class MainActivity extends CommonActivity
      */
     private void initDawLayout()
     {
+        CollapsingToolbarLayout collapsingToolbar =
+                (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+
         setSupportActionBar(toolbar);
         setTitle("云计错");
         //toolbar.setOnMenuItemClickListener(onMenuItemClick);
@@ -138,8 +144,8 @@ public class MainActivity extends CommonActivity
     private void initTab()
     {
 
-        mFragments3.add(NewTeacherMenuFragment.getInstance("TeacherMenuFragment"));
-        mFragments3.add(NewStudentFragment.getInstance("StudentFragment"));
+        mFragments3.add(TeaRecycleFragment.getInstance("TeaRecycleFragment"));
+        mFragments3.add(StuRecycleFragment.getInstance("StuRecycleFragment"));
         tl1.setTabData(mTitles, this, R.id.fl_content, mFragments3);
     }
 

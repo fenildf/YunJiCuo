@@ -89,8 +89,7 @@ public class MainActivity extends CommonActivity
     private void initWeiXinZhiF()
     {
         //通过WXAPIFactory工厂，获取IWXAPI实例
-       api = WXAPIFactory.createWXAPI(this,APP_ID,true);
-
+        api = WXAPIFactory.createWXAPI(this,APP_ID,true);
         //将应用的appId注册到微信
         api.registerApp(APP_ID);
     }

@@ -23,7 +23,7 @@
             fresco:roundBottomLeft="false"
             fresco:roundBottomRight="false"
             fresco:roundingBorderWidth="1dp"
-            android:background="@mipmap/dl_tx_img" />
+            android:background="@mipmap/yunjicuo_login_logon" />
     </LinearLayout>
 
     <!-- 用户名和密码 -->

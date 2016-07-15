@@ -2,9 +2,9 @@
 <resources>
 
     <!--程序颜色配置-->
-    <color name="colorPrimary">#009e96</color>
-    <color name="colorPrimaryDark">#009e96</color>
-    <color name="colorAccent">#009e96</color>
+    <color name="colorPrimary">#74c045</color>
+    <color name="colorPrimaryDark">#74c045</color>
+    <color name="colorAccent">#74c045</color>
     <color name="windowBackGround">#FFFFFF</color>
     <color name="textColorPrimary">#FFFFFF</color>
     <!--以上程序颜色配置-->

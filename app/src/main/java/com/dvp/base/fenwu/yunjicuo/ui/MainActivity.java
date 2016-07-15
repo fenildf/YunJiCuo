@@ -30,6 +30,8 @@ import com.dvp.base.fenwu.yunjicuo.ui.fragment.NewStudentFragment;
 import com.dvp.base.fenwu.yunjicuo.ui.fragment.NewTeacherMenuFragment;
 import com.dvp.base.util.DoubleClickExitDetector;
 import com.flyco.tablayout.SegmentTabLayout;
+import com.tencent.mm.sdk.openapi.IWXAPI;
+import com.tencent.mm.sdk.openapi.WXAPIFactory;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -69,14 +71,21 @@ public class MainActivity extends CommonActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
         ButterKnife.bind(this);
+
+        //商户APP工程中引入微信JAR包，调用API前，需要先向微信注册您的APPID
+        //initWeiXinZhiF();
         initDawLayout();
         initTab();
         init();
     }
 
+    private void initWeiXinZhiF()
+    {
+        final IWXAPI msgApi = WXAPIFactory.createWXAPI(getApplicationContext(), null);
+         // 将该app注册到微信
+        msgApi.registerApp("wxd930ea5d5a258f4f");
+    }
     private void init()
     {
         if(mModel == null)

@@ -9,6 +9,8 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
     <application
         android:name=".common.CommonApp"
         android:allowBackup="true"
@@ -22,156 +24,195 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".common.pictureselect.ui.activity.MultiImageListActivity"
-                  android:screenOrientation="portrait"/>
-        <activity android:name=".common.pictureselect.ui.activity.MultiImageSelectorActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".common.pictureselect.ui.activity.MultiImageListActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".common.pictureselect.ui.activity.MultiImageSelectorActivity"
+            android:screenOrientation="portrait"
             />
-        <activity android:name=".common.pictureselect.ui.activity.MultiImageZoomActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".common.pictureselect.ui.activity.MultiImageZoomActivity"
+            android:screenOrientation="portrait"
             />
-        <activity android:name=".ui.teacher.GuanLiBanJActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.teacher.GuanLiBanJActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.teacher.AddBanjiActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.teacher.AddBanjiActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.teacher.GuanLiLianXiCeActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.teacher.GuanLiLianXiCeActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.teacher.BanJCuoTiBenActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.teacher.BanJCuoTiBenActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.teacher.AddBanJLianXiCeActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.teacher.AddBanJLianXiCeActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.teacher.BuZhiZuoYeActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.teacher.BuZhiZuoYeActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.teacher.GuanLBJXiuGaiActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.teacher.GuanLBJXiuGaiActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.student.SouSuoBanjActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.student.SouSuoBanjActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.teacher.GuanLXueShengActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.teacher.GuanLXueShengActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.teacher.CuoTiKuActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.teacher.CuoTiKuActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.teacher.FenCeCuoTiListActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.teacher.FenCeCuoTiListActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.teacher.CuoTiLieBiaoInfoActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.teacher.CuoTiLieBiaoInfoActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.teacher.XiTiXiangQingActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.teacher.XiTiXiangQingActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.student.WoDShuJActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.student.WoDShuJActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.student.AddWDSJActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.student.AddWDSJActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.student.StuWoDCTBActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.student.StuWoDCTBActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.student.StuCuoTiLieBiaoActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.student.StuCuoTiLieBiaoActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.student.AddWDCTBActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.student.AddWDCTBActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.student.StuGuanLiWDBJActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.student.StuGuanLiWDBJActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.student.StuWDZYListActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.student.StuWDZYListActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.student.StuDaAnChaXunActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.student.StuDaAnChaXunActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.student.StuDaAnDisplayActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.student.StuDaAnDisplayActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.student.StuWDBJCuoTiKuActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.student.StuWDBJCuoTiKuActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.teacher.AddBuZhiZuoYeActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.teacher.AddBuZhiZuoYeActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.teacher.BuZhiZuoYeXiTInfoActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.teacher.BuZhiZuoYeXiTInfoActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.student.StuCuoTiInfoActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.student.StuCuoTiInfoActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.student.StuPanJuanListActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.student.StuPanJuanListActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.SignUpActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.SignUpActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.teacher.BanJCuoTBCuoTiTongJActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.teacher.BanJCuoTBCuoTiTongJActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.student.StuWDBJCuoTTJActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.student.StuWDBJCuoTTJActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.student.TongJDisplayActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.student.TongJDisplayActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.student.StuWDBJAddCuoTKActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.student.StuWDBJAddCuoTKActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.student.StuCuoTPaiZhaoActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.student.StuCuoTPaiZhaoActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.ForgetPswActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.ForgetPswActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.ResetPswActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.ResetPswActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".ui.NewLoginActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.NewLoginActivity"
+            android:screenOrientation="portrait"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -180,21 +221,25 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".common.ui.UpdateDialogActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".common.ui.UpdateDialogActivity"
+            android:screenOrientation="portrait"
             ></activity>
-        <activity android:name=".common.ui.DownloadDialogActivity"
-                  android:screenOrientation="portrait"
+        <activity
+            android:name=".common.ui.DownloadDialogActivity"
+            android:screenOrientation="portrait"
             ></activity>
 
-        <service android:name=".common.service.UpdateService"
-                 android:enabled="true"
-                 android:exported="true"
+        <service
+            android:name=".common.service.UpdateService"
+            android:enabled="true"
+            android:exported="true"
             ></service>
 
-        <service android:name=".common.service.NetworkStateService"
-                 android:enabled="true"
-                 android:exported="true"
+        <service
+            android:name=".common.service.NetworkStateService"
+            android:enabled="true"
+            android:exported="true"
             ></service>
     </application>
 

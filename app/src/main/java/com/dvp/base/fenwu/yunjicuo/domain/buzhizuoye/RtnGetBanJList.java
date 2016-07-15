@@ -9,31 +9,11 @@ import java.util.List;
  */
 public class RtnGetBanJList
 {
-
-    /**
-     * page : 1
-     * totalCount : 2
-     * pageSize : 999999
-     * orderCondition :  order by banJ.orderId,banJ.name
-     * searchCondition :  where  user.id ='e54910245143f903015146aa3ab6042c' and banJ.keM.id ='2c90813a5074c128015074cb6707000b' and str(isValid) ='1' and str(type) !='1'
-     * data : [{"typeName":"创建者","id":"e54910245143f903015146abd98b043d","valid":1,"validName":"正常","type":0,"user":{"id":"e54910245143f903015146aa3ab6042c","createTime":"2015-11-27 09:59:00","name":"王军平","state":"正常","mobile":"13994228195","loginName":"13994228195"},"yiShengUserNum":"60","banJ":{"id":"00000010","school":{"clime":{"climeName":"太原","id":"2","parentClime":{"climeName":"忻州","id":"1","rcsField":"climeName","rcsKey":"1","rcsParentField":"parentClime","rcsParentKey":"","rcsValue":"忻州"},"rcsField":"climeName","rcsKey":"2","rcsParentField":"parentClime","rcsParentKey":"1","rcsValue":"太原"},"id":"402881ed50943a980150945ef5640297","name":"太原市志达中学","orderId":0,"rcsField":"name","rcsKey":"402881ed50943a980150945ef5640297","rcsValue":"太原市志达中学"},"keM":{"id":"2c90813a5074c128015074cb6707000b","name":"数学","orderId":1,"rcsField":"name","rcsKey":"2c90813a5074c128015074cb6707000b","rcsValue":"数学"},"name":"44班","user":{"id":"e54910245143f903015146aa3ab6042c","createTime":"2015-11-27 09:59:00","name":"王军平","state":"正常","mobile":"13994228195","loginName":"13994228195"}}},{"typeName":"创建者","id":"e549102453a2b4a30153abb2bd3b0bc3","valid":1,"validName":"正常","type":0,"user":{"id":"e54910245143f903015146aa3ab6042c","createTime":"2015-11-27 09:59:00","name":"王军平","state":"正常","mobile":"13994228195","loginName":"13994228195"},"yiShengUserNum":"57","banJ":{"id":"00000261","school":{"clime":{"climeName":"太原","id":"2","parentClime":{"climeName":"忻州","id":"1","rcsField":"climeName","rcsKey":"1","rcsParentField":"parentClime","rcsParentKey":"","rcsValue":"忻州"},"rcsField":"climeName","rcsKey":"2","rcsParentField":"parentClime","rcsParentKey":"1","rcsValue":"太原"},"id":"402881ed50943a980150945ef5640297","name":"太原市志达中学","orderId":0,"rcsField":"name","rcsKey":"402881ed50943a980150945ef5640297","rcsValue":"太原市志达中学"},"keM":{"id":"2c90813a5074c128015074cb6707000b","name":"数学","orderId":1,"rcsField":"name","rcsKey":"2c90813a5074c128015074cb6707000b","rcsValue":"数学"},"name":"51班","user":{"id":"e54910245143f903015146aa3ab6042c","createTime":"2015-11-27 09:59:00","name":"王军平","state":"正常","mobile":"13994228195","loginName":"13994228195"}}}]
-     */
-
     private int page;
     private int totalCount;
     private int pageSize;
     private String orderCondition;
     private String searchCondition;
-    /**
-     * typeName : 创建者
-     * id : e54910245143f903015146abd98b043d
-     * valid : 1
-     * validName : 正常
-     * type : 0
-     * user : {"id":"e54910245143f903015146aa3ab6042c","createTime":"2015-11-27 09:59:00","name":"王军平","state":"正常","mobile":"13994228195","loginName":"13994228195"}
-     * yiShengUserNum : 60
-     * banJ : {"id":"00000010","school":{"clime":{"climeName":"太原","id":"2","parentClime":{"climeName":"忻州","id":"1","rcsField":"climeName","rcsKey":"1","rcsParentField":"parentClime","rcsParentKey":"","rcsValue":"忻州"},"rcsField":"climeName","rcsKey":"2","rcsParentField":"parentClime","rcsParentKey":"1","rcsValue":"太原"},"id":"402881ed50943a980150945ef5640297","name":"太原市志达中学","orderId":0,"rcsField":"name","rcsKey":"402881ed50943a980150945ef5640297","rcsValue":"太原市志达中学"},"keM":{"id":"2c90813a5074c128015074cb6707000b","name":"数学","orderId":1,"rcsField":"name","rcsKey":"2c90813a5074c128015074cb6707000b","rcsValue":"数学"},"name":"44班","user":{"id":"e54910245143f903015146aa3ab6042c","createTime":"2015-11-27 09:59:00","name":"王军平","state":"正常","mobile":"13994228195","loginName":"13994228195"}}
-     */
 
     private List<DataEntity> data;
 

@@ -8,7 +8,6 @@ package com.dvp.base.fenwu.yunjicuo.domain.user;
 public class RtnUserInfo
 {
 
-
     private int age;
     private String createTime;
 
@@ -370,22 +369,7 @@ public class RtnUserInfo
         private int childDeptNum;
         private int childRoleNum;
         private int childUserNum;
-        /**
-         * childDeptNum : 1
-         * childRoleNum : 1
-         * childUserNum : 2559
-         * id : 402881e836e72cd70136e72d96f50001
-         */
-
         private DeptStateEntity deptState;
-        /**
-         * id : 0
-         * name : 机构
-         * rcsField : id
-         * rcsKey : 0
-         * rcsValue : 机构
-         */
-
         private DeptTypeEntity deptType;
         private String description;
         private boolean detailRecord;

@@ -367,38 +367,13 @@ public class RtnBuZhiZuoYeList
 
         public static class BanJEntity
         {
-            /**
-             * id : e5491024509498a50150994d56d60261
-             * name : 物理
-             * orderId : 2
-             * rcsField : name
-             * rcsKey : e5491024509498a50150994d56d60261
-             * rcsValue : 物理
-             */
 
             private KeMEntity keM;
-            /**
-             * clime : {"climeName":"太原","id":"2","parentClime":{"climeName":"忻州","id":"1","rcsField":"climeName","rcsKey":"1","rcsParentField":"parentClime","rcsParentKey":"","rcsValue":"忻州"},"rcsField":"climeName","rcsKey":"2","rcsParentField":"parentClime","rcsParentKey":"1","rcsValue":"太原"}
-             * id : e5491024509c41c001509d68d3850172
-             * name : 太原市第五中学
-             * orderId : 0
-             * rcsField : name
-             * rcsKey : e5491024509c41c001509d68d3850172
-             * rcsValue : 太原市第五中学
-             */
+
 
             private SchoolEntity school;
             private String name;
             private String id;
-            /**
-             * createTime : 2015-11-25 09:43:23
-             * loginName : 15235120496
-             * name : 刘玉芬
-             * mobile : 15235120496
-             * id : e5491024513a103301513c4f39ff07c0
-             * state : 正常
-             */
-
             private UserEntity user;
 
             public KeMEntity getKeM()
@@ -523,17 +498,6 @@ public class RtnBuZhiZuoYeList
 
             public static class SchoolEntity
             {
-                /**
-                 * climeName : 太原
-                 * id : 2
-                 * parentClime : {"climeName":"忻州","id":"1","rcsField":"climeName","rcsKey":"1","rcsParentField":"parentClime","rcsParentKey":"","rcsValue":"忻州"}
-                 * rcsField : climeName
-                 * rcsKey : 2
-                 * rcsParentField : parentClime
-                 * rcsParentKey : 1
-                 * rcsValue : 太原
-                 */
-
                 private ClimeEntity clime;
                 private String id;
                 private String name;

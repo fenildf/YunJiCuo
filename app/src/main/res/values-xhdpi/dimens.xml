@@ -80,7 +80,7 @@
     <!-- 顶部菜单栏高度-->
     <dimen name="login_width">18dp</dimen>
     <dimen name="top_title_height">48dp</dimen>
-    <dimen name="top_menu_height">30dp</dimen>
+    <dimen name="top_menu_height">33dp</dimen>
     <dimen name="top_menu_stroke_width">1dp</dimen>
 
     <dimen name="bianju">12dp</dimen>

@@ -35,12 +35,12 @@
                 android:src="@mipmap/jysy_bg"
                 app:layout_collapseMode="parallax"
                 app:layout_collapseParallaxMultiplier="0.7" />
+
            <!-- <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin" />-->
-
             <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
                                                xmlns:app="http://schemas.android.com/apk/res-auto"
                                                xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
@@ -48,10 +48,14 @@
                                                android:layout_width="match_parent"
                                                android:layout_height="?attr/actionBarSize"
                                                xmlns:tl="http://schemas.android.com/tools"
-                                               android:minHeight="?attr/actionBarSize"
+                                               android:minHeight="@dimen/top_title_height"
                                                app:navigationIcon="@mipmap/ic_grzx"
                                                app:layout_collapseMode="pin"
-                                               app:title="">
+                                               app:layout_scrollFlags="scroll|enterAlways"
+                                               app:title=" "
+
+                                               >
+
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -61,7 +65,7 @@
                         android:id="@+id/tl_1"
                         android:layout_width="130dip"
                         android:layout_height="@dimen/top_menu_height"
-                        android:layout_gravity="center_horizontal"
+                        android:layout_gravity="center"
                         app:tl_textSelectColor="@color/colorPrimary"
                         app:tl_bar_stroke_color="@color/white"
                         app:tl_bar_color="@color/colorPrimary"
@@ -69,10 +73,9 @@
                         app:tl_textUnselectColor="@color/white"
                         tl:tl_indicator_corner_radius="1dp"
                         tl:tl_tab_padding="20dp"
-                        android:layout_marginStart="61dp"
                         android:layout_centerVertical="true"
-                        android:layout_alignParentStart="true"/>
-
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="84dp"/>
                 </RelativeLayout>
 
 

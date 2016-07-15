@@ -66,6 +66,12 @@ public class MainActivity extends CommonActivity
     DoubleClickExitDetector exit = new DoubleClickExitDetector(MainActivity.this);//创建双击退出程序对象
 
     private LoginModel mModel;
+
+    //APP_ID 替换为你的应用从官方网站申请到的合法appId
+    private static final String APP_ID = "wxd930ea5d5a258f4f";
+
+    //IWXAPI 是第三方app和微信通信的openapi接口
+    private IWXAPI api;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -82,9 +88,11 @@ public class MainActivity extends CommonActivity
 
     private void initWeiXinZhiF()
     {
-        final IWXAPI msgApi = WXAPIFactory.createWXAPI(getApplicationContext(), null);
-         // 将该app注册到微信
-        msgApi.registerApp("wxd930ea5d5a258f4f");
+        //通过WXAPIFactory工厂，获取IWXAPI实例
+       api = WXAPIFactory.createWXAPI(this,APP_ID,true);
+
+        //将应用的appId注册到微信
+        api.registerApp(APP_ID);
     }
     private void init()
     {

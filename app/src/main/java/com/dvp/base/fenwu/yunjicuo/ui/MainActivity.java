@@ -114,8 +114,9 @@ public class MainActivity extends CommonActivity
         CollapsingToolbarLayout collapsingToolbar =
                 (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
 
-        setSupportActionBar(toolbar);
         setTitle("云计错");
+        setSupportActionBar(toolbar);
+
         //toolbar.setOnMenuItemClickListener(onMenuItemClick);
 
         toolbar.setNavigationIcon(R.mipmap.yh);
